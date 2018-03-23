@@ -36,7 +36,7 @@
 
 ```
 export LICENSE_ID="your-license-id"
-curl -L https://get.cryosparc2.com/download/master-latest/$LICENSE_ID > cryosparc2_master.tar.gz
+curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID > cryosparc2_master.tar.gz
 tar -xf cryosparc2_master.tar.gz
 cd cryosparc2_master
 ./install.sh --license $LICENSE_ID --dbpath <path> --port <portnum>
@@ -62,7 +62,7 @@ cryosparcm createuser <email> <password>
 
 ```
 export LICENSE_ID="blah"
-curl -L https://get.cryosparc2.com/download/worker-latest/$LICENSE_ID > cryosparc2_worker.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID > cryosparc2_worker.tar.gz
 tar -xf cryosparc2_worker.tar.gz
 cd cryosparc2_worker
 ./install.sh --license $LICENSE_ID --cudapath <path> --ssdpath <ssdpath>
@@ -83,7 +83,7 @@ bin/cryosparcw connect <workerhostname> <masterhostname> <commandport>
 Log in interactively to a GPU node that will be scheduled on (if no internet do the download elsewhere first into home dir)
 ```
 export LICENSE_ID="blah"
-curl -L https://get.cryosparc2.com/download/worker-latest/$LICENSE_ID > cryosparc2_worker.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID > cryosparc2_worker.tar.gz
 tar -xf cryosparc2_worker.tar.gz
 cd cryosparc2_worker
 ./install.sh --license $LICENSE_ID --cudapath <path> --ssdpath <ssdpath>
