@@ -1,0 +1,16 @@
+{
+ "items": [
+  {
+   "category": "Update", 
+   "date": "2018-01-12T13:04:40.232633", 
+   "description": "<ul>\n<li>Bug fixes for CUDA exclusive mode GPUs</li>\n<li>Bug fixes dependency errors in installer </li>\n</ul>", 
+   "title": "Version 0.6.5"
+  }, 
+  {
+   "category": "Update", 
+   "date": "2017-12-09T21:00:47.280883", 
+   "description": "<ul>\n<li>Fix to SSD cache system to address concurrency bug when launching multiple experiments on the same dataset at the same time.</li>\n<li>Minor bug fixes</li>\n</ul>", 
+   "title": "Version 0.6.3"
+  }
+ ]
+}
