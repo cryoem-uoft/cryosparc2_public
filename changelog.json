@@ -2,6 +2,12 @@
  "items": [
   {
    "category": "Update", 
+   "date": "2018-07-24T01:38:38.814254", 
+   "description": "<ul>\n<li>Updates to installation and configuration system, making cluster setup easier</li>\n<li>New detailed <a href=\"https://github.com/cryoem-uoft/cryosparc2_public/blob/master/INSTALL.md\">Installation Guide</a> that has details of how to configure cryoSPARC v2, as well as documentation for admin and advanced functions</li>\n<li>2D classification now has options to recenter and window class references during classification, helpful with crowding or when generating templates for picking. Re-centering is on by default.</li>\n<li>2D classification now defaults to using colored noise, can yield better results in some cases (thanks to Oliver Clarke)</li>\n<li>New volume utility for upsampling, cropping, and flipping maps (for example after importing, or to correct the hand of an ab-initio result)</li>\n<li>Bugfix in heterogeneous refinement that would cause over-sharpening</li>\n<li>All jobs that use SSD caching now have an option to disable caching</li>\n<li>New settings for worker nodes to configure SSD cache quota and reserve space, on a per-node basis</li>\n<li>Import jobs can now import using environment variables like <code>$HOME</code></li>\n<li>Fix bug causing jobs to stall if they require files to be cached that are in use by another job</li>\n<li>Many parameter descriptions now expanded</li>\n</ul>", 
+   "title": "v2.0.22"
+  }, 
+  {
+   "category": "Update", 
    "date": "2018-07-06T13:40:46.891178", 
    "description": "<ul>\n<li><strong>NEW</strong> Exposure curation interactive job: allows population or individual-level inspection, sorting, and selecting subsets of exposures (movies/micrographs) based on CTF estimates, motion trajectories, particle picks, etc.</li>\n<li>Fixes for GPUs in process-exclusive mode</li>\n<li>Fixes in GPU parallelized particle extraction</li>\n<li>Support for loading <code>mrc.bz2</code> format movies and decompressing on the fly (using <code>pbzip2</code>)</li>\n<li>Multi-GPU motion correction (global and local)</li>\n<li>Tweaks/updates to non-uniform refinement (beta)</li>\n<li>New wrapper for <a href=\"https://github.com/nysbc/Anisotropy\">3DFSC</a></li>\n<li>Changelog on dashboard</li>\n<li>Various bug fixes</li>\n</ul>", 
    "title": "v2.0.20"
