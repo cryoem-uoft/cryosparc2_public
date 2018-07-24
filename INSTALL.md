@@ -1,5 +1,6 @@
+# CryoSPARC v2: Installation and management guide
 
-# Installation and management guide
+July 2018
 
 ## Installation
 ### Overall setup
@@ -415,4 +416,3 @@ Notes:
 
 - master and worker installation directories cannot be moved to a different absolute path once installed. To move the installation, dump the database, install cryoSPARC again in the new location, and restore the database.
 
-## 
