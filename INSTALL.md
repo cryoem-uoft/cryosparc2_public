@@ -1,6 +1,5 @@
 # CryoSPARC v2: Installation and management guide
-
-July 2018
+August 2018
 
 ## Installation
 ### Overall setup
@@ -41,10 +40,10 @@ The major requirements for networking and infrastructure are:
     
 * Shared file system. All nodes must have access to the same shared file system(s) where input and project directories are stored.
 * A reliable (i.e. redundant) file system, not necessarily shared, available on the master node for storage of the cryoSPARC database. 
-* HTTP access from user's browser to master node. The master node will run a web application at port 38000 (configurable) that all user machines (laptops, etc) must be able to access via HTTP. For remote access, users can use a VPN into your local network, SSH port tunnelling, or X forwarding (last resort, not recommended).
+* HTTP access from user's browser to master node. The master node will run a web application at port 39000 (configurable) that all user machines (laptops, etc) must be able to access via HTTP. For remote access, users can use a VPN into your local network, SSH port tunnelling, or X forwarding (last resort, not recommended).
 * SSH access between the master node and each standalone worker node. The `cryosparc_user` account should be set up to be able to SSH without password (using a key-pair) into all non-cluster worker nodes.
 * SSH access between the master node and a cluster head node. If the master node itself is allowed to directly run cluster scheduler commands (qsub, etc) then this is not necessary. Otherwise, a cluster head node that can launch jobs must be SSH (without password) accessible for `cryosparc_user` from the master node.
-* TCP access between every worker node (standalone or cluster) and the master node on ports 38000-38010 (configurable) for command and database connections.
+* TCP access between every worker node (standalone or cluster) and the master node on ports 39000-39010 (configurable) for command and database connections.
 * Internet access (via HTTPS) from the master node. Note: worker and cluster nodes do not need internet access.
 * Every node should have a consistently resolvable hostname on the network (long name is preferred, i.e `hostname.structura.bio` rather than just `hostname`)
 
@@ -72,7 +71,7 @@ Note: it is not stricly necessary that the user account name/UID on the worker n
 Cluster worker nodes:
 
 * SSH access from the master node is not required
-* Must be able to directly connect via TCP (HTTP and MongoDB) to the master node, on ports 38000-38010 (configurable)
+* Must be able to directly connect via TCP (HTTP and MongoDB) to the master node, on ports 39000-39010 (configurable)
 * must have installed CUDA 8.0+
 
 ### Quick Install: Single workstation
@@ -92,7 +91,7 @@ cd cryosparc2_master
 
 source ~/.bashrc
 cryosparcm start
-cryosparcm createuser --email <user_email> --password <user_password>
+cryosparcm createuser --email <user_email> --password <user_password> --name "<full name>"
 
 cd <install_path>
 curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID > cryosparc2_worker.tar.gz
@@ -103,7 +102,7 @@ cd cryosparc2_worker
 bin/cryosparcw connect --worker <workstation_hostname> --master <workstation_hostname> --ssdpath <ssd_path>
 ```
 
-After completing the above, navigate your browser to `https://<workstation_hostname>:38000` to access the cryoSPARC user interface. 
+After completing the above, navigate your browser to `https://<workstation_hostname>:39000` to access the cryoSPARC user interface. 
 
 ### Installation: Master
 
@@ -124,8 +123,8 @@ Prepare the following items before you start. The name of each item is used as a
 4. `<license_id> = 682437fb-d2ae-47b8-870b-b530c587da94`
     * The license ID issued to you 
     * Only a single cryoSPARC master instance can be running per license key.
-3. `<port_number> = 38000` [Optional]
-    * The base port number for this cryoSPARC instance. Do not install cryosparc master on the same machine multiple times with the same port number - this can cause database errors. 38000 is the default and will be used if the `--port` option is left out below.
+3. `<port_number> = 39000` [Optional]
+    * The base port number for this cryoSPARC instance. Do not install cryosparc master on the same machine multiple times with the same port number - this can cause database errors. 39000 is the default and will be used if the `--port` option is left out below.
 4. `<user_email> = someone@structura.bio`
     * login email address for first cryoSPARC webapp account
     * This will become an admin account in the user interface
@@ -145,7 +144,7 @@ cd cryosparc2_master
 
 source ~/.bashrc
 cryosparcm start
-cryosparcm createuser --email <user_email> --password <user_password>
+cryosparcm createuser --email <user_email> --password <user_password> --name "<full name>"
 ```
 
 More arguments to `install.sh`:
@@ -166,8 +165,8 @@ Prepare the following items before you start:
     * `cryosparcm start` (as above)
 1. `<master_hostname> = cryoem1.structura.bio`
     * The long-form hostname of the machine that is the master node.
-1. `<port_num> = 38000`
-    * The port number that was used to install the master process, 38000 by default.
+1. `<port_num> = 39000`
+    * The port number that was used to install the master process, 39000 by default.
 1. `<worker_hostname> = cryoem2.structura.bio`
     * The long-form hostname of the machine that will be running jobs as the worker.
 2. Ensure that SSH keys are set up for the `cryosparc_user` account to SSH between the master node and the worker node without a password.
@@ -358,8 +357,9 @@ Some of the general command available are:
 * `cryosparcm env` - prints out a list of environment variables that should be set in a shell to replicate the exact environment used to run cryosparc processes. The typical way to use this command is `eval $(cryosparcm env)` which causes the current shell to execute the output of the `env` command and therefore define all needed variables. This is the way to get access to for example the `python` distribution packed with cryosparc.
 * `cryosparcm cli <command> ` - runs the command using the cryosparc cli (more detail below)
 * `cryosparcm icli` drops the current shell into an interactive cryosparc shell that connects to the master processes and allows you to interactively run cli commands
-* `cryosparcm createuser --email <email_address> --password <password>` - creates a new user account that can be accessed in the graphical web UI.
-* `cryosparcm resetpassword --email <email address> --password <password> ` - reset the password for indicated user with the new `<password>` provided
+* `cryosparcm createuser --email <email_address> --password <password> --name "<full name>"` - creates a new user account that can be accessed in the graphical web UI.
+* `cryosparcm resetpassword --email <email address> --password <newpassword>` - reset the password for indicated user with the new `<newpassword>` provided
+* `cryosparcm updateuser --email <email address> --password <password> [--name <new name>] [--admin <true|false>]` - update a user profile to change the user name or set admin priviledges (by default new users are not admin users, other than the first created user account.)
 * `cryosparcm downloadtest` - download test data (subset of EMPIAR 10025) to the current working directory.
 
 ### Status
@@ -416,3 +416,4 @@ Notes:
 
 - master and worker installation directories cannot be moved to a different absolute path once installed. To move the installation, dump the database, install cryoSPARC again in the new location, and restore the database.
 
+## 
