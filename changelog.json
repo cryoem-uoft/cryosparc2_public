@@ -8,7 +8,7 @@
   }, 
   {
    "category": "Update", 
-   "date": "2018-11-10T12:55:40.621447", 
+   "date": "2018-11-08T12:55:40.621447", 
    "description": "<ul>\n<li>New: Wrapper for GCTF (BETA) <a href=\"https://cryosparc.com/docs/reference/jobs#ctf-estimation-gctf\">More details</a></li>\n<li>New: Wrapper for CTFFIND 4.1.10 <a href=\"https://cryosparc.com/docs/reference/jobs#ctf-estimation-ctffind\">More details</a></li>\n<li>New: Added lowpass filter option under Volume Tools </li>\n<li>New: Simulate Data (BETA) job to create particle images from up to two input volumes at random relative and global alignments </li>\n<li>Update: Jobs no longer run if required inputs are missing; user is prompted to connect required inputs before queuing is possible </li>\n<li>Update: Plotting projections of generated volume in Ab-Initio Reconstruction instead of slices. Refinements still plot slices</li>\n<li>Fixed: CTF error 'binary not found'</li>\n<li>Fixed: CTFFIND same filename issues</li>\n<li>Fixed: CudaFftError on some GPUs in compute-exclusive mode</li></ul>", 
    "title": "v2.4.2"
   }, 
