@@ -2,9 +2,9 @@
  "items": [
   {
    "category": "Update", 
-   "date": "2018-11-26T23:35:51.472758", 
+   "date": "2018-11-30T23:35:51.472758", 
    "description": "<ul>\n<li>Update: cryoSPARC now supports CUDA 9 and 10. </li>\n<li><strong>Note:</strong> Updating to this version will trigger a reinstallation of cryoSPARC dependencies. These are included in the installation bundle and should not cause any issues but updating could take longer than normal.</li>\n<li>Fixed: Bug in GCTF wrapper that caused problems when run in per-particle local CTF refinement mode.</li>\n<li>Fixed: Bug in exposure curation when some micrographs contained no particles.</li>\n</ul>", 
-   "title": "v2.4.5"
+   "title": "v2.4.6"
   }, 
   {
    "category": "Update", 
