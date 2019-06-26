@@ -2,6 +2,12 @@
  "items": [
   {
    "category": "Update", 
+   "date": "2019-06-25T20:00:00.000000",
+   "description": "<ul>\n<li>New: 3D Variability Analysis job [BETA] (requires CUDA 9+) <a href=\"https://cryosparc.com/docs/tutorials/3d-variability-analysis/\">More details</a></li>\n<li>Update: Support for CUDA 10.1 (recompile cryoSPARC with a newer CUDA Toolkit by using <code>bin/cryosparcw newcuda <path_to_cuda></code></li>\n<li>Fixed: Micrographs with Patch CTF Extraction fail when particles are extracted</li>\n</ul>", 
+   "title": "v2.9.0"
+  },
+  {
+   "category": "Update", 
    "date": "2019-06-14T15:48:12.163621",
    "description": "<ul>\n<li>Update: Install script for cryoSPARC (new version of anaconda used when installing)</li>\n<li>Fixed: Dependency issue caused numpy functions to fail</li>\n<li>Fixed: CTFFIND4 wrapper crashes when it tries to output failed micrographs</li>\n</ul>", 
    "title": "v2.8.3"
