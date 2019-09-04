@@ -1,0 +1,14 @@
+{
+  "tutorials": [
+    {
+      "title": "3D Variability Analysis: Part One",
+      "description": "The background, basics, and usage of these powerful new tools",
+      "link": "https://cryosparc.com/docs/tutorials/3d-variability-analysis"
+    },
+    {
+      "title": "Patch Motion and Patch CTF",
+      "description": "An overview of our new fast, auto-tuning jobs",
+      "link": "https://cryosparc.com/docs/tutorials/patch-motion-ctf"
+    }
+  ]
+}
