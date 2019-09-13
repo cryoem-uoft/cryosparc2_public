@@ -1,6 +1,11 @@
 {
   "tutorials": [
     {
+      "title": "Data Management in cryoSPARC",
+      "description": "How to export, share, archive & upload data",
+      "link": "https://cryosparc.com/docs/tutorials/data-management"
+    },
+    {
       "title": "3D Variability Analysis: Part One",
       "description": "The background, basics, and usage of these powerful new tools",
       "link": "https://cryosparc.com/docs/tutorials/3d-variability-analysis"
