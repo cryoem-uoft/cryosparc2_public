@@ -1,8 +1,8 @@
 {
   "versions": [
     {
-      "tag": "v2.10.0",
-      "date": "09-12-2019",
+      "tag": "v2.11.0",
+      "date": "09-13-2019",
       "items": [
         {
           "tag": "new",
@@ -14,7 +14,7 @@
         },
         {
           "tag": "new",
-          "description": "Dashboard Improvements: Helpful links & relevant statistics and more!"
+          "description": "Dashboard Improvements: Helpful links, relevant statistics and more!"
         },
         {
           "tag": "new",
