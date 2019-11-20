@@ -1,14 +1,14 @@
-CRYOSPARC v2.0 NON-COMMERCIAL SOFTWARE LICENSE AGREEMENT 
+CRYOSPARC v2 NON-COMMERCIAL SOFTWARE LICENSE AGREEMENT 
 
-Last Updated July 20, 2018
+Last Updated November 20, 2019
 
 This Non-Commercial Software License Agreement (the "Agreement") is made between you (the "Licensee") and Structura Biotechnology Inc. (the "Licensor"). By installing or otherwise using cryoSPARC (the "Software"), you agree to be bound by the terms and conditions of this Agreement as may be revised from time to time at Licensor's sole discretion. If you do not agree to the terms and conditions of this Agreement, do not install or use the Software.
 
-1. NON-COMMERCIAL USE. Licensor hereby grants to Licensee one (1) non-exclusive, non-transferable license (the "License") to install and use the Software for non-profit academic research and processing of cryo-electron microscopy ("cryo-EM") data (the "Intended Purpose"). 
+1. NON-COMMERCIAL USE. Licensor hereby grants to Licensee one (1) non-exclusive, non-transferable license (the "License") to install and use the Software for Non-Profit Academic Research and processing of cryo-electron microscopy ("cryo-EM") data (the "Intended Purpose"). 
 
 "Software" includes the executable computer programs, code and any related printed, electronic and online documentation, manuals, training aids, user guides, system administration documentation and any other files that may accompany the code. 
 
-"Non-profit academic research" means academic or other scholarly research which is: (i) not undertaken for profit; (ii) not intended to produce works, services, or data for commercial use; and (iii) neither conducted nor funded by an individual or an entity engaged in for-profit activities or the commercial use, application or exploitation of works similar to or derived from, the Software. Without limiting the generality of the foregoing, centralized microscope facilities, for-profit research institutions, academic-industry collaborations, individuals or entities charging fees of any nature for cryo-EM services, contract research organizations and industrial users may not use the Software under the terms of this non-commercial license and must contact sales@structura.bio to obtain a commercial license.  
+"Non-Profit Academic Research" means practicing, making, using, improving upon, importing and exporting (but not selling, leasing or otherwise monetizing) academic or scholarly research, for individual (personal) or academic institutional research purposes, in good faith, and expressly excludes, without limitation, purposes that are intended to (or result in, whether by intent or otherwise): (i) create a commercial advantage for any Person; (ii) generate monetary compensation for products or services; (iii) generate commercialization rights for any Person; (iv) be used in an ongoing business concern; or (v) result in an ongoing business concern obtaining any intellectual property rights in any research or results linked to the Non-profit Academic Research.  
 
 2. RESTRICTIONS. Licensee may not: (i) modify, enhance, reverse-engineer, decompile, disassemble or create derived forms of the Software; (ii) copy the Software; (iii) sell, sub-license, lease, assign, transmit, distribute or otherwise transfer rights in/to the Software; (iv) allow third-party use of Licensee's installation of the Software; or (v) pledge, hypothecate, alienate or otherwise encumber the Software to any third party. Use of the Software is restricted to the Intended Purpose only.
 
@@ -44,4 +44,4 @@ This Non-Commercial Software License Agreement (the "Agreement") is made between
 
 18. ENTIRE AGREEMENT. This Agreement including all schedules hereto, constitutes the entire agreement between the Parties concerning the subject matter hereof and supersedes all prior or collateral agreements, communications, representations, understandings, negotiations and discussions, oral or written.
 
-© 2018 Structura Biotechnology Inc. 
+© 2019 Structura Biotechnology Inc. 
