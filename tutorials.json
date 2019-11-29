@@ -1,19 +1,19 @@
 {
   "tutorials": [
     {
-      "title": "Data Management in cryoSPARC",
-      "description": "How to export, share, archive & upload data",
-      "link": "https://cryosparc.com/docs/tutorials/data-management"
+      "title": "CTF Refinement",
+      "description": "Per-particle defocus estimation, beam tilt, trefoil, spherical aberration, tetrafoil",
+      "link": "https://cryosparc.com/docs/tutorials/ctf-refinement"
     },
     {
-      "title": "3D Variability Analysis: Part One",
-      "description": "The background, basics, and usage of these powerful new tools",
-      "link": "https://cryosparc.com/docs/tutorials/3d-variability-analysis"
+      "title": "Topaz Integration",
+      "description": "Automatic particle picking and micrograph denoising",
+      "link": "https://cryosparc.com/docs/tutorials/topaz"
     },
     {
-      "title": "Patch Motion and Patch CTF",
-      "description": "An overview of our new fast, auto-tuning jobs",
-      "link": "https://cryosparc.com/docs/tutorials/patch-motion-ctf"
+      "title": "User Management",
+      "description": "New interface-based user creation, management and password reset",
+      "link": "https://cryosparc.com/docs/tutorials/user-management"
     }
   ]
 }

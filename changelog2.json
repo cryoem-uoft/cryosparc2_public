@@ -1,6 +1,176 @@
 {
   "versions": [
     {
+      "tag": "v2.12.0",
+      "date": "11-29-2019",
+      "items": [
+        {
+          "tag": "new",
+          "description": "New 'cluster' mode in 3D Variability Display allows for automatic hierarchical 3D classification based on variability coordinates: directly visualize and see how many discrete classes are present in a dataset, separate them by clustering, and reconstruct each separately. Then recursively perform 3D Variability to look for sub-conformations or flexibility within each cluster, or refine each cluster separately."
+        },
+        {
+          "tag": "new",
+          "description": "New 'intermediates' mode in 3D Variability Display allows for weighted reconstructions of intermediate positions along each variability dimension: create more detailed videos of variability that minimize the effect of density appearing and disappearing during large motions. Also output weighted particle subsets for intermediate positions, for refinement of particular flexible conformations."
+        },
+        {
+          "tag": "new",
+          "description": "Default options in 3D Variability improve sensitivity to small variations in the 3D density. Plus support for coloured or white noise models, high-pass filter during optimization, per-particle scale optimization."
+        },
+        {
+          "tag": "fixed",
+          "description": "Streaking issue in 3D Variability so that (many) more variability modes can be solved simultaneously."
+        },
+        {
+          "tag": "new",
+          "description": "Per-particle defocus refinement implemented on GPU allows CTF refinement in minutes for 100,000's of particles. Implemented as a standalone job and also as an in-line on-the-fly option during Homogeneous Refinement: <a href=\"https://cryosparc.com/docs/tutorials/ctf-refinement/\">learn more</a>"
+        },
+        {
+          "tag": "new",
+          "description": "Global CTF Refinement and Local CTF Refinement jobs: CTF aberration support, also GPU implemented, corrects for beam tilt, trefoil, spherical aberration, and tetrafoil. Estimation of the new parameters can be done in a standalone job or as an in-line on-the-fly option during Homogeneous Refinement, yielding ultra-high resolution reconstructions: <a href=\"https://cryosparc.com/docs/tutorials/ctf-refinement/\">learn more</a>"
+        },
+        {
+          "tag": "new",
+          "description": "Exposure Group Utilities job allows users to split or combine datasets into multiple exposure groups for higher-order aberration correction: <a href=\"https://cryosparc.com/docs/reference/jobs#exposure-group-utilities/\">learn more</a>"
+        },
+        {
+          "tag": "new",
+          "description": "First-pass optimization of GPU and CPU code for Homogeneous Refinement: now up to 5x faster, especially for symmetric particles"
+        },
+        {
+          "tag": "new",
+          "description": "New admin page with ability to change roles of existing users and create new users through the UI: <a href=\"https://cryosparc.com/docs/tutorials/user-management/\">User Management Tutorial</a>"
+        },
+        {
+          "tag": "new",
+          "description": "Users can request to reset their password through the interface: <a href=\"https://cryosparc.com/docs/tutorials/user-management#reset-password/\">Learn more</a>"
+        },
+        {
+          "tag": "new",
+          "description": "New Topaz wrapper jobs for integrating Topaz's particle picking and micrograph denoising functionality: <a href=\"https://cryosparc.com/docs/tutorials/topaz/\">Tutorial: Topaz Integration in cryoSPARC</a>"
+        },
+        {
+          "tag": "new",
+          "description": "New Symmetry Expansion job expands particle poses around point-group symmetries, to support local refinement of subunits, as well as 3D variability of symmetric particles."
+        },
+        {
+          "tag": "new",
+          "description": "New Job Scheduler and Queuing Interface: Override the cryoSPARC scheduler to queue directly to a specific GPU: <a href=\"https://cryosparc.com/docs/tutorials/queue-to-gpu/\">Learn more</a>"
+        },
+        {
+          "tag": "new",
+          "description": "Ability to perform non-interactive threshold selection for particle picking and extraction, and non interactive selection of 2D classes, making it possible to process simple data completely end-to-end without manual intervention"
+        },
+        {
+          "tag": "new",
+          "description": "Ability to interactively select all classes above or below a threshold in Select 2D job (right-click a class)"
+        },
+        {
+          "tag": "new",
+          "description": "Multiprocessing robustness updates in preprocessing jobs (Patch Motion, Full Frame Motion Correction, Patch CTF Estimation) ensure that if a job fails or is interrupted, completed results are recovered and processing can be resumed."
+        },
+        {
+          "tag": "update",
+          "description": "Orientation-precision plots in refinement are now coloured with minimum value zero so that differences in ratios can be easily spotted"
+        },
+        {
+          "tag": "update",
+          "description": "Relative ice thickness is now available in Exposure Curation"
+        },
+        {
+          "tag": "update",
+          "description": "2D Classification allows for changing the maximum alignment resolution and reconstruction resolution separately if desired"
+        },
+        {
+          "tag": "update",
+          "description": "Sharpening job now applied a spherical window by default"
+        },
+        {
+          "tag": "update",
+          "description": "Added option to skip header check when importing movies, which allows for faster importing on larger datasets"
+        },
+        {
+          "tag": "update",
+          "description": "Importing Movies, Micrographs or Particles will auto-populate the 'exposure group ID' field of the dataset based on the project (each project increments from 0)"
+        },
+        {
+          "tag": "update",
+          "description": "Set the environment variable <code>CRYOSPARC_DISABLE_IMPORT_ON_MASTER</code> to allow master-direct jobs (import jobs, curate exposures, select 2D) to be queued on any machine you specify, and not only the master node"
+        },
+        {
+          "tag": "update",
+          "description": "If a job is queued to a specific GPU, it will be noted in the Resource Manager"
+        },
+        {
+          "tag": "update",
+          "description": "Job Cards now show queue message if placed in queue"
+        },
+        {
+          "tag": "update",
+          "description": "Job type is more prominently shown in the sidebar"
+        },
+        {
+          "tag": "fixed",
+          "description": "Ab-initio job with symmetry enforced fails with invalid memory access error"
+        },
+        {
+          "tag": "fixed",
+          "description": "Certain parameter descriptions in the Job Builder don't show"
+        },
+        {
+          "tag": "fixed",
+          "description": "Better logging in Align 3D Job"
+        },
+        {
+          "tag": "fixed",
+          "description": "Error in non-uniform refinement when run with CPU option"
+        },
+        {
+          "tag": "fixed",
+          "description": "3DFSC job doesn't accept mask inputs"
+        },
+        {
+          "tag": "fixed",
+          "description": "New <code>ignore_pose</code> option in import particles to enable import of locations when pose information is missing"
+        },
+        {
+          "tag": "fixed",
+          "description": "Deadlock in new job types like 3D var on some newer GPUs"
+        },
+        {
+          "tag": "fixed",
+          "description": "Select 2D fails when all classes are selected (i.e., if there are no particles in the templates_excluded output result group)"
+        },
+        {
+          "tag": "fixed",
+          "description": "White circles in 2D Class job when circular mask diameter parameter is too close to particle box size"
+        },
+        {
+          "tag": "fixed",
+          "description": "Exposure Sets Tool Job doesn't recognize particle inputs"
+        },
+        {
+          "tag": "fixed",
+          "description": "The 'more' button in the Job History page doesn't load new rows"
+        },
+        {
+          "tag": "fixed",
+          "description": "Copy to clipboard functionality is more reliable on various browsers"
+        },
+        {
+          "tag": "fixed",
+          "description": "Back button in File Browser correctly expands path variables"
+        },
+        {
+          "tag": "fixed",
+          "description": "Project directory sizes are calculated more accurately"
+        },
+        {
+          "tag": "fixed",
+          "description": "When updating a worker's SSD configuration, the SSD option remained disabled even though user supplied a path to the SSD"
+        }
+      ]
+    },
+    {
       "tag": "v2.11.0",
       "date": "09-13-2019",
       "items": [
