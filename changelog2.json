@@ -1,7 +1,41 @@
 {
   "versions": [
     {
-      "tag": "v2.12.2",
+      "tag": "v2.12.4",
+      "date": "12-04-2019",
+      "items": [
+        {
+          "tag": "new",
+          "description": "Exposure Groups Utility Updates: Create exposure groups using regular expressions and separators and test your exposure group creation strategy"
+        },
+        {
+          "tag": "new",
+          "description": "3D Variability updates to default parameters: create better results without tweaking"
+        },
+        {
+          "tag": "fixed",
+          "description": "Multiprocessing jobs (Patch CTF, Patch motion, Full-frame motion) fail with abnormal termination errors"
+        },
+        {
+          "tag": "fixed",
+          "description": "Import micrographs and import movies function incorrectly with exposure groups"
+        },
+        {
+          "tag": "fixed",
+          "description": "Imported jobs with inputs cause the tree layout to fail or throw an error"
+        },
+        {
+          "tag": "fixed",
+          "description": "3D Variability display 'intermediate' mode outputs are incorrectly scaled"
+        },
+        {
+          "tag": "fixed",
+          "description": "3D Variability display 'cluster' mode outputs contain no particles"
+        }
+      ]
+    },
+    {
+      "tag": "v2.12.0",
       "date": "11-29-2019",
       "items": [
         {
