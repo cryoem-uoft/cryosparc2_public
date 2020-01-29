@@ -1,6 +1,88 @@
 {
   "versions": [
     {
+      "tag": "v2.13.0",
+      "date": "01-28-2020",
+      "items": [
+        {
+          "tag": "new",
+          "description": "The 3D Variability Display job output now includes an in-browser, in-line interactive 3D scatter plot to analyze clusters in the distribution of particle reaction coordinates! The user can select which three reaction coordinates to display, and individual clusters can be shown or hidden. Read the new full tutorial, including examples of results: <a href=\"https://cryosparc.com/docs/tutorials/3d-variability-analysis-2/\">3D Variability Analysis Tutorial: Part Two</a>"
+        },
+        {
+          "tag": "fixed",
+          "description": "CPU and GPU memory usage of Homogeneous Refinement is substantially reduced. In tests, it is now possible to refine a 1024 box size on a 11GB consumer-grade NVIDIA GPU (GTX 1080Ti), though this does require ~160GB of CPU RAM. A smaller 256 box size can run on a 4GB GPU and requires only 6GB of CPU RAM"
+        },
+        {
+          "tag": "new",
+          "description": "When inspecting particle picks from template or blob pickers, particle pick scores (NCC) and power scores are automatically calibrated with respect to the defocus of each micrograph. This ensures that setting an appropriate threshold on one micrograph will yield good picks on other micrographs with very different defocus. See the tutorial: <a href=\"https://cryosparc.com/docs/tutorials/particle-picking-calibration/\">Particle Picking Calibration</a>"
+        },
+        {
+          "tag": "new",
+          "description": "Negative stain and phase-plate datasets are now more easy to process. A single toggle can be set during import and no other parameter changes are necessary in subsequent job types. See the tutorial for details: <a href=\"https://cryosparc.com/docs/tutorials/negative-stain-phase-plate/\">Negative Stain and Phase Plate Data Workflows</a>"
+        },
+        {
+          "tag": "new",
+          "description": "The blob picker can now use \"ring\" shaped blobs, which perform well in picking viruses and other spherical particles (eg. apoferritin)"
+        },
+        {
+          "tag": "fixed",
+          "description": "The template picker now uses substantially less GPU memory for large micrographs (e.g., K3 super-resolution data)"
+        },
+        {
+          "tag": "new",
+          "description": "Relion 3.1 format <code>.star</code> files can now be imported without errors, though optics group data is not currently parsed"
+        },
+        {
+          "tag": "fixed",
+          "description": "Local per-particle motion correction of K3 data now works correctly"
+        },
+        {
+          "tag": "new",
+          "description": "Manual picker interactive job now has adaptive robust contrast normalization to make seeing particles in imperfect images easier"
+        },
+        {
+          "tag": "new",
+          "description": "Manual Picker interactive job now includes a \"Contrast Intensity Override\" slider that allows users to manually select the contrast bounds when viewing a micrograph. The average, patch-based intensity is used by default for the Manual Picker and Exposure Curation jobs"
+        },
+        {
+          "tag": "new",
+          "description": "Validation (FSC) Job: Validation of a refinement result (i.e. half-maps) using the FSC is now available as a separate job type, with optional mask input"
+        },
+        {
+          "tag": "update",
+          "description": "Fourier-space plots in Homogeneous Refinement display correctly"
+        },
+        {
+          "tag": "new",
+          "description": "Multiple updates to Topaz-wrapped jobs in cryoSPARC:<ul><li>→ Added multiprocessing to substantially improve preprocessing times in all Topaz jobs</li><li>→ Added parameter to select number of CPUs in the Topaz Extract job</li><li>→ Topaz jobs now automatically account for negative stain data</li><li>→ Topaz-extracted particles no longer cause 2D classification jobs to occasionally fail due to inconsistent CTF outputs</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "Passthrough output files now include the project and job numbers for easier referencing (e.g.,<code>P1_J1_passthrough.cs</code>)"
+        },
+        {
+          "tag": "update",
+          "description": "Manual Picker job now fails by default if the CTF inputs are not connected. An override switch has been added to allow manual picking without CTF estimates, which is not the recommended workflow"
+        },
+        {
+          "tag": "update",
+          "description": "3D Variability Display can now flip the handedness of output volume series"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug that would cause <code>cufftInvalidPlan</code> error during refinement"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug where two Select 2D jobs are jobs connected to each other, the last Select 2D job shows incorrect class average thumbnails"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug where the <code>command_vis</code> would repeatedly try to start but fails, using 100% CPU in the process"
+        }
+      ]
+    },
+    {
       "tag": "v2.12.4",
       "date": "12-04-2019",
       "items": [

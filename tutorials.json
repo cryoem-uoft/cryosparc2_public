@@ -1,19 +1,19 @@
 {
   "tutorials": [
     {
-      "title": "CTF Refinement",
-      "description": "Per-particle defocus estimation, beam tilt, trefoil, spherical aberration, tetrafoil",
-      "link": "https://cryosparc.com/docs/tutorials/ctf-refinement"
+      "title": "3D Variability Analysis Tutorial: Part Two",
+      "description": "More advanced ways that 3D variability results can be used to interpret heterogeneity in a dataset",
+      "link": "https://cryosparc.com/docs/tutorials/3d-variability-analysis-2"
     },
     {
-      "title": "Topaz Integration",
-      "description": "Automatic particle picking and micrograph denoising",
-      "link": "https://cryosparc.com/docs/tutorials/topaz"
+      "title": "Particle Picking Calibration",
+      "description": "Feature to directly calibrate pick scores against defocus",
+      "link": "https://cryosparc.com/docs/tutorials/particle-picking-calibration"
     },
     {
-      "title": "User Management",
-      "description": "New interface-based user creation, management and password reset",
-      "link": "https://cryosparc.com/docs/tutorials/user-management"
+      "title": "Negative Stain and Phase Plate Data Workflows",
+      "description": "Now seamlessly integrated into the processing pipeline",
+      "link": "https://cryosparc.com/docs/tutorials/negative-stain-phase-plate"
     }
   ]
 }
