@@ -1,8 +1,8 @@
 {
   "versions": [
     {
-      "tag": "v2.13.0",
-      "date": "01-28-2020",
+      "tag": "v2.13.2",
+      "date": "01-30-2020",
       "items": [
         {
           "tag": "new",
@@ -79,6 +79,14 @@
         {
           "tag": "fixed",
           "description": "Bug where the <code>command_vis</code> would repeatedly try to start but fails, using 100% CPU in the process"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug where <code>mrc</code> volumes were being saved as <code>float64</code> files, which the <code>mrc</code> file format doesn't support, causing the Sharpening Tools job to fail"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug where Heterogenous Refinement and Multi-Class Ab-Initio jobs would fail due to a <code>ValueError</code>"
         }
       ]
     },
