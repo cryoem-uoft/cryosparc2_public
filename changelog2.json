@@ -1,6 +1,64 @@
 {
   "versions": [
     {
+      "tag": "v2.14.0",
+      "date": "02/20/2020",
+      "items": [
+        {
+          "tag": "new",
+          "description": "The job builder includes a search bar to quickly find the job you're looking for"
+        },
+        {
+          "tag": "update",
+          "description": "Many optimizations across cryoSPARC jobs - datasets containing a large number of items will see significant speedups"
+        },
+        {
+          "tag": "update",
+          "description": "Added option to use pre-trained initializations in Topaz Train"
+        },
+        {
+          "tag": "update",
+          "description": "Added option to use pre-trained model when running Topaz Extract"
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz Denoise fails when trained model is input"
+        },
+        {
+          "tag": "fixed",
+          "description": "Template Picker fails on K3 micrographs motion corrected using external software"
+        },
+        {
+          "tag": "update",
+          "description": "All jobs that output FSC plots have been updated to allow for downloading the raw data for external plotting"
+        },
+        {
+          "tag": "update",
+          "description": "Curate Exposures job can be run without connecting micrographs, allowing for CTF-based curation using only movies"
+        },
+        {
+          "tag": "new",
+          "description": "\"Cache Particles on SSD\" Job that will cache particles on a node of your choice"
+        },
+        {
+          "tag": "fixed",
+          "description": "Turning on the \"Generate new FSC Mask\" parameter in the Sharpening Tools job caused an <code>AssertionError</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "\"Particles Excluded\" output group image in Select2D job was the same as the \"Particles Included\" output group image"
+        },
+        {
+          "tag": "fixed",
+          "description": "New Homogeneous Refinement job sometimes fails when resampling initial model because boxes were not even sized"
+        },
+        {
+          "tag": "fixed",
+          "description": "Performance regressions in the \"Extract from Micrographs\" job where the time to extract particles increased non-linearly with a larger number of exposures"
+        }
+      ]
+    },
+    {
       "tag": "v2.13.2",
       "date": "01/30/2020",
       "items": [
