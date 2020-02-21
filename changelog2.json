@@ -1,8 +1,8 @@
 {
   "versions": [
     {
-      "tag": "v2.14.0",
-      "date": "02/20/2020",
+      "tag": "v2.14.2",
+      "date": "02/21/2020",
       "items": [
         {
           "tag": "new",
@@ -55,6 +55,10 @@
         {
           "tag": "fixed",
           "description": "Performance regressions in the \"Extract from Micrographs\" job where the time to extract particles increased non-linearly with a larger number of exposures"
+        },
+        {
+          "tag": "fixed",
+          "description": "\"Inspect Particle Picks\" job fails with a <code>KeyError</code> when it encounters an exposure with no particle locations"
         }
       ]
     },
