@@ -1,6 +1,144 @@
 {
   "versions": [
     {
+      "tag": "v2.15.0",
+      "date": "05/13/2020",
+      "items": [
+        {
+          "tag": "new",
+          "description": "First version of a new, comprehensive cryoSPARC guide! Available at <a href=\"https://guide.cryosparc.com\">guide.cryosparc.com</a> (Beta). This guide will consolidate all existing documentation and be populated with cryo-EM data processing tutorials, tips, descriptions of methods, case studies, etc."
+        },
+        {
+          "tag": "new",
+          "description": "Use the new <code>cryosparcm patch</code> command to install bug fixes and improvements without a full update"
+        },
+        {
+          "tag": "new",
+          "description": "It is now possible to set a project-level default value for whether or not to cache particle images to the local SSD before running jobs within a project. The parameter can be adjusted from the sidebar when a project is selected"
+        },
+        {
+          "tag": "new",
+          "description": "New <em>Particle Class Probability Filter</em> job: Filter particles based on the probability of matching their assigned 2D or 3D classes"
+        },
+        {
+          "tag": "update",
+          "description": "In the <em>Topaz Denoise</em> job, the default values for the following parameters have been altered to better suit Topaz: The default value for the \"shape of split micrographs\" parameter has been changed to 1536. The default value for the \"padding around each split micrograph\" parameter has been changed to 256."
+        },
+        {
+          "tag": "update",
+          "description": "The <em>Topaz Cross-Validation</em> job has been updated with various improvements: Added option to output models from subsidiary training jobs when running cross-validation. Added expected number of particles and training radius as cross-validation parameters. Improved GPU distribution for subsidiary training jobs."
+        },
+        {
+          "tag": "update",
+          "description": "All Topaz jobs now store preprocessed micrographs to avoid unnecessary preprocessing in subsequent Topaz jobs."
+        },
+        {
+          "tag": "update",
+          "description": "Added option for the <em>Extensive Workflow</em> to run additional job types, including <em>Local Motion Correction</em>, Multi-class <em>ab-initio</em> and <em>3D Variability</em>. This can be used as a full system test for new installs and updates."
+        },
+        {
+          "tag": "update",
+          "description": "Use dynamically-generated SSD cache paths by including environment variables in the <code>CRYOSPARC_SSD_PATH</code> definition for a worker's <code>config.sh</code>"
+        },
+        {
+          "tag": "update",
+          "description": "<em>Import Movies</em> and <em>Import Micrographs</em> jobs are now parallelizable across multiple threads while reading the headers of all exposures to import"
+        },
+        {
+          "tag": "update",
+          "description": "Initial and final mini-batch size parameters for <em>Ab-initio Reconstruction</em> can now be set to zero to automatically tune based on the estimated particle size"
+        },
+        {
+          "tag": "update",
+          "description": "The project and workspace switchers, which allow you to quickly search and navigate, have been revamped. When you're viewing a project or workspace, the switcher will highlight and scroll to it, allowing you to easily navigate relative to them. When viewing a job within a workspace, the workspace switcher will display a link icon next to every workspace that particular job is linked to."
+        },
+        {
+          "tag": "update",
+          "description": "The job history tab within the resource manager page now shows only jobs that have not been deleted by default. Select the 'show deleted' toggle to show only jobs that have been deleted."
+        },
+        {
+          "tag": "update",
+          "description": "Jobs can now only be imported from inside the project directory. This fixes a bug that causes particles to not be cached if they were imported from outside the project."
+        },
+        {
+          "tag": "update",
+          "description": "Executing a <code>cryosparcm</code> command is now only allowed by the owner of the script and on the master node. You can override this parameter by setting <code>CRYOSPARC_FORCE_USER</code> or <code>CRYOSPARC_FORCE_HOSTNAME</code> to <code>true</code> in your shell (or permanently inside <code>cryosparc2_master/config.sh</code>)."
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug where multiple jobs launched simultaneously using the same particles could result in endless \"cache waiting\" messages"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Full-frame Motion Correction</em> runs out of memory on 8GB cards with K3 data. There is now a switch to reduce memory usage by approximately half"
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>ValueError</code> was raised in <em>2D classification</em> or <em>Patch CTF Estimation</em> jobs when movies that were imported separately but contain files with the same names get overwritten"
+        },
+        {
+          "tag": "fixed",
+          "description": "All refinement jobs now use the first (rather than last) FSC threshold crossing for filtering during iterations"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug in <em>Particle Set Tools</em> intersection when set A is smaller than set B"
+        },
+        {
+          "tag": "fixed",
+          "description": "Bug in <em>Heterogeneous Refinement</em> which fails if intermediate plots are disabled"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Manual Picker</em> fails while calculating the contrast intensity range for a micrograph with an irregular shape"
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz Denoised micrographs display fail to display correctly in the <em>Manual Picker</em> job (as either gray or black images)"
+        },
+        {
+          "tag": "fixed",
+          "description": "Micrographs captured at a low magnification fail during <em>Patch CTF Estimation</em> with an <code>IndexError</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Select 2D</em> fails when trying to select classes from a particle <code>.mrc</code> file that is too large to fit in memory. Also fixed a bug where an <code>IndexError</code> is raised if a class has less than 3 particles in it."
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Exposure Group Utility</em> job fails with a <code>KeyError</code> when an input dataset has a missing CTF result field"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Inspect Picks</em> job fails if you try to extract locations and the box size set is not an even number"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Downsample Particles</em> now exports particles in the correct order if the input particles are out of order on disk"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>MotionCor2</em> Wrapper: <code>total dose</code> is incorrectly specified as the <code>frame dose</code> argument for dose weighting"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>MotionCor2</em> Wrapper: output pixel size is incorrect after specifying a Fourier crop factor, causing CTF Estimates to fail"
+        },
+        {
+          "tag": "fixed",
+          "description": "Project directory sizes don't update when a project is deleted"
+        },
+        {
+          "tag": "fixed",
+          "description": "Allow importing movies shot on high-aspect ratio detectors (2:1 aspect ratio or higher)"
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved version incompatibilities with Topaz version <code>0.2.4a</code>"
+        }
+      ]
+    },
+    {
       "tag": "v2.14.2",
       "date": "02/21/2020",
       "items": [
