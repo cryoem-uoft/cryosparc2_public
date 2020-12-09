@@ -1,6 +1,160 @@
 {
   "versions": [
     {
+      "tag": "v3.0.0",
+      "date": "12/09/2020",
+      "items": [
+        {
+          "tag": "new",
+          "description": "New and improved cryoSPARC Live app, redesigned and reworked for robust and seamless real-time end-to-end cryo-EM data processing. CryoSPARC Live is built for data collection facilities, cryo-EM cores, industry labs, microscope operators and individual users who want to perform real-time cryo-EM data quality assessment and decision-making based on streaming 2D and 3D results that update in time with new data. CryoSPARC Live is also now the best and fastest way for users to perform their first-cut processing and curation on already available data. <ul><li>→ Expedited and optimized preprocessing, <a href=\"https://guide.cryosparc.com/live/performance-metrics\">enabling up to 600+ movies per hour per GPU</a> (motion correction, CTF estimation, particle picking and extraction)</li><li>→ The ability to seamlessly reprocess data at any time, to curate exposures, test/refine picking strategies and the choice of particles for refinement, on the fly</li><li>→ <em>Streaming 2D classification</em>, in-line <em>Ab-initio Reconstruction</em>, and <em>Streaming high-resolution 3D Refinement</em>, which update automatically as new particles become available</li><li>→ Seamless integration with cryoSPARC, allowing for direct advanced processing from the results generated in cryoSPARC Live without any data shuffling</li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "After extensive beta testing globally, cryoSPARC Live is now available free of charge for general academic use. To learn more and to access Live, please see: <a href=\"https://guide.cryosparc.com\">guide.cryosparc.com</a><ul><li>→ Watch Now: <a href=\"https://guide.cryosparc.com/live/tutorial-videos\">CryoSPARC Live Walkthrough</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "Improved <em>Non-Uniform Refinement</em> algorithm <span className='tag tag--new'>NEW</span> and job type <span className='tag tag--beta'>Beta</span>. Higher resolution results and reduced sensitivity to parameter changes. For more details, see the new paper published in <a href=\"https://www.nature.com/articles/s41592-020-00990-8\">Nature Methods</a> Plus: <ul><li>→ Support for local and global CTF refinement during non-uniform refinement</li><li>→ Fast, new GPU implementation of non-uniform regularization developed with support from NVIDIA</li><li>→ Additionally, support for automatic adaptive marginalization over alignment variables (enabled by default) yielding further improvements for small molecules.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "Upgraded to modern Python 3.7 runtime, including new updated dependencies and installation. Easy upgrades and downgrades between cryoSPARC v2 and v3."
+        },
+        {
+          "tag": "new",
+          "description": "Support for CUDA 11 + Ampere Architecture GPUs (3080, 3090, A100, etc.)."
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-eer-file-support\">Full support for Thermo Fisher Scientific EER data</a> in cryoSPARC and cryoSPARC Live. EER data is decompressed on the fly and can be upsampled and split into the desired number of fractions during processing."
+        },
+        {
+          "tag": "new",
+          "description": "Improved defect file and defect pixel support in motion correction jobs in cryoSPARC and cryoSPARC Live. Defect pixels can be specified in a <code>.txt</code> defect file or as zeros in the gain reference."
+        },
+        {
+          "tag": "new",
+          "description": "Helical Reconstruction <span className='tag tag--beta'>BETA</span>: New suite of tools for end-to-end helical processing and refinement, including: <ul><li>→ <span className='tag tag--new'>NEW</span> high-resolution Helical Refinement job that also supports non-uniform regularization, and enforcement and local optimization of helical symmetry</li><li>→ <span className='tag tag--new'>NEW</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-filament-tracer-beta\">Filament Tracer</a> job tailored to the picking of filaments</li><li>→ Updates to <em>Inspect Particle Picks</em> to allow pruning of filament picks by curvature</li><li>→ <span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/job-symmetry-search-utility-beta\"></a>Symmetry search utility</a> for exploring the symmetry space in a helical volume</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<em>Extract From Micrographs</em> will now re-center particles by default if they have already been extracted and aligned through 2D classification, 3D reconstruction, or refinement."
+        },
+        {
+          "tag": "new",
+          "description": "<span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-homogeneous-reconstruction-only\">Homogeneous Reconstruction Only</a> job type that performs 3D reconstruction from previously aligned particle images."
+        },
+        {
+          "tag": "new",
+          "description": "Ability to set priority values for jobs and users in cryoSPARC and cryoSPARC Live, allowing jobs to run in priority order instead of the order they were queued. Learn more about this feature with our <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-priority-job-queuing\">Guide to Priority Job Queuing</a>"
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/cryosparc-live-session-data-management\">CryoSPARC Live Session Data Management:</a> View, delete and archive data created by cryoSPARC Live on a granular level. Save space taken up by data generated in old sessions and projects, while still being able to browse and view results."
+        },
+        {
+          "tag": "new",
+          "description": "A new Data Management tab is available in the Resource Manager in cryoSPARC, displaying details of all projects and workspaces available to the logged in user. At-a-glance information includes: project creation and ownership info, project directory location, last accessed/viewed, project size and other details."
+        },
+        {
+          "tag": "new",
+          "description": "Reduced GPU memory footprint in Patch Motion Correction. The overall GPU memory footprint of patch motion correction has been reduced. This enables most K3-sized image data to be processed on 11GB GPUs. Additionally, a \"low-memory mode\" switch is now available, which reduces it even further (at expense of speed)."
+        },
+        {
+          "tag": "new",
+          "description": "<span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-remove-duplicate-particles\">Remove Duplicate Particles job</a> checks for particles that are extracted too close together on a micrograph and keeps only one, to allow combining picks from multiple pickers without affecting FSC estimates."
+        },
+        {
+          "tag": "new",
+          "description": "<span className='tag tag--beta'>Beta</span> Patch Motion Correction in cryoSPARC and cryoSPARC Live now optionally support movie data that has been saved with a variable dose rate among frames (e.g., from Leginon)"
+        },
+        {
+          "tag": "new",
+          "description": "<span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/optional-cryosparc-and-systemd\">Systemd Unit File</a> to restart cryoSPARC after server shutdown: A systemd unit file is now included to allow running cryoSPARC as a service."
+        },
+        {
+          "tag": "update",
+          "description": "Improvements to <em>Patch CTF estimation</em> for better CTF fit in cases where background or envelope estimation is difficult. Improved robustness in relative ice thickness measure."
+        },
+        {
+          "tag": "update",
+          "description": "<em>Downsample Particles</em> and <em>Extract from Micrographs</em> will now correctly scale particle alignment shifts, fixing issues where downsample was used immediately prior to local refinement or 3D variability."
+        },
+        {
+          "tag": "update",
+          "description": "Orientation distribution and posterior precision plots were added to <em>Heterogeneous Refinement</em>, and can be disabled by turning off the \"Show viewing orientation distribution plots\" parameter."
+        },
+        {
+          "tag": "update",
+          "description": "<em>Import Micrographs</em> now has an option to output constant CTF values, so that subsequent steps will ignore the CTF entirely. Useful for negative stain and exotic data collection."
+        },
+        {
+          "tag": "update",
+          "description": "Improved <code>cryosparcm patch</code> pre-apply validation."
+        },
+        {
+          "tag": "update",
+          "description": "Reduced SSD-cache coordination bandwidth, improving the robustness of caching on multi-node systems."
+        },
+        {
+          "tag": "update",
+          "description": "Smarter cluster job ID parsing following cluster submission. Ability to use shell redirects in cluster submission commands, enabling native support for the LSF cluster management system."
+        },
+        {
+          "tag": "update",
+          "description": "Each project, workspace and job now records a 'last accessed' timestamp, updating whenever a user views the project, workspace or job through the web application interface. This allows for administrators to quickly identify and remove/archive data that is no longer used."
+        },
+        {
+          "tag": "update",
+          "description": "Queuing interactive jobs always default to the master node."
+        },
+        {
+          "tag": "update",
+          "description": "Ability to specify a first and last name for new users in the Admin panel and through the command line interface."
+        },
+        {
+          "tag": "update",
+          "description": "Default umask is now <code>022</code>, to allow write permissions by 'group' for folders created by cryoSPARC."
+        },
+        {
+          "tag": "update",
+          "description": "Renamed internal installation directories from <code>cryosparc2_*</code> to <code>cryosparc_*</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Import Particles</em> job fixes: Importing particle locations using micrographs created in v2.15+ failed because of a variable length UID prepended to the path of each micrograph; Using the \"ignore raw data\" parameter causes the job to fail with a missing pixel size error; Support for offsets specified in angstroms (<code>_rlnOriginXAngst</code>, <code>_rlnOriginYAngst</code>)."
+        },
+        {
+          "tag": "fixed",
+          "description": "Import result group fails if some path fields are blank."
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Inspect Picks</em> \"use_denoise\" button failed to actually load denoised micrographs, even if they were connected."
+        },
+        {
+          "tag": "fixed",
+          "description": " <em>Local Refinement</em> now respects the static masking and minimization-over-per-particle-scale parameters, which were previously not used correctly."
+        },
+        {
+          "tag": "fixed",
+          "description": "Setting \"Override number of iterations\" to True without providing a number of iterations previously prevented Local Refinement from ever terminating."
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Non-Uniform Refinement</em>: Local processing causes an error if masks are too close to the edge of the refinement box."
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Local Filtering</em> had <code>SSD:True</code> hard-coded, causing it to fail when running on resources without SSDs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Usernames are now correctly displayed in the details panel for a job."
+        }
+      ]
+    },
+    {
       "tag": "v2.15.0",
       "date": "05/13/2020",
       "items": [

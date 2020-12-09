@@ -1,19 +1,29 @@
 {
   "tutorials": [
     {
+      "title": "Helical Processing Case Study: EMPIAR-10031 (MAVS)",
+      "description": "Detailed description of the helical processing workflow in cryoSPARC from particle picking to reconstruction and refinement on this EMPIAR dataset.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/case-study-empiar-10031-mavs"
+    },
+    {
+      "title": "EER File Support",
+      "description": "CryoSPARC now supports reading input movies in electron-event representation (EER) format.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-eer-file-support"
+    },
+    {
+      "title": "3D Variability Analysis Tutorial: Part One",
+      "description": "Introduction to 3DVA, a powerful tool for exploring discrete and continuous heterogeneity in SPA cryo-EM data.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-variability-analysis-part-one"
+    },
+    {
       "title": "3D Variability Analysis Tutorial: Part Two",
-      "description": "More advanced ways that 3D variability results can be used to interpret heterogeneity in a dataset",
-      "link": "https://cryosparc.com/docs/tutorials/3d-variability-analysis-2"
+      "description": "More advanced ways that 3DVA results can be used to interpret heterogeneity in a dataset.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-variability-analysis-part-two"
     },
     {
-      "title": "Particle Picking Calibration",
-      "description": "Feature to directly calibrate pick scores against defocus",
-      "link": "https://cryosparc.com/docs/tutorials/particle-picking-calibration"
-    },
-    {
-      "title": "Negative Stain and Phase Plate Data Workflows",
-      "description": "Now seamlessly integrated into the processing pipeline",
-      "link": "https://cryosparc.com/docs/tutorials/negative-stain-phase-plate"
+      "title": "Priority Job Queuing",
+      "description": "All jobs in cryoSPARC now have a priority property that the cryoSPARC scheduler uses to sort jobs to be executed.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-priority-job-queuing"
     }
   ]
 }
