@@ -114,7 +114,7 @@
         },
         {
           "tag": "update",
-          "description": "Default umask is now <code>022</code>, to allow write permissions by 'group' for folders created by cryoSPARC."
+          "description": "Default umask is now <code>002</code>, to allow write permissions by 'group' for folders created by cryoSPARC."
         },
         {
           "tag": "update",
