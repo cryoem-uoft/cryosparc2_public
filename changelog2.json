@@ -14,7 +14,7 @@
         },
         {
           "tag": "new",
-          "description": "Improved <em>Non-Uniform Refinement</em> algorithm <span className='tag tag--new'>NEW</span> and job type <span className='tag tag--beta'>Beta</span>. Higher resolution results and reduced sensitivity to parameter changes. For more details, see the new paper published in <a href=\"https://www.nature.com/articles/s41592-020-00990-8\">Nature Methods</a> Plus: <ul><li>→ Support for local and global CTF refinement during non-uniform refinement</li><li>→ Fast, new GPU implementation of non-uniform regularization developed with support from NVIDIA</li><li>→ Additionally, support for automatic adaptive marginalization over alignment variables (enabled by default) yielding further improvements for small molecules.</li></ul>"
+          "description": "Improved <em>Non-Uniform Refinement</em> algorithm <span class='tag tag--new'>NEW</span> and job type <span class='tag tag--beta'>Beta</span>. Higher resolution results and reduced sensitivity to parameter changes. For more details, see the new paper published in <a href=\"https://www.nature.com/articles/s41592-020-00990-8\">Nature Methods</a> Plus: <ul><li>→ Support for local and global CTF refinement during non-uniform refinement</li><li>→ Fast, new GPU implementation of non-uniform regularization developed with support from NVIDIA</li><li>→ Additionally, support for automatic adaptive marginalization over alignment variables (enabled by default) yielding further improvements for small molecules.</li></ul>"
         },
         {
           "tag": "new",
@@ -34,7 +34,7 @@
         },
         {
           "tag": "new",
-          "description": "Helical Reconstruction <span className='tag tag--beta'>BETA</span>: New suite of tools for end-to-end helical processing and refinement, including: <ul><li>→ <span className='tag tag--new'>NEW</span> high-resolution Helical Refinement job that also supports non-uniform regularization, and enforcement and local optimization of helical symmetry</li><li>→ <span className='tag tag--new'>NEW</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-filament-tracer-beta\">Filament Tracer</a> job tailored to the picking of filaments</li><li>→ Updates to <em>Inspect Particle Picks</em> to allow pruning of filament picks by curvature</li><li>→ <span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/job-symmetry-search-utility-beta\"></a>Symmetry search utility</a> for exploring the symmetry space in a helical volume</li></ul>"
+          "description": "Helical Reconstruction <span class='tag tag--beta'>BETA</span>: New suite of tools for end-to-end helical processing and refinement, including: <ul><li>→ <span class='tag tag--new'>NEW</span> high-resolution Helical Refinement job that also supports non-uniform regularization, and enforcement and local optimization of helical symmetry</li><li>→ <span class='tag tag--new'>NEW</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-filament-tracer-beta\">Filament Tracer</a> job tailored to the picking of filaments</li><li>→ Updates to <em>Inspect Particle Picks</em> to allow pruning of filament picks by curvature</li><li>→ <span class='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/job-symmetry-search-utility-beta\"></a>Symmetry search utility</a> for exploring the symmetry space in a helical volume</li></ul>"
         },
         {
           "tag": "new",
@@ -42,7 +42,7 @@
         },
         {
           "tag": "new",
-          "description": "<span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-homogeneous-reconstruction-only\">Homogeneous Reconstruction Only</a> job type that performs 3D reconstruction from previously aligned particle images."
+          "description": "<span class='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-homogeneous-reconstruction-only\">Homogeneous Reconstruction Only</a> job type that performs 3D reconstruction from previously aligned particle images."
         },
         {
           "tag": "new",
@@ -62,15 +62,15 @@
         },
         {
           "tag": "new",
-          "description": "<span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-remove-duplicate-particles\">Remove Duplicate Particles job</a> checks for particles that are extracted too close together on a micrograph and keeps only one, to allow combining picks from multiple pickers without affecting FSC estimates."
+          "description": "<span class='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-remove-duplicate-particles\">Remove Duplicate Particles job</a> checks for particles that are extracted too close together on a micrograph and keeps only one, to allow combining picks from multiple pickers without affecting FSC estimates."
         },
         {
           "tag": "new",
-          "description": "<span className='tag tag--beta'>Beta</span> Patch Motion Correction in cryoSPARC and cryoSPARC Live now optionally support movie data that has been saved with a variable dose rate among frames (e.g., from Leginon)"
+          "description": "<span class='tag tag--beta'>Beta</span> Patch Motion Correction in cryoSPARC and cryoSPARC Live now optionally support movie data that has been saved with a variable dose rate among frames (e.g., from Leginon)"
         },
         {
           "tag": "new",
-          "description": "<span className='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/optional-cryosparc-and-systemd\">Systemd Unit File</a> to restart cryoSPARC after server shutdown: A systemd unit file is now included to allow running cryoSPARC as a service."
+          "description": "<span class='tag tag--new'>New</span> <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/optional-cryosparc-and-systemd\">Systemd Unit File</a> to restart cryoSPARC after server shutdown: A systemd unit file is now included to allow running cryoSPARC as a service."
         },
         {
           "tag": "update",
