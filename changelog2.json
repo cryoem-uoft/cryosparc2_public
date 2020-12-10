@@ -22,7 +22,7 @@
         },
         {
           "tag": "new",
-          "description": "Support for CUDA 11 + Ampere Architecture GPUs (3080, 3090, A100, etc.)."
+          "description": "Support for CUDA 11 + Ampere Architecture GPUs (3080, 3090, A100, etc.). <ul><li>→ Please ensure you’re running the latest NVIDIA Driver compatible with your GPU and CUDA Toolkit version. <a href=\"https://www.nvidia.com/Download/index.aspx\">You can download the latest driver for your GPUs here</a>. Visit <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/troubleshooting#gpu-issues\">Troubleshooting</a> for common GPU errors.</li></ul>"
         },
         {
           "tag": "new",
