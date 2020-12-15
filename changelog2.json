@@ -14,7 +14,7 @@
         },
         {
           "tag": "fixed",
-          "description": "Command <code>cryosparcm updateeuser</code> fails because of incorrect arguments"
+          "description": "Command <code>cryosparcm updateuser</code> fails because of incorrect arguments"
         },
         {
           "tag": "fixed",
