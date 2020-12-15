@@ -1,6 +1,56 @@
 {
   "versions": [
     {
+      "tag": "v3.0.1",
+      "date": "12/15/2020",
+      "items": [
+        {
+          "tag": "update",
+          "description": "Disable existing conda environments before activating cryoSPARC's conda environment"
+        },
+        {
+          "tag": "fixed",
+          "description": "Specifying initial user credentials in install.sh fails with \"improper usage\" because of incorrect arguments"
+        },
+        {
+          "tag": "fixed",
+          "description": "Command <code>cryosparcm updateeuser</code> fails because of incorrect arguments"
+        },
+        {
+          "tag": "fixed",
+          "description": "cURL symbol lookup error on CentOS8 when starting cryoSPARC after update to v3.0.0"
+        },
+        {
+          "tag": "fixed",
+          "description": "Importing Projects from v2.15.0 or earlier into v3.0.0 fails with UnicodeDecodeError"
+        },
+        {
+          "tag": "fixed",
+          "description": "Command <code>cryosparcw newcuda</code> uses old pyCUDA binary that doesn't exist"
+        },
+        {
+          "tag": "fixed",
+          "description": "Deleting an Extract From Micrographs job fails with KeyError"
+        },
+        {
+          "tag": "fixed",
+          "description": "Importing particle pose information in Import Particles fails with TypeError"
+        },
+        {
+          "tag": "fixed",
+          "description": "Command <code>cryosparcm backup</code> fails if cryoSPARC is turned off"
+        },
+        {
+          "tag": "fixed",
+          "description": "Inspect Picks job fails with ValueError if using micrographs imported with \"Constant CTF\" parameter"
+        },
+        {
+          "tag": "fixed",
+          "description": "Symmetry Search Utility job fails with TypeError in \"rise\" mode"
+        }
+      ]
+    },
+    {
       "tag": "v3.0.0",
       "date": "12/09/2020",
       "items": [
