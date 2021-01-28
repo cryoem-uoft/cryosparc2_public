@@ -1,6 +1,180 @@
 {
   "versions": [
     {
+      "tag": "v3.1.0",
+      "date": "01/28/2021",
+      "items": [
+        {
+          "tag": "new",
+          "description": "Local Refinement (NEW! BETA) job, supporting features including: <ul><li>→ Non-Uniform regularization and adaptive pose marginalization</li><li>→ Alignment priors for soft penalization of unlikely poses</li><li>→ Reconstruction using higher-order CTF aberrations</li><li>→ Enforced point-group symmetry</li><li>→ </li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "Helical Processing feature improvements: <ul><li>→ Helical refinement now supports Non-Uniform regularization</li><li>→ Symmetry expansion now supports helical symmetry</li><li>→ In helical refinement, shifts along the helical axis can be limited to the asymmetric unit, improving resolutions for many datasets</li><li>→ \"z-clip\" parameter added to helical refinement's dynamic masking, to generate a mask covering only the central region along the z-axis</li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "New Extract from Micrographs (CPU) job, supporting particle extraction on CPU in parallel using multiple cores." 
+        },
+        {
+          "tag": "new",
+          "description": "Admin users can now modify the list of users in which a project is shared with" 
+        },
+        {
+          "tag": "update",
+          "description": "Major updates to SSD caching to avoid issues of <code>Detected file change due to change in file size</code> and improve performance"
+        },
+        {
+          "tag": "update",
+          "description": "Several robustness improvements for Patch-CTF Estimation. Previous behaviour can be enabled using \"Classic mode\" parameter."
+        },
+        {
+          "tag": "update",
+          "description": "You can now quickly queue interactive jobs via the job details in the sidebar. The queue dialog has also been updated to clarify what machine the interactive jobs will run on."
+        },
+        {
+          "tag": "update",
+          "description": "Import Movies and Patch Motion now skip bad files instead of failing. Skipped files are added as a separate output."
+        },
+        {
+          "tag": "update",
+          "description": "Import Particles no longer ignores the <code>data_optics</code> section while trying to import a particle .star file. Exposure groups and CTF parameters other than high-order aberrations are retained from <code>data_optics</code> table."
+        },
+        {
+          "tag": "update",
+          "description": "Rebalance 2D Classes now has a \"Override maximum superclass size\" parameter that can be set to override the maximum size of all superclasses"
+        },
+        {
+          "tag": "update",
+          "description": "When launching a job, hidden files (files that start with a '.') will be ignored when checking if the job directory is empty if the <code>CRYOSPARC_IGNORE_HIDDEN_FILES</code> environment variable exists (add to <code>cryosparc_master/config.sh</code>)"
+        },
+        {
+          "tag": "update",
+          "description": "Homogeneous Reconstruct now has the option to reconstruct with helical symmetry, and to reconstruct with an inverted hand"
+        },
+        {
+          "tag": "update",
+          "description": "Homogeneous Reconstruct now supports input alignments on any pixel size, regardless of the reconstruction pixel size"
+        },
+        {
+          "tag": "update",
+          "description": "cryoSPARC Job Scheduler will now ignore CPU requirements when queuing jobs to non-cluster lanes; only RAM and GPU will be considered"
+        },
+        {
+          "tag": "update",
+          "description": "Change the parameter \"Remove leading UID in input micrograph path\" in Import Particles to be optional"
+        },
+        {
+          "tag": "fixed",
+          "description": "Discussion forum topics have returned to the dashboard"
+        },
+        {
+          "tag": "fixed",
+          "description": "Some users were unable to create an account or reset their password in Chrome"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug in Import Particles that caused it will fail when trying to convert <code>rlnOriginX/rlnOriginY</code> to <code>rlnOriginXAngst/rlnOriginYAngst</code> while importing Relion 3.1 star files"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that caused the cryoSPARC start process to not complete"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that caused the string of characters appended to the micrograph file paths created by cryoSPARC to be a variable length (now 21 characters)"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that caused the Import Project function to fail with <code>_pickle.UnpicklingError: could not find MARK</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Filament tracer now eliminates particles beyond the micrograph's edge"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that prevented the Rebalance 2D Classes job from launching on clusters"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug in the Volume Tools job that gave erroneous output when the \"Invert mask\" and \"Fill holes\" options were both true"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a plotting issue in Heterogeneous Refinement causing orientation plots to fail with a <code>ValueError</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue that prevented pre-v3.0 Extract From Micrographs, 2D Classification, and Create Templates jobs from being cleared"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue causing static masks to be improperly resized in Homogeneous Refinement New, Non-Uniform Refinement New, and Helical Refinement"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue preventing Helical Refinement from running with static masks that were sampled on a different grid than the volume; fixed related bug with static masks being improperly rotated when the \"Align input structure to helical (z) axis\" parameter was activated"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug where running \"Clear Intermediate Results\" on a project caused the outputs of Curate Exposures jobs within the project to be inadvertently deleted."
+        },
+        {
+          "tag": "fixed",
+          "description": "Add support for pre-release versions of Topaz"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where job queue modal would display incorrect default lane/target info when 'default' lane doesn't exist"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where systemd service used wrong python interpreter"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where deleted sessions still appear in cryoSPARC Live browse view"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue in <code>cryosparcm updateuser</code> when using <code>lastname</code> flag"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed IndexError in motioncor2 wrapper job"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where Topaz denoise would not work"
+        },
+        {
+          "tag": "new",
+          "description": "Clicking on the number of failed exposures in the navigation sidebar will open a dialog displaying the error details for each exposure" 
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a case where a deleted session would display in the browse page when selected"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that caused manual picks on \"Test\" exposures to be excluded from session statistics and from being extracted"
+        },
+        {
+          "tag": "fixed",
+          "description": "Job cards in the \"current jobs\" and \"target\" modals will now open their respective job modals when clicked. Job cards will also display the job's priority if one has been set"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug in the cryoSPARC Live Worker that caused it to fail repeatedly due to uncaught exceptions caused by IO errors"
+        },
+        {
+          "tag": "fixed",
+          "description": "Blob and template particle diameters are now correctly shown as Å values"
+        }
+      ]
+    },
+    {
       "tag": "v3.0.1",
       "date": "12/15/2020",
       "items": [
