@@ -6,7 +6,7 @@
       "items": [
         {
           "tag": "new",
-          "description": "Local Refinement (NEW! BETA) job, supporting features including: <ul><li>→ Non-Uniform regularization and adaptive pose marginalization</li><li>→ Alignment priors for soft penalization of unlikely poses</li><li>→ Reconstruction using higher-order CTF aberrations</li><li>→ Enforced point-group symmetry</li><li>→ </li></ul>" 
+          "description": "Local Refinement (NEW! BETA) job, supporting features including: <ul><li>→ Non-Uniform regularization and adaptive pose marginalization</li><li>→ Alignment priors for soft penalization of unlikely poses</li><li>→ Reconstruction using higher-order CTF aberrations</li><li>→ Enforced point-group symmetry</li></ul>" 
         },
         {
           "tag": "new",
