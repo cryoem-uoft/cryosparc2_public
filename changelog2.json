@@ -1,6 +1,100 @@
 {
   "versions": [
     {
+      "tag": "v3.2.0",
+      "date": "03/29/2021",
+      "items": [
+        {
+          "tag": "new <NOT FOR PUSH>",
+          "description": "<ul><li>→ Non-Uniform regularization and adaptive pose marginalization</li><li>→ Alignment priors for soft penalization of unlikely poses</li><li>→ Reconstruction using higher-order CTF aberrations</li><li>→ Enforced point-group symmetry</li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "Added option for sorting jobs by date and title. Projects and workspaces can be sorted by title as well" 
+        },
+        {
+          "tag": "update",
+          "description": "Substantially improved performance in iterative particle-processing jobs (2D Classification, Refinement) when particles are stored on some types of filesystems (including FSx for Lustre), resolving cases where some users found that jobs run in v3.1 were slower than in v2.15"
+        },
+        {
+          "tag": "update",
+          "description": "Deep Particle Picking jobs (Deep Picker Train, Deep Picker Inference) now require CUDA Toolkit 11+"
+        },
+        {
+          "tag": "update",
+          "description": "The 'Metadata' tab within the job preview dialog is more performant and features expandable sections and colour highlighting based on data type"
+        },
+        {
+          "tag": "update",
+          "description": "Import Particles no longer ignores the <code>rlnImagePixelSize</code> column while trying to import a particle <code>.star</code> file"
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC processes are now less likely to become orphaned due to more robust supervisor management configuration"
+        },
+        {
+          "tag": "update",
+          "description": "Removed unused cuBLAS dependency that caused multiple GPU contexts on all GPUs in a system to be created even when using only a single GPU"
+        },
+        {
+          "tag": "update",
+          "description": "GPU status info is now updated when a worker is connected for the first time, or when a worker connection is updated"
+        },
+        {
+          "tag": "update",
+          "description": "New option to work around bug in CUDA on CentOS 7 that causes <code>cuMemHostAlloc failed</code> errors in multiple job types. To engage this, add <code>export CRYOSPARC_NO_PAGELOCK=true</code> to the <code>cryosparc_worker/config.sh</code> file."
+        },
+        {
+          "tag": "update",
+          "description": "Patch CTF Estimation no longer fails when encountering an error on a specific micrograph. Failed micrographs are outputted to a separate group if exceptions are encountered and processing continues."
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue in Patch Motion that causes dose weighting to be incorrectly applied in some cases. This was caused by the introduction of variable-dose support in v3.1."
+        },
+        {
+          "tag": "fixed",
+          "description": "Patch CTF Estimation fails with <code>IndexError: index 0 is out of bounds for axis 0 with size 0</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Patch CTF Estimation fails with <code>ValueError: Axis limits cannot be NaN or Inf</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Patch CTF Estimation sometimes reports underestimated CTF fit resolution in cryoSPARC Live, in cases where the correlation between the fit and the actual signal is very poor at low resolutions"
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue that can cause exposure groups set up at import to be lost during processing, specifically through wrapper jobs for GCTF or CTFFIND"
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue where Deep Picker Train job would fail reporting that there are no training particles on any micrographs"
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz wrapper TypeError during negative stain processing: can't multiple sequence by non-int of type <code>numpy.float32</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue causing <code>IndexError</code> in wrapper for Motioncor2"
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue in particle simulator job where all particles would be modulated by the same CTF regardless of specified input CTF parameters"
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue in <code>cryosparcm cli delete_user</code> command that prevented an admin user from being authenticated"
+        },
+        {
+          "tag": "fixed",
+          "description": "Issue in Extract From Micrographs (CPU) job requiring a GPU dependency, causing it to fail on CPU-only workstations"
+        }
+      ]
+    },
+    {
       "tag": "v3.1.0",
       "date": "01/28/2021",
       "items": [
