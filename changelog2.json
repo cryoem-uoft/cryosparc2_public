@@ -5,10 +5,6 @@
       "date": "03/29/2021",
       "items": [
         {
-          "tag": "new <NOT FOR PUSH>",
-          "description": "<ul><li>→ Non-Uniform regularization and adaptive pose marginalization</li><li>→ Alignment priors for soft penalization of unlikely poses</li><li>→ Reconstruction using higher-order CTF aberrations</li><li>→ Enforced point-group symmetry</li></ul>" 
-        },
-        {
           "tag": "new",
           "description": "Added option for sorting jobs by date and title. Projects and workspaces can be sorted by title as well" 
         },
