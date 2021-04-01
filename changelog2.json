@@ -45,6 +45,14 @@
           "description": "Patch CTF Estimation no longer fails when encountering an error on a specific micrograph. Failed micrographs are outputted to a separate group if exceptions are encountered and processing continues."
         },
         {
+          "tag": "update",
+          "description": "Local Resolution job now prints local resolution statistics (minimum, median, maximum, 25th percentile, 75th percentile) in job event log"
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC Live Data Management now supports executing a script upon a datatype's state change. Add <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_ENABLE=true</code> and <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_PATH=/path/to/script.sh</code> in <code>cryosparc_master/config.sh</code> to enable this feature"
+        },
+        {
           "tag": "fixed",
           "description": "Issue in Patch Motion that causes dose weighting to be incorrectly applied in some cases. This was caused by the introduction of variable-dose support in v3.1."
         },
@@ -87,6 +95,10 @@
         {
           "tag": "fixed",
           "description": "Issue in Extract From Micrographs (CPU) job requiring a GPU dependency, causing it to fail on CPU-only workstations"
+        },
+        {
+          "tag": "fixed",
+          "description": "Import Job/Import Result Group fails with <code>Unable to find data referenced by cs files</code> when importing a <code>mscope_params</code> result group due to empty fields"
         }
       ]
     },
