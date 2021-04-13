@@ -99,6 +99,22 @@
         {
           "tag": "fixed",
           "description": "Import Job/Import Result Group fails with <code>Unable to find data referenced by cs files</code> when importing a <code>mscope_params</code> result group due to empty fields"
+        },
+        {
+          "tag": "fixed",
+          "description": "Local Motion correction with EER data"
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs no longer wait on cache forever after the cache is unlocked in other jobs"
+        },
+        {
+          "tag": "fixed",
+          "description": "Restore missing \"Use Class Weights\" parameter in Deep Picker Train job"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent <code>LD_PRELOAD</code> warning when launching cluster jobs"
         }
       ]
     },
