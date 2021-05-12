@@ -9,6 +9,14 @@
           "description": "Added option for sorting jobs by date and title. Projects and workspaces can be sorted by title as well" 
         },
         {
+          "tag": "new",
+          "description": "Check Particles job for verifying data integrity of particle stacks [Patch 20210511]" 
+        },
+        {
+          "tag": "new",
+          "description": "Computational batch size parameter in Heterogeneous Refinement job [Patch 20210511]" 
+        },
+        {
           "tag": "update",
           "description": "Substantially improved performance in iterative particle-processing jobs (2D Classification, Refinement) when particles are stored on some types of filesystems (including FSx for Lustre), resolving cases where some users found that jobs run in v3.1 were slower than in v2.15"
         },
@@ -46,11 +54,11 @@
         },
         {
           "tag": "update",
-          "description": "Local Resolution job now prints local resolution statistics (minimum, median, maximum, 25th percentile, 75th percentile) in job event log"
+          "description": "Local Resolution job now prints local resolution statistics (minimum, median, maximum, 25th percentile, 75th percentile) in job event log [Patch 20210401]"
         },
         {
           "tag": "update",
-          "description": "CryoSPARC Live Data Management now supports executing a script upon a datatype's state change. Add <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_ENABLE=true</code> and <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_PATH=/path/to/script.sh</code> in <code>cryosparc_master/config.sh</code> to enable this feature"
+          "description": "CryoSPARC Live Data Management now supports executing a script upon a datatype's state change. Add <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_ENABLE=true</code> and <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_PATH=/path/to/script.sh</code> in <code>cryosparc_master/config.sh</code> to enable this feature [Patch 20210401]"
         },
         {
           "tag": "fixed",
@@ -98,23 +106,31 @@
         },
         {
           "tag": "fixed",
-          "description": "Import Job/Import Result Group fails with <code>Unable to find data referenced by cs files</code> when importing a <code>mscope_params</code> result group due to empty fields"
+          "description": "Import Job/Import Result Group fails with <code>Unable to find data referenced by cs files</code> when importing a <code>mscope_params</code> result group due to empty fields [Patch 20210401]"
         },
         {
           "tag": "fixed",
-          "description": "Local Motion correction with EER data"
+          "description": "Local Motion correction with EER data [Patch 20210413]"
         },
         {
           "tag": "fixed",
-          "description": "Jobs no longer wait on cache forever after the cache is unlocked in other jobs"
+          "description": "Jobs no longer wait on cache forever after the cache is unlocked in other jobs [Patch 20210413]"
         },
         {
           "tag": "fixed",
-          "description": "Restore missing \"Use Class Weights\" parameter in Deep Picker Train job"
+          "description": "Restore missing \"Use Class Weights\" parameter in Deep Picker Train job [Patch 20210413]"
         },
         {
           "tag": "fixed",
-          "description": "Prevent <code>LD_PRELOAD</code> warning when launching cluster jobs"
+          "description": "Prevent <code>LD_PRELOAD</code> warning when launching cluster jobs [Patch 20210413]"
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>ValueError</code> during 3DFSC job volume output stage [Patch 20210511]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Empty workspaces after importing project [Patch 20210511]"
         }
       ]
     },
