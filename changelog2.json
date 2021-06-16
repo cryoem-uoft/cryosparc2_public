@@ -147,6 +147,14 @@
         {
           "tag": "fixed",
           "description": "Improved error messages when reading invalid exposures or particle stacks [Patch 210601]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent numeric initialization error in Ab-Initio Reconstruction jobs for some systems [Patch 210615]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent numeric error in Inspect Picks job [Patch 210615]"
         }
       ]
     },
