@@ -21,6 +21,10 @@
           "description": "<code>cryosparcm changeport</code> command and related utilities for changing the base port [Patch 210601]" 
         },
         {
+          "tag": "new",
+          "description": "New utility <code>cryosparcm licensestatus</code> to verify if a license is valid [Patch 210629]" 
+        },
+        {
           "tag": "update",
           "description": "Substantially improved performance in iterative particle-processing jobs (2D Classification, Refinement) when particles are stored on some types of filesystems (including FSx for Lustre), resolving cases where some users found that jobs run in v3.1 were slower than in v2.15"
         },
@@ -155,6 +159,14 @@
         {
           "tag": "fixed",
           "description": "Prevent numeric error in Inspect Picks job [Patch 210615]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Statistic showing the total number of particles being processed by Ab-Initio Reconstruction job in cryoSPARC Live sometimes isn't updated [Patch 210629]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent <code>mrc_readmic (1) 447: Invalid argument</code> errors that occur after extracting particles in a pipeline where micrographs were imported multiple times [Patch 210629]"
         }
       ]
     },
