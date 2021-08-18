@@ -29,6 +29,14 @@
           "description": "<code>cryosparcm status</code> now reports patch version [Patch 210713]" 
         },
         {
+          "tag": "new",
+          "description": "Set environment variable <code>CRYOSPARC_SSD_CACHE_LIFETIME_DAYS</code> in <code>cryosparc_master/config.sh</code> to auto-remove cache files older than the given number of days [Patch 210803]" 
+        },
+        {
+          "tag": "new",
+          "description": "New TIFF reading strategy for improved performance on network file systems such as GPFS and Lustre. To enable, add export <code>CRYOSPARC_TIFF_IO_SHM=true</code> to <code>cryosparc_worker/config.sh</code> [Patch 210817]" 
+        },
+        {
           "tag": "update",
           "description": "Substantially improved performance in iterative particle-processing jobs (2D Classification, Refinement) when particles are stored on some types of filesystems (including FSx for Lustre), resolving cases where some users found that jobs run in v3.1 were slower than in v2.15"
         },
