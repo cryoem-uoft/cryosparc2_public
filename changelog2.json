@@ -37,6 +37,22 @@
           "description": "New TIFF reading strategy for improved performance on network file systems such as GPFS and Lustre. To enable, add export <code>CRYOSPARC_TIFF_IO_SHM=true</code> to <code>cryosparc_worker/config.sh</code> [Patch 210817]" 
         },
         {
+          "tag": "new",
+          "description": "\"Reassign Particles to Micrographs\" job to reassign particles to their associated micrographs [Patch 210831]"
+        },
+        {
+          "tag": "new",
+          "description": "Full Prefix/suffix cutting parameters for matching between input movies and micrographs in \"Import Micrographs\" job [Patch 210831]"
+        },
+        {
+          "tag": "new",
+          "description": "Extend master/worker communication timeout with <code>CRYOSPARC_CLIENT_TIMEOUT</code> environment variable [Patch 210831]"
+        },
+        {
+          "tag": "new",
+          "description": "Download EMDB-friendly XML files from FSC figures [Patch 211012]"
+        },
+        {
           "tag": "update",
           "description": "Substantially improved performance in iterative particle-processing jobs (2D Classification, Refinement) when particles are stored on some types of filesystems (including FSx for Lustre), resolving cases where some users found that jobs run in v3.1 were slower than in v2.15"
         },
@@ -187,6 +203,30 @@
         {
           "tag": "fixed",
           "description": "Allow shell operators during cluster job submission, enabling redirections required for LSF Clusters [Patch 210713]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Exception handling for Clear Intermediate Results [Patch 210831]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Corrected <code>cryosparcm cluster example</code> JSON output [Patch 210831]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Consistent exposure/particle matching in Deep Picker [Patch 211012]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent startup error when system does not report CPU frequency [Patch 211012]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent loss reporting error during Topaz jobs [Patch 211012]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent create directory errors on some file systems [Patch 211012]"
         }
       ]
     },
