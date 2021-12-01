@@ -1,6 +1,152 @@
 {
   "versions": [
     {
+      "tag": "v3.3.0",
+      "date": "12/01/2021",
+      "items": [
+        {
+          "tag": "new",
+          "description": "New <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">3D Classification <span class='tag tag--beta'>BETA</span> job</a> can be used to quickly classify particles into many 3D classes, without re-alignment of particle poses and shifts. Sort out heterogeneity from million+ particle datasets with 100+ classes. Read a tutorial <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-classification-beta\">here</a>" 
+        },
+        {
+          "tag": "new",
+          "description": "New ruler and scale bar allow for <a href=\"https://guide.cryosparc.com/live/ui-overview#exposure-viewer-ruler-and-scale-bar\">interactively determining the size of a particle in cryoSPARC Live</a>" 
+        },
+        {
+          "tag": "new",
+          "description": "<strong>New Blob Picker Tuner</strong> determines optimal blob picker parameters from a minimal set of user-selected manual picks. Tunes blob size, shape, and picker score thresholds automatically. Read a tutorial <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-blob-picker-tuner\">here</a>." 
+        },
+        {
+          "tag": "new",
+          "description": "A technique for <strong>Ewald Sphere Correction</strong> implemented in <strong>homogeneous refinement and reconstruction jobs</strong> allows for higher resolution reconstructions of larger proteins. Read a tutorial <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-ewald-sphere-correction\">here</a>. The new technique corrects for the Ewald Sphere during pose alignment and during back-projection, and also correctly estimates/refines <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-ctf-refinement#ewald-sphere-correction\">higher-order CTF aberrations (HOA) while accounting for the Ewald Sphere</a>." 
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-ctf-refinement#global-ctf-refinement-per-exposure-group-beam-tilt-trefoil-spherical-aberration-tetrafoil-and-anisot\"><strong>Anisotropic magnification</strong> can now be estimated during CTF refinement</a>, and is corrected for in Refinement, Reconstruction, 3D Classification, and 3D Variability jobs." 
+        },
+        {
+          "tag": "new",
+          "description": "<strong>Substantial speed and memory improvements to FSC calculations</strong> in all job types, speeding up FSC calculation by over 10x, and providing an overall <strong>speedup of up to 20% for homogeneous refinements</strong>. A benchmark refinement of 100,000 Ribosome particles at 360 pixel box size (EMPIAR-10028) takes only 5.2 minutes on a single NVIDIA V100 GPU." 
+        },
+        {
+          "tag": "new",
+          "description": "Substantially improved TIFF read performance for some filesystems. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/environment-variables#cryosparc_worker-config.sh\">To enable, add <code>export CRYOSPARC_TIFF_IO_SHM=true</code> to <code>cryosparc_worker/config.sh</code>.</a>" 
+        },
+        {
+          "tag": "new",
+          "description": "<code>cryosparcm log</code> provides an improved log format and new filter flags." 
+        },
+        {
+          "tag": "new",
+          "description": "Import 3D Volumes now supports importing <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-3d-volumes\">multiple volumes, including importing entries directly from EMDB</a>." 
+        },
+        {
+          "tag": "new",
+          "description": "FSC Plots are now accompanied by an <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-emdb-friendly-xml-file-for-fsc-plots\">EMDB-friendly XML file</a>." 
+        },
+        {
+          "tag": "new",
+          "description": "<strong>Improved performance in large projects</strong>. Faster Tree View updates and instantaneous input drag-and-drop connections." 
+        },
+        {
+          "tag": "new",
+          "description": "New <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools utility</a>, supporting re-centering and symmetry alignment of 3D volumes." 
+        },
+        {
+          "tag": "update",
+          "description": "3DVA Display job can now output particle sets corresponding to intermediate states." 
+        },
+        {
+          "tag": "update",
+          "description": "Added option to select a subset of variability components in 3DVA Display job." 
+        },
+        {
+          "tag": "update",
+          "description": "Volume Tools job now accepts a custom output filename. The default output name has also been updated to be more informative." 
+        },
+        {
+          "tag": "update",
+          "description": "Display path of job working directory at the top of the event log."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-ssd-particle-caching-in-cryosparc#increase-or-reduce-cache-files-lifetime\">Automatically delete SSD cache files</a> that have not been used in more than 30 days during job caching steps."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/accessing-cryosparc#appendix-d-custom-ssl-certificate-authority-bundle\">Specify path to custom Certificate Authority bundle for external SSL requests</a>."
+        },
+        {
+          "tag": "update",
+          "description": "CLI endpoint to safely update a project's directory (<code>update_project_directory(project_uid, new_project_dir)</code>)."
+        },
+        {
+          "tag": "update",
+          "description": "Ability to use common path field (vs. UID) to intersect or split in Exposure Sets Tool and Particle Sets Tool."
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC Live Data Management now supports <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/cryosparc-live-session-data-management#state-change-hooks\">executing a script upon a datatype's state change</a>. Add <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_ENABLE=true</code> and <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_PATH=/path/to/script.sh</code> in cryosparc_master/config.sh to enable this feature."
+        },
+        {
+          "tag": "update",
+          "description": "Particle subtraction now respects refined higher-order aberrations."
+        },
+        {
+          "tag": "update",
+          "description": "Added FSC mask auto-tightening to the standalone Validation (FSC) job."
+        },
+        {
+          "tag": "update",
+          "description": "Extraction Box Size in Local Motion Correction now uses the input particle box size by default."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed contrast issues in Inspect Picks, Manual Picker and Curate Exposures jobs when viewing a micrograph that wasn't motion-corrected in cryoSPARC."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue in Volume Tools that caused ringing artefacts when downsampling masks."
+        },
+        {
+          "tag": "fixed",
+          "description": "Added resolution parameter to low-pass filter templates in Blob and Template Picker jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed <code>libtiff</code> error when running the worker on a read-only file system."
+        },
+        {
+          "tag": "fixed",
+          "description": "Corrected volume flip in cryoSPARC Live 3D volume web viewer."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that caused stale notifications to persist after restarting cryoSPARC."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug where it was not possible to queue a job into a new workspace."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug where topics from the cryoSPARC Discussion Forum would not display on the dashboard."
+        },
+        {
+          "tag": "fixed",
+          "description": "Updated the job queuing interface to clarify which nodes certain jobs are launched on. Interactive jobs are always launched on the master node. Import jobs are launched on the master node unless <code>CRYOSPARC_DISABLE_IMPORT_ON_MASTER</code> is set to true, in which case import jobs can run on any lane/node selected. All other job types launch on a lane/node the user selects."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug where symmetry alignment during refinement often aligned volumes incorrectly if they were already aligned."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug where volumes are improperly aligned to symmetry axes in helical refinement."
+        }
+      ]
+    },
+    {
       "tag": "v3.2.0",
       "date": "03/29/2021",
       "items": [
