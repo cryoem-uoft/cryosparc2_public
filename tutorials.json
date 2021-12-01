@@ -1,24 +1,24 @@
 {
   "tutorials": [
     {
-      "title": "Helical Processing Case Study: EMPIAR-10031 (MAVS)",
-      "description": "Detailed description of the helical processing workflow in cryoSPARC from particle picking to reconstruction and refinement on this EMPIAR dataset.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/case-study-empiar-10031-mavs"
+      "title": "Tutorial: 3D Classification (BETA)",
+      "description": "3D Classification (BETA) provides a way to distinguish discrete heterogeneous states, or classes, from single particle cryo-EM data.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-classification-beta"
+    },
+    {
+      "title": "Tutorial: Blob Picker Tuner",
+      "description": "The Blob Picker Tuner finds optimal blob sizes, shapes, and thresholds for particle picking by comparing picks to a small number of manually selected examples.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-blob-picker-tuner"
+    },
+    {
+      "title": "Tutorial: EMDB-friendly XML file for FSC plots",
+      "description": "In cryoSPARC v3.3+, an EMDB-friendly XML version of every plotted FSC is available to download.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-emdb-friendly-xml-file-for-fsc-plots"
     },
     {
       "title": "EER File Support",
       "description": "CryoSPARC now supports reading input movies in electron-event representation (EER) format.",
       "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-eer-file-support"
-    },
-    {
-      "title": "3D Variability Analysis Tutorial: Part One",
-      "description": "Introduction to 3DVA, a powerful tool for exploring discrete and continuous heterogeneity in SPA cryo-EM data.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-variability-analysis-part-one"
-    },
-    {
-      "title": "3D Variability Analysis Tutorial: Part Two",
-      "description": "More advanced ways that 3DVA results can be used to interpret heterogeneity in a dataset.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-variability-analysis-part-two"
     },
     {
       "title": "Priority Job Queuing",
