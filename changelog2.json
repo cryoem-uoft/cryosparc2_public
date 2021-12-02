@@ -143,6 +143,14 @@
         {
           "tag": "fixed",
           "description": "Fixed bug where volumes are improperly aligned to symmetry axes in helical refinement."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an error during startup that occurs when an instance has less than 1000 notifications [v3.3.1]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed plotting error during (legacy) local refinement [Patch 211202]"
         }
       ]
     },
