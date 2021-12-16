@@ -53,6 +53,14 @@
           "description": "New <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools utility</a>, supporting re-centering and symmetry alignment of 3D volumes." 
         },
         {
+          "tag": "new",
+          "description": "Specify path of directory containing preprocessed micrographs for Topaz Train and Extract [Patch 211214]" 
+        },
+        {
+          "tag": "new",
+          "description": "New 3D Classification advanced parameter \"Output data after every full iter\" to enable data outputs (volumes, particles, volume series) after every full iteration [Patch 211214]" 
+        },
+        {
           "tag": "update",
           "description": "3DVA Display job can now output particle sets corresponding to intermediate states." 
         },
@@ -99,6 +107,14 @@
         {
           "tag": "update",
           "description": "Extraction Box Size in Local Motion Correction now uses the input particle box size by default."
+        },
+        {
+          "tag": "update",
+          "description": "3D Classification volume outputs are now unmasked, fixing downstream refinements [Patch 211214]"
+        },
+        {
+          "tag": "update",
+          "description": "New printout for each 3D Classification iteration to clearly specify O-EM/F-EM iterations left [Patch 211214]"
         },
         {
           "tag": "fixed",
@@ -151,6 +167,22 @@
         {
           "tag": "fixed",
           "description": "Fixed plotting error during (legacy) local refinement [Patch 211202]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Use correct license check SSL certificate configuration when running cryoSPARC in insecure mode [Patch 211214]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed Blob Tuner Error when Blob picker finds no particles [Patch 211214]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Passthrough GS split in 3D Classification [Patch 211214]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Check for empty splits in Homogenous Reconstruction job [Patch 211214]"
         }
       ]
     },
