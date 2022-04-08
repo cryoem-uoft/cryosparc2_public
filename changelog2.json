@@ -1,8 +1,8 @@
 {
   "versions": [
     {
-      "tag": "v3.3.1",
-      "date": "12/01/2021",
+      "tag": "v3.3.2",
+      "date": "04/08/2022",
       "items": [
         {
           "tag": "new",
@@ -61,6 +61,22 @@
           "description": "New 3D Classification advanced parameter \"Output data after every full iter\" to enable data outputs (volumes, particles, volume series) after every full iteration [Patch 211214]" 
         },
         {
+          "tag": "new",
+          "description": "<code>cryosparcm cli \"update_parents_and_children_for_project(project_uid)\"</code> function to fix broken tree view input/output connections in previously-imported projects [Patch 220215]" 
+        },
+        {
+          "tag": "new",
+          "description": "Exposure/Particle Sets Tool option to ignore leading UIDs when comparing paths for intersection mode [Patch 220215]" 
+        },
+        {
+          "tag": "new",
+          "description": "Support for reading <code>.mrc</code> files containing float16 data (datatype code 12) [Patch 220215]" 
+        },
+        {
+          "tag": "new",
+          "description": "Option to remove all duplicates in Remove Duplicate Particles job [Patch 220315]" 
+        },
+        {
           "tag": "update",
           "description": "3DVA Display job can now output particle sets corresponding to intermediate states." 
         },
@@ -94,7 +110,7 @@
         },
         {
           "tag": "update",
-          "description": "CryoSPARC Live Data Management now supports <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/cryosparc-live-session-data-management#state-change-hooks\">executing a script upon a datatype's state change</a>. Add <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_ENABLE=true</code> and <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_PATH=/path/to/script.sh</code> in cryosparc_master/config.sh to enable this feature."
+          "description": "CryoSPARC Live Data Management now supports <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/cryosparc-live-session-data-management#state-change-hooks\">executing a script upon a datatype's state change</a>. Add <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_ENABLE=true</code> and <code>export CRYOSPARC_LIVE_DATA_MANAGEMENT_SCRIPT_PATH=/path/to/script.sh</code> in cryosparc_master/config.sh to enable this feature."
         },
         {
           "tag": "update",
@@ -115,6 +131,38 @@
         {
           "tag": "update",
           "description": "New printout for each 3D Classification iteration to clearly specify O-EM/F-EM iterations left [Patch 211214]"
+        },
+        {
+          "tag": "update",
+          "description": "3D Variability Display has more informative <code>.mrc</code> volume file names (simple/intermediates mode) [Patch 220215]"
+        },
+        {
+          "tag": "update",
+          "description": "Improved error details when a cli method call fails [Patch 220315]"
+        },
+        {
+          "tag": "update",
+          "description": "Improved logging in Extract From Micrographs (GPU), now shows number of particles rejected near edges of each micrograph [Patch 220315]"
+        },
+        {
+          "tag": "update",
+          "description": "Improved EER read performance for some file systems [Patch 220315]"
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC Live Session Data Management: All datatype sizes are now updated when a session is “paused” or “completed”"
+        },
+        {
+          "tag": "update",
+          "description": "Helpful error messages when calling cryosparcm/cli functions with incorrect arguments"
+        },
+        {
+          "tag": "update",
+          "description": "Check for Corrupt Particles job now has an option to check for NaN values in the particle data files to test for data corruption on disk"
+        },
+        {
+          "tag": "update",
+          "description": "Extraction jobs now have an option to force re-extraction of CTF values for each particle from the input micrographs"
         },
         {
           "tag": "fixed",
@@ -183,6 +231,90 @@
         {
           "tag": "fixed",
           "description": "Check for empty splits in Homogenous Reconstruction job [Patch 211214]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent crash of Rigid Motion Correction, Local Motion Correction and Extract Particles jobs when encountering corrupt exposures. The jobs now continue after any error in a single exposure, and output all incomplete exposures as a separate output [Patch 220118]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Set <code>class</code> field for 3D Classification particle outputs (fixes bug with downstream particles and <code>csparc2star.py</code>) [Patch 220118]"
+        },
+        {
+          "tag": "fixed",
+          "description": "In 3D Classification, viewing direction distribution plots work with empty classes [Patch 220118]"
+        },
+        {
+          "tag": "fixed",
+          "description": "In Topaz Extract, use provided preprocessed directory when no pre-trained model is specified [Patch 220118]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Importing projects retain job tree view input/output connections [Patch 220215]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Symmetry Search Utility no longer fails with KeyError [Patch 220215]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz Train imported jobs no longer reference preprocessed micrographs directory from old project [Patch 220215]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Remove unused “Number of GPUs to parallelize” parameter from Local Motion Correction (non-multi) [Patch 220215]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Include 1st and 99th percentile particles in Inspect Picks threshold range [Patch 220315]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Use high-order aberration information in ResLog job [Patch 220315]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Local Motion does not fail when some movies do not include particles [Patch 220315]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Filter correct component reaction coordinates in 3D Variability Display job [Patch 220315]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent error in Local Motion Correction when zero-shift frame is set [Patch 220315]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Improve multithreaded performance for some operations [Patch 220315]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Local motion no longer fails when zero shift frame is not set by previous motion correction job"
+        },
+        {
+          "tag": "fixed",
+          "description": "AttributeError raised in Filament Tracer job when only one particle pick is found on a given filament"
+        },
+        {
+          "tag": "fixed",
+          "description": "GPU FSC calculation in Refinement jobs raises AssertionError when used with box sizes under 84"
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz job now correctly fails when topaz subprocess fails"
+        },
+        {
+          "tag": "fixed",
+          "description": "Micrograph contrast in Manual Picker job is sometimes set to a value that clips the image"
+        },
+        {
+          "tag": "fixed",
+          "description": "Support for 3DVA Display clustering with one component"
+        },
+        {
+          "tag": "fixed",
+          "description": "Return HTTP 404 response when GridFS image requests are not found"
         }
       ]
     },
