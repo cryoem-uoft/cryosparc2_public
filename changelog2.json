@@ -2,7 +2,7 @@
   "versions": [
     {
       "tag": "v3.3.2",
-      "date": "04/08/2022",
+      "date": "05/18/2022",
       "items": [
         {
           "tag": "new",
@@ -75,6 +75,30 @@
         {
           "tag": "new",
           "description": "Option to remove all duplicates in Remove Duplicate Particles job [Patch 220315]" 
+        },
+        {
+          "tag": "new",
+          "description": "Pre-processing jobs no longer fail immediately when a child process encounters a segmentation fault [Patch 220518]" 
+        },
+        {
+          "tag": "new",
+          "description": "Patch Motion jobs now use an improved IO library, providing substantial speedups on some cluster file systems [Patch 220518]" 
+        },
+        {
+          "tag": "new",
+          "description": "Blob Picker Tuner job now reports progress during optimization [Patch 220518]" 
+        },
+        {
+          "tag": "new",
+          "description": "Validation (FSC) job now takes in an optional <code>Override Pixel Size (Å)</code> parameter to allow adjusting the final pixel size and resolution estimate if incorrect pixel size was specified during processing [Patch 220518]" 
+        },
+        {
+          "tag": "new",
+          "description": "Align 3D job now takes in particle stack(s) and rotates/shifts the alignments of the particles to match the rotation and shift applied to the volumes during 3D alignment [Patch 220518]" 
+        },
+        {
+          "tag": "new",
+          "description": "Project deletion (and other long running actions) are now decoupled from instance-wide locks, allowing a cryoSPARC instance to continue to perform unrelated actions while a deletion is ongoing [Patch 220518]" 
         },
         {
           "tag": "update",
@@ -163,6 +187,26 @@
         {
           "tag": "update",
           "description": "Extraction jobs now have an option to force re-extraction of CTF values for each particle from the input micrographs"
+        },
+        {
+          "tag": "update",
+          "description": "Outputs in the Sharpening Tools job are now separated into two output groups and can be directly connected to downstream Volume Tools jobs [Patch 220518]"
+        },
+        {
+          "tag": "update",
+          "description": "Warnings in the Import Particles job's Overview tab are now more visible when fields are missing in the imported metadata files [Patch 220518]"
+        },
+        {
+          "tag": "update",
+          "description": "Warnings in the Check For Corrupt Particles job's Overview tab are now more visible when corrupt files are found [Patch 220518]"
+        },
+        {
+          "tag": "update",
+          "description": "The Local Refinement (NEW!) job now explicitly requires an input mask [Patch 220518]"
+        },
+        {
+          "tag": "update",
+          "description": "Blob picker output images now show more contrast for negative stain data [Patch 220518]"
         },
         {
           "tag": "fixed",
@@ -315,6 +359,30 @@
         {
           "tag": "fixed",
           "description": "Return HTTP 404 response when GridFS image requests are not found"
+        },
+        {
+          "tag": "fixed",
+          "description": "Allow clearing Extract Particles jobs created before the previous patch [Patch 220518]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent Motion Correction job failure due to low-level memory error from corrupt TIFF files [Patch 220518]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Corrected stdout/stderr redirect options in <code>cryosparcm cluster example</code> scripts [Patch 220518]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Manual picker and Inspect picks jobs no longer overly downsample rectangular (K3) images [Patch 220518]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Job status timestamps are now correctly cleared when a job is cleared [Patch 220518]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Patch CTF job no longer fails with data from spherical aberration-corrected microscopes [Patch 220518]"
         }
       ]
     },
