@@ -101,6 +101,30 @@
           "description": "Project deletion (and other long running actions) are now decoupled from instance-wide locks, allowing a cryoSPARC instance to continue to perform unrelated actions while a deletion is ongoing [Patch 220518]" 
         },
         {
+          "tag": "new",
+          "description": "<em>Patch Motion Correction</em> now supports Fourier crop ratios of 1/8 and 1/16 [Patch 220824]" 
+        },
+        {
+          "tag": "new",
+          "description": "<em>3D Variability Display</em> (Cluster Mode) now has a volume series output [Patch 220824]" 
+        },
+        {
+          "tag": "new",
+          "description": "Exposure processing priority in a cryoSPARC Live session can now be modified. For more information, see: <a href=\"https://guide.cryosparc.com/live/live-jobs-and-session-level-functions#session-level-functions\">the Guide page on Session-level functions</a> [Patch 220824]" 
+        },
+        {
+          "tag": "new",
+          "description": "Cache log now outputs average speed (MB/s) and estimated time to completion [Patch 220824]" 
+        },
+        {
+          "tag": "new",
+          "description": "<code>cryosparcw call &lt;cmd&gt;</code> enables execution of a command in a transient cryoSPARC worker environment [Patch 220824]" 
+        },
+        {
+          "tag": "new",
+          "description": "<code>cryosparcm eventlog &lt;project_uid&gt; &lt;job_uid&gt;</code> prints all text from a job's overview tab to stdout [Patch 220824]" 
+        },
+        {
           "tag": "update",
           "description": "3DVA Display job can now output particle sets corresponding to intermediate states." 
         },
@@ -207,6 +231,38 @@
         {
           "tag": "update",
           "description": "Blob picker output images now show more contrast for negative stain data [Patch 220518]"
+        },
+        {
+          "tag": "update",
+          "description": "Further improvements to error messages when problems are encountered while reading particles or micrographs [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "Volume series outputs in <em>3D Variability Display</em> no longer require a <code>zip</code> system dependency [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "<em>3D Variability Display</em> (Cluster Mode) 1D histogram now includes a legend [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "Warning if all three dimensions of the input data for <em>Import Templates</em> match, which suggests that a cubic (3D) volume has been input instead of a stack of 2D templates [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "Summary of rejected particle counts and reasons for rejection in <em>Extract From Micrographs</em> jobs [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "Jobs now fail if they require more SSD cache space than the total available space or quota [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "If available, show MRC file name in job log when file cannot be read [Patch 220824]"
+        },
+        {
+          "tag": "update",
+          "description": "Improved error formatting when running functions via <code>cryosparcm cli</code> [Patch 220824]"
         },
         {
           "tag": "fixed",
@@ -383,6 +439,22 @@
         {
           "tag": "fixed",
           "description": "Patch CTF job no longer fails with data from spherical aberration-corrected microscopes [Patch 220518]"
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Local Resolution Estimation</em> job now reads the mask from the “Static Mask” input group [Patch 220824]"
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>.mrc.bz2</code> files with an MRC extended header now load correctly [Patch 220824]"
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>workspaces.json</code> now correctly updated when a cryoSPARC Live session is running [Patch 220824]"
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent SSD cache system failure when file size is missing in cache files database collection [Patch 220824]"
         }
       ]
     },
