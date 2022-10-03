@@ -1,6 +1,192 @@
 {
   "versions": [
     {
+      "tag": "v4.0.0",
+      "date": "10/03/2022",
+      "items": [
+        {
+          "tag": "new",
+          "description": "All-new CryoSPARC interface designed for performance and productivity. Watch a <a target=\"_blank\" href=\"https://youtu.be/b9UD7_GGZas\">video walkthrough</a> of all the new features and read the <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/a-tour-of-the-cryosparc-interface\">comprehensive new guide</a>.<ul><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs\">Redesigned interactive jobs</a> (Inspect Picks, Exposure Curation, etc.) with significantly improved functionality and scalability. Easily handle large datasets (25K+ exposures)</li><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-data#volumes\">Integrated in-app 3D volume viewer</a> to inspect volume outputs from all job types</li><li>→ System for <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/filters-and-sorting\">browsing and filtering</a> projects, workspaces, sessions and jobs</li><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/tags\">Tagging system</a> to easily organize and record details about projects and jobs</li><li>→ Multi-job selection and a new <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-data#comparing-jobs\">job comparison view</a></li><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/browsing-the-cryosparc-instance#table-view\">Table view</a> for projects, workspaces, sessions and jobs with CSV download support</li><li>→ Two new ways to build jobs in addition to the drag-and-drop Job Builder: <ul><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/creating-and-running-jobs#job-quick-actions\">Quick actions</a>: right click a job and run common next steps (e.g., Blob Picker → Inspect Picks)</li><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/creating-and-running-jobs#job-cart\">Job cart</a>: select outputs directly from completed job cards to generate a filtered list of applicable jobs. Create and connect in a single click</li></ul></li><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/downloading-and-exporting-data#downloading-the-job-event-log\">Download a PDF report</a> of each job including key stats and the event log</li><li>→ And much more! Be sure to watch the video and read the <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/a-tour-of-the-cryosparc-interface\">guide</a></li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "CryoSPARC Live is now integrated as part of the CryoSPARC interface. Seamlessly transition from the primary interface into a Live session within the same browser tab: <a target=\"_blank\" href=\"https://guide.cryosparc.com/live/how-to-access-cryosparc-live\">How to Access CryoSPARC Live</a>." 
+        },
+        {
+          "tag": "new",
+          "description": "Improved algorithm and diagnostics in <a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">3D Classification (BETA)</a>.<ul><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-classification-beta\">New tutorial covering multiple datasets and use cases</a></li><li>→ FSC-based regularization to improve class quality and variety</li><li>→ Two new convergence criteria (class switches, density change)</li><li>→ Separate solvent and focus mask inputs</li><li>→ Option for hard classification</li><li>→ Better tuned and refactored default parameters</li><li>→Updated diagnostics, including: <ul><li>→ class \"flow\"</li><li>→ focus mask overlay</li><li>→ difference-from-consensus</li></ul></li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-deepemhancer-wrapper\">Wrapper for DeepEMhancer</a>, a deep learning model for automatic masking-like and sharpening-like post-processing." 
+        },
+        {
+          "tag": "new",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/job-average-power-spectra\">“Average Power Spectra” Job</a> for averaging the power spectra of aligned, 2D-classified particles for helical symmetry exploration." 
+        },
+        {
+          "tag": "new",
+          "description": "Verify CryoSPARC installation integrity with <code>cryosparcm test install</code> and <code>cryosparcm test workers</code>. Read the Guide: <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-installation-testing-with-cryosparcm-test\">Installation Testing with <code>cryosparcm test</code>.</a>"
+        },
+        {
+          "tag": "new",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-maintenance-mode-and-configurable-user-facing-messages\">“Maintenance Mode” setting</a> which may be toggled on/off to prevent queued jobs from running while allowing running jobs to complete." 
+        },
+        {
+          "tag": "new",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-maintenance-mode-and-configurable-user-facing-messages#message-of-the-day\">Administrator-configurable login message and instance banner</a> to show notices to users." 
+        },
+        {
+          "tag": "new",
+          "description": "Improved project data management system, simplifying common projects tasks such as transfer and archival.<ul><li>→ <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+\">New comprehensive Data Management Guide for v4.0</a></li><li>→ New project <strong>Attach</strong> and <strong>Detach</strong> actions to easily move projects between CryoSPARC instances</li><li>→ New project <strong>Archive</strong> and <strong>Unarchive</strong> actions simplify moving projects to archival storage or changing a project location on disk</li><li>→ For new projects, the generated project directory name is a hyphenated variant of the project title instead of <code>PXX</code>. A <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/environment-variables\">configurable prefix</a> may be added to project directory names for easy identification</li><li>→ Projects now use an <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+#overview\">instance-lock</a> to prevent accidental corruption due to multiple CryoSPARC instances modifying the same project simultaneously</li><li>→ Projects and Jobs no longer prefix output files with <code>cryosparc_PXX_</code> on disk, since project numeric identifiers may change when detaching and re-attaching a project. The prefix is added when <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+#overview\">downloading files through the browser instead</a></li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "Improved <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/hardware-and-system-requirements#database-and-command-api-security\">CryoSPARC database and API security</a> with authenticated access control." 
+        },
+        {
+          "tag": "new",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-download-error-reports\">Error reporting tools</a> to simplify troubleshooting.<ul><li>→ Download a job error report bundle from the Event Log tab of the Job Dialog</li><li>→ Download a system error report bundle from the Instance Logs tab of the Admin Panel</li><li>→ From the CLI, the <code>cryosparcm errorreport</code> <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/cryosparcm#cryosparcm-errorreport\">function</a> generates a system level error report bundle when the web-app is inaccessible</li></ul>" 
+        },
+        {
+          "tag": "new",
+          "description": "<code>cryosparcm filterlog</code> <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/cryosparcm#cryosparcm-filterlog-less-than-process-greater-than\">command</a> filters logs by days, date, name, function, and level and adopts a more consistent logging format including timestamps at the beginning of logs lines." 
+        },
+        {
+          "tag": "new",
+          "description": "<code>cryosparcm cluster validate</code> <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/cryosparcm#cryosparcm-cluster\">function</a> validates cluster configurations during installation." 
+        },
+        {
+          "tag": "new",
+          "description": "View improved database backup functionality with recent activity records. Available in Instance Information → Backups." 
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-non-uniform-refinement-new\">Job: Non-Uniform Refinement</a> now supports optional Ewald Sphere Correction via an advanced parameter switch."
+        },
+        {
+          "tag": "update",
+          "description": "All jobs which process masks and volumes now accept masks sampled at different box and/or pixel sizes relative to the volume, which are internally resampled when appropriate."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/local-refinement\">Local Refinement and Particle Subtraction</a> now issue a warning if binary masks are used."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-extract-from-micrographs\">Job: Extract from Micrographs</a> now supports extracting and downsampling to two different box sizes via Fourier crop to provide smaller particles for early classification and reconstruction steps."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-global-ctf-refinement\">Job: Global CTF Refinement</a> default parameters no longer fit fourth order aberrations (Spherical Aberration and Tetrafoil) unless specifically enabled."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-local-motion-correction\">Job: Local Motion Correction</a> now includes an option to downsample particles via Fourier crop after correcting per-particle motion."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction\">Job: Ab-initio Reconstruction</a> now includes an unused particles output when not all particles were used for reconstruction in the single-class case."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-estimation/job-gctf-wrapper\">Job: Gctf </a> is now a “Legacy” job. Turn on “Show legacy jobs” in the job builder to unhide the job. Gctf also includes a CUDA libraries parameter to override CUDA version for compatibility with available Gctf binaries."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">Job: 2D Classification</a> may now run <strong>without</strong> CTF correction by turning off the <code>Do CTF correction</code> parameter, which may be useful for negative stain data."
+        },
+        {
+          "tag": "update",
+          "description": "Improvements to CryoSPARC Live interface: <ul><li>→ In the Live Overview tab, enter rejection thresholds with free-form numeric input</li><li>→ Display particle picks in more distinguishable colours</li><li>→ Volume viewer includes action buttons for resetting and zooming</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "Added <code>Maximum number of local maxima to consider</code> picking parameter to Blob Picker and Template Picker in CryoSPARC Live."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-cluster-integration-validation\">Improved cluster job status updates</a> before a job is launched for better visibility. "
+        },
+        {
+          "tag": "update",
+          "description": "Silent password input prompt in <code>cryosparcm</code> <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/cryosparcm\">commands</a>; will not be printed in the command output."
+        },
+        {
+          "tag": "update",
+          "description": "Added <code>cryosparcm cli</code> functions <code>get_project_symlinks</code> and <code>get_job_symlinks</code> to find moved symlinks in jobs. <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/tutorial-migrating-your-cryosparc-instance\">Read the guide for more details</a>."
+        },
+        {
+          "tag": "update",
+          "description": "Reduced excessive verbiage in log files for certain job types that process particles."
+        },
+        {
+          "tag": "update",
+          "description": "Added <code>CRYOSPARC_DB_CONNECTION_TIMEOUT_MS</code> <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/environment-variables#cryosparc_master-config.sh\">configurable environment variable</a> for adjusting connection timeout during database startup."
+        },
+        {
+          "tag": "update",
+          "description": "Improved libcufft library initialization when only major version files (e.g., <code>libcufft.so.10</code>) are available."
+        },
+        {
+          "tag": "update",
+          "description": "Updated Extensive Workflow to issue warning rather than timeout error caused by long-running jobs."
+        },
+        {
+          "tag": "update",
+          "description": "Previous v3.3 web application (now running at <code>BASE_PORT + 7</code>) does not start up by default. To start it, run <code>cryosparcm start app_legacy</code>."
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC Live (<code>liveapp</code> service) is integrated into the main web application interface running at <code>BASE_PORT</code> and is no longer available at <code>BASE_PORT + 6</code>."
+        },
+        {
+          "tag": "update",
+          "description": "Automatically update session data sizes when a session is paused or completed for improved data management."
+        },
+        {
+          "tag": "fixed",
+          "description": "Exposure Sets Tools no longer fails to intersect on <code>path</code> if <code>mscope_params</code> result slot is connected to both <code>Exposures_A</code> and <code>Exposures_B</code> input groups."
+        },
+        {
+          "tag": "fixed",
+          "description": "Heterogeneous Refinement jobs no longer fails when <code>Force hard classification</code> is turned on and some classes become empty."
+        },
+        {
+          "tag": "fixed",
+          "description": "Additional corrupt exposure error handling for Full-Frame Motion Correction, Patch Motion Correction and Patch CTF jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Scheduler no longer fails for all queued jobs when a single queued job fails to run."
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>cryosparcm restore</code> no longer fails when restoring against an empty database directory."
+        },
+        {
+          "tag": "fixed",
+          "description": "Show database connection error message in job log if one occurs during job startup."
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>cryosparcm restart</code> no longer restarts all services if an incorrect service name is provided as an argument."
+        },
+        {
+          "tag": "fixed",
+          "description": "Long running background processes in one project no longer block actions across all projects in the system."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed <code>phase_shift</code> attribute in CryoSPARC Live overview plot that was previously displayed as radians instead of degrees with an incorrect label."
+        },
+        {
+          "tag": "fixed",
+          "description": "FFTs on CPU no longer use a minimum of 8 threads that was causing contention on some systems."
+        }
+      ]
+    },
+    {
       "tag": "v3.3.2",
       "date": "08/24/2022",
       "items": [

@@ -1,29 +1,64 @@
 {
   "tutorials": [
     {
+      "title": "Application Guide (v4.0+)",
+      "description": "Comprehensive guide to the new CryoSPARC interface, working with projects, workspaces, sessions and jobs, as well as filtering and tagging.",
+      "link": "https://guide.cryosparc.com/application-guide-v4.0+/a-tour-of-the-cryosparc-interface"
+    },
+    {
+      "title": "Job: DeepEMhancer (Wrapper)",
+      "description": "Wrapper job for DeepEMhancer, a deep learning model trained to perform masking-like and sharpening-like post-processing on cryo-EM maps.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-deepemhancer-wrapper"
+    },
+    {
+      "title": "Job: Average Power Spectra",
+      "description": "This job takes the outputs of a Select 2D Classes job and generates averaged power spectra for each desired class, to assist with determining the helical symmetry present in the sample.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/job-average-power-spectra"
+    },
+    {
+      "title": "Job: 3D Classification (BETA)",
+      "description": "Improved algorithm and diagnostics in CryoSPARC v4.0: FSC-based regularization, new convergence criteria, and more.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta"
+    },
+    {
       "title": "Tutorial: 3D Classification (BETA)",
-      "description": "3D Classification (BETA) provides a way to distinguish discrete heterogeneous states, or classes, from single particle cryo-EM data.",
+      "description": "Newly updated for CryoSPARC v4.0 with multiple datasets and use cases.",
       "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-classification-beta"
     },
     {
-      "title": "Tutorial: Blob Picker Tuner",
-      "description": "The Blob Picker Tuner finds optimal blob sizes, shapes, and thresholds for particle picking by comparing picks to a small number of manually selected examples.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-blob-picker-tuner"
+      "title": "Tutorial: Tips for Membrane Protein Structures",
+      "description": "Tips for working with membrane protein targets in CryoSPARC, sorted by the different stages of processing.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-tips-for-membrane-protein-structures"
     },
     {
-      "title": "Tutorial: EMDB-friendly XML file for FSC plots",
-      "description": "In cryoSPARC v3.3+, an EMDB-friendly XML version of every plotted FSC is available to download.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-emdb-friendly-xml-file-for-fsc-plots"
+      "title": "Guide: Maintenance Mode and Configurable User Facing Messages",
+      "description": "Once an administrator has turned on maintenance mode, the queue will be paused. When existing running jobs are complete, the instance will be idle and the administrator can re-start, update, etc. Also includes information on configurable message of the day and login message.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-maintenance-mode-and-configurable-user-facing-messages"
     },
     {
-      "title": "EER File Support",
-      "description": "CryoSPARC now supports reading input movies in electron-event representation (EER) format.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-eer-file-support"
+      "title": "Guide: Installation Testing with `cryosparcm test`",
+      "description": "Verify that CryoSPARC is your instance is correctly installed by using `cryosparcm test install` and `cryosparcm test workers` via the command line. Running these functions will perform several tests that ensure users can seamlessly launch jobs and process data in CryoSPARC.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-installation-testing-with-cryosparcm-test"
     },
     {
-      "title": "Priority Job Queuing",
-      "description": "All jobs in cryoSPARC now have a priority property that the cryoSPARC scheduler uses to sort jobs to be executed.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-priority-job-queuing"
+      "title": "Guide: Data Management in CryoSPARC (v4.0+)",
+      "description": "CryoSPARC projects are now explicitly “locked” to a single CryoSPARC instance at any given time. Use the new Attach, Detach, Archive and Unarchive actions to manage the project life cycle and moving project directories.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+"
+    },
+    {
+      "title": "Troubleshooting",
+      "description": "Overview of common issues and advice on how to resolve them.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/troubleshooting"
+    },
+    {
+      "title": "Guide: Download Error Reports",
+      "description": "Learn how to download a complete job error report (including job details, job event logs, browser diagnostics and system logs), as well as system error report, to assist with troubleshooting.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-download-error-reports"
+    },
+    {
+      "title": "Guide: Cluster Integration Validation",
+      "description": "New functions in CryoSPARC v4.0 for testing cluster integrations and polling the cluster scheduler to ensure that job status is reflected in the CryoSPARC instance.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-cluster-integration-validation"
     }
   ]
 }
