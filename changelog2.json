@@ -1,6 +1,84 @@
 {
   "versions": [
     {
+      "tag": "v4.0.1",
+      "date": "10/06/2022",
+      "items": [
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-deepemhancer-wrapper\">Job: DeepEMhancer (Wrapper)</a> now accepts a mask input for DeepEMhancer’s binary mask normalization mode."
+        },
+        {
+          "tag": "update",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-manually-curate-exposures\">Job: Manually Curate Exposures</a> now outputs a warning if not all input particles exist in the input micrographs."
+        },
+        {
+          "tag": "update",
+          "description": "Tensorflow test is now disabled by default during <code>cryosparcm test workers</code>. To enable, specify <code>--test-tensorflow</code>. Read the full installation test guide <a target=\"_blank\" href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-installation-testing-with-cryosparcm-test\">here</a>."
+        },
+        {
+          "tag": "update",
+          "description": "The <a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/admin-panel#instance-logs\">instance tab</a> within the admin panel now loads primary system logs by default."
+        },
+        {
+          "tag": "update",
+          "description": "<code>cryosparcm errorreport</code> will now add the entire <code>app</code>, <code>app_api</code>, and <code>app_legacy</code> log files to the generated archive."
+        },
+        {
+          "tag": "update",
+          "description": "Updated the Windows shortcut for multi-selecting to use the <code>ctrl</code> key instead of the <code>meta</code> key."
+        },
+        {
+          "tag": "update",
+          "description": "Updated <code>command_core</code> request License-ID header check “Authentication failed” message with actionable suggestions."
+        },
+        {
+          "tag": "fixed",
+          "description": "Removed the <code>cryosparcw</code> executable path validation check by the master node when running <code>cryosparcm cluster connect</code>."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where running jobs could be marked as completed."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent SSH and other command failures when system library versions don’t match embedded CryoSPARC libraries."
+        },
+        {
+          "tag": "fixed",
+          "description": "<a target=\"_blank\" href=\"https://guide.cryosparc.com/application-guide-v4.0+/managing-data#project-data\">Project data management table</a> now shows projects shared with the user."
+        },
+        {
+          "tag": "fixed",
+          "description": "The tree view no longer resets its zoom level when creating or modifying jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue in the job builder where scrolling was locked when hovering over an input box."
+        },
+        {
+          "tag": "fixed",
+          "description": "Items with many tags now display correctly in the sidebar details panel and on the cards."
+        },
+        {
+          "tag": "fixed",
+          "description": "The browse view no longer auto-scrolls to a newly created job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved issue where job cards were not properly displaying images and info tags."
+        },
+        {
+          "tag": "fixed",
+          "description": "Allow clearing long-running notifications from Notifications panel."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed <code>cryosparcm fixdbport</code> error."
+        }
+      ]
+    },
+    {
       "tag": "v4.0.0",
       "date": "10/03/2022",
       "items": [
