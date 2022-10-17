@@ -1,6 +1,24 @@
 {
   "versions": [
     {
+      "tag": "v4.0.1+221017 (Patch)",
+      "date": "10/17/2022",
+      "items": [
+        {
+          "tag": "update",
+          "description": "Over 10x speedup in job completion processes (check and passthrough outputs) for jobs with many output groups (e.g., 3D Classification with 20+ classes). Also speeds up “Mark as Completed” action for jobs."
+        },
+        {
+          "tag": "update",
+          "description": "Added more detailed logging message when manually taking over projects in an instance using <code>cryosparcm cli \"take_over_projects()\"</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC environment no longer uses <code>LD_PRELOAD</code> to load <code>libtiff</code>, resolving issues where dependencies of <code>libtiff</code> (<code>libLerc</code> and <code>libstdc++</code>) would not be found on some OSes (e.g., CentOS 7)."
+        }
+      ]
+    },
+    {
       "tag": "v4.0.1",
       "date": "10/06/2022",
       "items": [
