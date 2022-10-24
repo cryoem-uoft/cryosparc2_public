@@ -1,6 +1,164 @@
 {
   "versions": [
     {
+      "tag": "v4.0.2",
+      "date": "10/24/2022",
+      "items": [
+        {
+          "tag": "new",
+          "description": "When viewing jobs within a workspace there is an option to load all jobs at once rather than incrementally load as you scroll down the page."
+        },
+        {
+          "tag": "new",
+          "description": "New project-level option to set the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz\" target=\"_blank\">default path to a Topaz executable</a>. If set, all new Topaz jobs will automatically be populated with the specified project-level path."
+        },
+        {
+          "tag": "new",
+          "description": "Ability to use the spotlight to search for applicable jobs based on what project or workspace has been selected."
+        },
+        {
+          "tag": "update",
+          "description": "In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-exposure-group-utilities\" target=\"_blank\">Job: Exposure Group Utilities</a>, when specifying a regular expression to split exposures or particles into exposure groups, all unmatched items will now be grouped together into a single, separate exposure group."
+        },
+        {
+          "tag": "update",
+          "description": "Added <code>--offline</code> and <code>--skip_workers</code> options to <code>cryosparcm errorreport</code><ul><li><code>--offline</code> skips retrieval of database statistics and worker instance information (intended for use when the CryoSPARC instance is not running)</li><li><code>--skip_workers</code> skips retrieval of worker instance information (intended for use when there are issues connecting to worker nodes)</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "The first applicable lane is now pre-selected when queueing a job from the sidebar."
+        },
+        {
+          "tag": "update",
+          "description": "<code>systemd</code> setup is now simplified, and correctly enables CryoSPARC environment during <code>systemd</code> process startup. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/optional-cryosparc-and-systemd\" target=\"_blank\">Read the guide here.</a>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved inconsistency between displayed values for accepted and rejected exposures (and threshold included and excluded) in the Curate Exposures job with specific threshold ranges set now match job outputs in all cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "Inspect Picks in v4+ now rejects outlier particles based on absolute value of power score rather than percentile (matching the behaviour of v3.3)."
+        },
+        {
+          "tag": "fixed",
+          "description": "Local Motion correction no longer fails when some movies have zero particles or when some movies are corrupt."
+        },
+        {
+          "tag": "fixed",
+          "description": "Multiple targets within a single lane will now correctly display in the instance section of the manage dialog."
+        },
+        {
+          "tag": "fixed",
+          "description": "Volume viewer will now properly resize to the available space when adjusting sidebars and resizing the window."
+        },
+        {
+          "tag": "fixed",
+          "description": "Clicking checkboxes on the job table view will now correctly additively select them."
+        },
+        {
+          "tag": "fixed",
+          "description": "Event log downloads will no longer break in cases where ASCII characters are not included in the pdf font set."
+        },
+        {
+          "tag": "fixed",
+          "description": "Users can now log in with emails where the domain does not include a <code>.</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "The page will no longer automatically refresh when downloading files from the output actions menus in Firefox."
+        },
+        {
+          "tag": "fixed",
+          "description": "When viewing a volume in Firefox, the selecting the up/down arrows within the threshold control number input field will retain focus in the same way other browsers do."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent Live session view from crashing if the session was started after being marked as completed."
+        },
+        {
+          "tag": "fixed",
+          "description": "When making picks on the micrograph in the Manual Picker job, the picks column will correctly update in the corresponding table row."
+        },
+        {
+          "tag": "fixed",
+          "description": "When attaching a project, workspaces no longer have an incorrect “Created By” field, but show the user that attached the project."
+        },
+        {
+          "tag": "fixed",
+          "description": "Project title is now a required field when creating projects from the command line."
+        },
+        {
+          "tag": "fixed",
+          "description": "Clear Intermediate Results no longer deletes non-final results from some refinement jobs when those results were used downstream."
+        },
+        {
+          "tag": "fixed",
+          "description": "Improved error messages and error checking in Topaz Train, Extract and Cross Validation jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz Denoise job now correctly allocates CPU resources when run without GPUs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Installation test (<code>cryosparcm test install</code>) no longer fails if only clusters are connected to the instance."
+        },
+        {
+          "tag": "fixed",
+          "description": "Starting a Live session that was previously marked as “completed” no longer incorrectly pauses the session twice."
+        },
+        {
+          "tag": "fixed",
+          "description": "Queue dialog now correctly applies titles and descriptions that were set."
+        },
+        {
+          "tag": "fixed",
+          "description": "Queue dialog now has a tooltip to clarify the toggle to show or hide lanes with applicable targets based on job resource requirements."
+        },
+        {
+          "tag": "fixed",
+          "description": "Manually Curate Exposures job no longer fails for infinite or NaN CTF parameters, outputs a warning instead."
+        },
+        {
+          "tag": "fixed",
+          "description": "Ab-initio jobs no longer break display of job cards when there are many classes."
+        },
+        {
+          "tag": "fixed",
+          "description": "Inspect Picks job no longer fails during CTF calibration if exposures do not contain enough particle pick locations."
+        },
+        {
+          "tag": "fixed",
+          "description": "3D Classification no longer fails when Output Diagnostic Plots at every Interation is set to False."
+        },
+        {
+          "tag": "fixed",
+          "description": "When using cryosparcm cluster connect, the final connected cluster configuration is printed as the output of the command (returning to v3.3 behaviour)."
+        },
+        {
+          "tag": "fixed",
+          "description": "The range values for threshold sliders and input controls in the Curate Exposures job will now round display values to expected precision in all cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "The reload browser shortcut will no longer manually reject selected exposure in the Curate Exposures job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Table index cells in the Curate Exposures job now correctly update their colour when setting thresholds or manually rejecting/un-rejecting."
+        },
+        {
+          "tag": "fixed",
+          "description": "Filenames and other non-number values will now display correctly in the hover preview popovers in all interactive jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Input fields in the Curate Exposures job can now be incremented using the arrow keys without changing the selected exposure in the micrographs table."
+        }
+      ]
+    },
+    {
       "tag": "v4.0.1+221017 (Patch)",
       "date": "10/17/2022",
       "items": [
