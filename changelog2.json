@@ -1,6 +1,24 @@
 {
   "versions": [
     {
+      "tag": "v4.0.3",
+      "date": "11/03/2022",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Prevent interface from becoming unresponsive when viewing the homepage in cases where the web application cannot load external resources."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where changelog grid styling was causing items to overlap on Safari."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevented an issue where available CryoSPARC updates would not display on the homepage and navigation bar."
+        }
+      ]
+    },
+    {
       "tag": "v4.0.2",
       "date": "10/24/2022",
       "items": [
