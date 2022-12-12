@@ -1,6 +1,260 @@
 {
   "versions": [
     {
+      "tag": "v4.1.0",
+      "date": "12/12/2022",
+      "items": [
+        {
+          "tag": "new",
+          "description": "<b><a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-flexible-refinement\">3D Flexible Refinement (3DFlex)</a></b> (<span className=\"tag tag--beta\">Beta</span>) is a motion-based deep generative model for continuous heterogeneity. It can model non-rigid motion and flexibility of a protein molecule across its conformational landscape, and can use the motion model to combine signal from particle images in different conformations to improve refinement resolution in flexible regions.<ul><li>→ 3DFlex jointly learns a single canonical 3D density map of the particle, latent coordinates for each particle image, and a flow generator network. Given a latent position, the flow generator outputs a 3D deformation field mapping the canonical density to a particular conformation</li><li>→ 3DFlex requires tuning of some parameters and optionally can take custom inputs defining geometry and topology of the target molecule</li><li>→ <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-flexible-refinement\">Read an in-depth guide, including new example results using 3DFlex</a></li><li>→ <a href=\"https://youtu.be/o1srM6PkIP0\">Watch a walkthrough video covering how to using the new algorithm in CryoSPARC</a></li><li>→ Read the <a href=\"https://doi.org/10.1101/2021.04.22.440893\">bioRxiv preprint</a> from April 2021. An updated paper will be made available soon.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<b><a href=\"https://tools.cryosparc.com\">cryosparc-tools</a></b> (<span className=\"tag tag--beta\">Beta</span>) is an open-source Python library that enables powerful scripting access to CryoSPARC.<ul><li>→ Programmatically read and write exposure, particle and volume data</li><li>→ Easily perform advanced operations on metadata (alignments, CTF, etc) and programmatically insert modified data back into CryoSPARC</li><li>→ Access project, workspace and job data</li><li>→ Build and run jobs to orchestrate custom cryo-EM workflows</li><li>→ Extend CryoSPARC functionality with third-party software packages</li><li>→ cryosparc-tools is <a href=\"https://github.com/cryoem-uoft/cryosparc-tools\">on GitHub</a> and available via <code>pip</code> and can be used outside of the CryoSPARC environment in your own programs and tools</li><li>→ <a href=\"https://tools.cryosparc.com\">Read the full documentation including example usage</a></li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "Multi-select actions allow for cloning multiple jobs at once, cloning a chain of jobs between two selections, queuing, clearing or deleting multiple jobs at once, and more. Learn more about multi actions <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/managing-jobs#multi-actions\">here</a>."
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/application-guide-v4.0+/managing-jobs#restart-job\">Restart job action</a> allows a job to be restarted from a killable or clearable state. This new action kills, clears, and queues the job to the same lane with the same parameters with which it was initially run."
+        },
+        {
+          "tag": "new",
+          "description": "Ability to configure custom variables for use in cluster submission scripts directly through the Cluster Configuration Tab in the Admin Panel. Custom variables can be configured at the instance level, target level and job level. See <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-configuring-custom-variables-for-cluster-job-submission-scripts\">Guide: Configuring Custom Variables for Cluster Job Submission Scripts</a> for more details."
+        },
+        {
+          "tag": "new",
+          "description": "Ability for admins to restrict users to view and run jobs on specific lanes using the Lane Restrictions Tab on the Admin Panel. See <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-lane-assignments-and-restrictions\">Guide: Lane Assignments and Restrictions</a> for more details. By default, when a CryoSPARC user is created, they are assigned all existing lanes."
+        },
+        {
+          "tag": "update",
+          "description": "Multiple updates to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">Job: 3D Classification</a>. Refer to the job guide and updated <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-classification-beta#important-considerations\">Tutorial: 3D Classification</a> for details.<ul><li>→ Per-particle scale optimization is now built-in to the job</li><li>→ New 'class flow matrix' diagram helps to visualize class changes across F-EM iterations</li><li>→ New ‘Δ’ text column lists class size differences across F-EM iterations</li><li>→ Updated aesthetics for class flow diagram to improve clarity of edges</li><li>→ Unique volumes are no longer required for initialization</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-remove-duplicate-particles\">Job: Remove Duplicate Particles</a> now allows for duplicate rejection based on 2D and 3D alignment error, in addition to NCC score."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-symmetry-expansion\">Job: Symmetry Expansion</a> now includes a parameter that enables splitting the output particle stack by the applied symmetry operator."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Job: Volume Alignment Tools</a> now allows for application of arbitrary rotations to input volumes, particles, and masks."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/interactive-job-select-2d-classes\">Job: Select 2D Classes</a> now exports an .mrc stack containing only selected classes, and an .mrc stack containing only rejected classes."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">Job: 2D Classification</a> now by default removes duplicate particles after classification based on a minimum separation distance between pick locations."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">2D Classification</a> jobs that perform binary class re-centering now show the binary masks used, generated from the specified threshold."
+        },
+        {
+          "tag": "update",
+          "description": "New project-level option to set the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-deepemhancer-wrapper#optional-set-deepemhancer-executable-path-as-project-level-default-parameter\">default path to a DeepEMhancer executable</a>. If set, all new DeepEMhancer jobs will automatically be populated with the project-level path."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-particle-stack\">Job: Import Particle Stack</a> now copies <code>rlnAutopickFigureOfMerit</code> into CryoSPARC's <code>pick_stats/ncc_score</code> upon import, if available."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-global-ctf-refinement\">Job: Global CTF Refinement</a> now allows for initializing the spherical aberration to a custom value, prior to fitting."
+        },
+        {
+          "tag": "update",
+          "description": "Ability to prevent CryoSPARC from requesting external resources external HTTPS resources used to display information modules on the homepage by setting <code>CRYOSPARC_DISABLE_EXTERNAL_REQUESTS</code> environment variable to true. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/environment-variables\">Details</a>."
+        },
+        {
+          "tag": "update",
+          "description": "The CryoSPARC updater (<code>cryosparcm update</code>) has several enhancements, including:<ul><li>→ Ability to only download the master and worker update packages without doing a full update. Read more <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-updates#manually-download-update-packages\">here</a></li><li>→ Ability to skip downloading the master and worker update packages, and update using the previously-downloaded packages. Read more <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-updates#skip-downloading-update-packages-during-update\">here</a></li><li>→ The CryoSPARC instance is only shut down after confirming the master and worker update packages are downloaded and valid, reducing downtime during an update</li><li>→ The output log of the update process is now written to <code>cryosparc_master/run/update.log</code>, and can be read any time using <code>cryosparcm log update</code>.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "Ability for instances with the <code>CRYOSPARC_DISABLE_IMPORT_ON_MASTER</code> environment variable to queue jobs to the master node."
+        },
+        {
+          "tag": "update",
+          "description": "The signatures for the CLI functions <code>delete_project</code> and <code>delete_workspace</code> have changed. Please see the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/cli\"><code>cryosparcm cli</code> reference page on the CryoSPARC Guide</a> for more information."
+        },
+        {
+          "tag": "update",
+          "description": "Project directories can now be renamed by using the edit button beside the \"directory\" field in the details section of the project sidebar."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-reassign-particles-to-micrographs\">Job: Reassign Particles to Micrographs</a> will now copy the exposure group data from the micrographs to the particles if the <code>particles.ctf</code> slot and the <code>exposure.ctf</code> or <code>exposure.mscope_params</code> slots are connected."
+        },
+        {
+          "tag": "update",
+          "description": "Job: Import Movies info tag now displays the size of each exposure and number of frames."
+        },
+        {
+          "tag": "update",
+          "description": "When viewing jobs in a flattened view (e.g., all jobs in a project) the clone job action sub-menu now provides all workspaces as options to clone into."
+        },
+        {
+          "tag": "update",
+          "description": "Restrict some <code>cryosparcm</code> commands to owner UNIX account, including <code>createuser</code>, <code>updateuser</code>, <code>resetpassword</code> and <code>patch</code>."
+        },
+        {
+          "tag": "update",
+          "description": "Close open file handles during Import jobs."
+        },
+        {
+          "tag": "update",
+          "description": "User IDs are now visible in the output of <code>cryosparcm listusers</code>"
+        },
+        {
+          "tag": "update",
+          "description": "<code>job_type</code> variable is now added to available cluster submission script variables provided by CryoSPARC. This value can be used for tracking which CryoSPARC job types are running on a cluster lane or for determining resource requirements for a cluster script."
+        },
+        {
+          "tag": "update",
+          "description": "<code>qstat_cmd_tpl</code> and <code>qdel_cmd_tpl</code> will have access to the same variables that are injected into <code>send_cmd_tpl</code>, including any user-configured custom variables."
+        },
+        {
+          "tag": "update",
+          "description": "Additional logging for master cache functions."
+        },
+        {
+          "tag": "update",
+          "description": "Interactive jobs now print out more informative errors in a scrollable, clearable log at the top of the interactive panel in the job dialog."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where when viewing all parameters of a job within the comparison dialog incorrect custom parameter values were shown."
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs created via quick actions are no longer created in a different workspace or session than the one currently selected."
+        },
+        {
+          "tag": "fixed",
+          "description": "NCC score slider in CryoSPARC Live no longer loses all picks when set to 0."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed ValueError in <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-manually-curate-exposures\">Manually Curate Exposures</a> due to outliers during histogram creation."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bugs in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-estimation/job-gctf-wrapper\">Job: Gctf (Wrapper)</a> that caused local CTF refinement to fail."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug in Job: 3D Variability Analysis that prevented job from completing when number of components is set to 1."
+        },
+        {
+          "tag": "fixed",
+          "description": "The job dialog outputs tab now correctly displays the name of low-level results."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that prevented correct download links for each output group of a job from being displayed within the sidebar details panel when a job is selected."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that prevented multiple entities from being selected via the checkbox within the table view."
+        },
+        {
+          "tag": "fixed",
+          "description": "Scroll bars are no longer shown overtop of menus and dialogs in Safari."
+        },
+        {
+          "tag": "fixed",
+          "description": "Hostname no longer appears twice on instance management cards."
+        },
+        {
+          "tag": "fixed",
+          "description": "The sidebar action panel now collapses automatically after an option has been selected."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where a \"Not Found\" message would flash in the sidebar on load."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug that resulted in incorrect cropping of some PNG figures in the event log."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/simulations/job-simulate-data-beta\">Job: Simulate Data</a> that caused incorrect particles’ CTF parameters when “apply CTF” was disabled."
+        },
+        {
+          "tag": "fixed",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/simulations/job-simulate-data-beta\">Job: Simulate Data</a> no longer requires the SSD cache"
+        },
+        {
+          "tag": "fixed",
+          "description": "Residual plots in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-global-ctf-refinement\">Job: Global CTF Refinement</a> now properly account for phase ambiguities of 2π."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed <code>KeyError</code> in <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-inspect-particle-picks\">Inspect Particle Picks</a> caused by micrographs that contain no particle picks."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-homogeneous-reconstruction-only\">Job: Homogeneous Reconstruction Only</a> with helical symmetry enforced and custom box size."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug in CryoSPARC Live that caused failed exposures to be double-counted as queued exposures."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where retrieving CryoSPARC Live sessions via the CLI would fail."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where slow database command response times would cause problems when configuring the database (e.g., updating CryoSPARC)."
+        },
+        {
+          "tag": "fixed",
+          "description": "Extensive Workflow now runs on a worker with 32GB of RAM."
+        },
+        {
+          "tag": "fixed",
+          "description": "Installation and update are now cancelled if Python dependency installation fails."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent job heartbeat failures following multiple disconnects and reconnects."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug that raised a <code>JSONDecodeError</code> when calling <code>cryosparcm eventlog</code> on Job: 3D Variability Display."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug that caused <code>command_core</code>, <code>command_rtp</code> and <code>command_vis</code> logs to not be properly rotated."
+        },
+        {
+          "tag": "fixed",
+          "description": "Event logs for motion correction and extraction jobs now count movies/micrographs starting from one instead of starting from zero (e.g. “completed 20/20” instead of “completed 19/20”)."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug whereby ice thickness reported by Patch CTF (including in CryoSPARC Live) can be <code>NaN</code>."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent file reading operations from failing on systems that incorrectly seek"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug that caused extracted particle count not to be displayed on the details panel when viewing a Live session"
+        }
+      ]
+    },
+    {
       "tag": "v4.0.3",
       "date": "11/03/2022",
       "items": [
