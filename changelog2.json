@@ -1,6 +1,24 @@
 {
   "versions": [
     {
+      "tag": "v4.1.1",
+      "date": "12/20/2022",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug affecting some OSes in the dependency installation for 3DFlex jobs (<code>cryosparcw install-3dflex</code>) that caused a <code>gcc</code> compilation error during the PyCUDA build."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that caused 3DVA display to fail when using a subset of variability components."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug causing restarted jobs with GPU requirements to override the scheduler and jump to the front of the queue on the specified lane."
+        }
+      ]
+    },
+    {
       "tag": "v4.1.0",
       "date": "12/12/2022",
       "items": [
