@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "tag": "v4.1.1+230104 (Patch)",
+      "date": "01/04/2023",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Prevent Extract From Micrographs (GPU) job from using too much GPU memory, causing exposures to fail with <code>cufftAllocFailed</code> or <code>cufftInternalError</code>."
+        }
+      ]
+    },
+    {
       "tag": "v4.1.1",
       "date": "12/20/2022",
       "items": [
