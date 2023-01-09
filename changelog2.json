@@ -5,6 +5,14 @@
       "date": "01/04/2023",
       "items": [
         {
+          "tag": "update",
+          "description": "Improved database startup reliability following updates."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent wrong generation dataset error for some jobs that process a large amount of micrographs or particles."
+        },
+        {
           "tag": "fixed",
           "description": "Prevent Extract From Micrographs (GPU) job from using too much GPU memory, causing exposures to fail with <code>cufftAllocFailed</code> or <code>cufftInternalError</code>."
         }
