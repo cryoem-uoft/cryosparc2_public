@@ -42,7 +42,7 @@
         },
         {
           "tag": "update",
-          "description": "Multi-select context menu improvements<ul><li>The job card action menu trigger button will now always display that job’s specific action menu even with multiple jobs selected</li><li>Opening the action menu on a job card not included in a multi-selection will show that job’s specific action menu instead of the multi-select action menu</li><li>The multi-select action menu can now be opened by right clicking the workspace background and not just jobs within the selection</li></ul>"
+          "description": "Multi-select context menu improvements<ul><li>→ The job card action menu trigger button will now always display that job’s specific action menu even with multiple jobs selected</li><li>→ Opening the action menu on a job card not included in a multi-selection will show that job’s specific action menu instead of the multi-select action menu</li><li>→ The multi-select action menu can now be opened by right clicking the workspace background and not just jobs within the selection</li></ul>"
         },
         {
           "tag": "fixed",
