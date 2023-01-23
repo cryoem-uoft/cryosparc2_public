@@ -1,6 +1,88 @@
 {
   "versions": [
     {
+      "tag": "v4.1.2",
+      "date": "01/23/2023",
+      "items": [
+        {
+          "tag": "new",
+          "description": "New <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\"><em>3D Classification</em></a> parameters<ul><li>→ Added an option (default: on) to re-order classes by number of particles at the end of processing</li><li>→ Added maximum F-EM iterations which will terminate classification even if convergence criteria are not met</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "In addition to CPU memory used, available CPU memory can now be displayed in the job event log. It is also displayed in the job log PDF."
+        },
+        {
+          "tag": "new",
+          "description": "Added options to sort projects by their size."
+        },
+        {
+          "tag": "new",
+          "description": "Added a new project-level action to delete detached projects from the CryoSPARC database. More information is available in the updated <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+#detach\">data management guide</a>."
+        },
+        {
+          "tag": "new",
+          "description": "Exposure preview context menus in CryoSPARC Live now feature a button to reject/unreject the exposure."
+        },
+        {
+          "tag": "update",
+          "description": "Additional timestamp information added to job output log."
+        },
+        {
+          "tag": "update",
+          "description": "The job preview dialog project and workspace breadcrumbs have been updated to native browser links to allow them to be opened in a new window or tab."
+        },
+        {
+          "tag": "update",
+          "description": "Buttons with a corresponding keyboard shortcut will now show that shortcut in their tooltips."
+        },
+        {
+          "tag": "update",
+          "description": "The tree view now supports using the shift key to toggle the outputs view on all job cards."
+        },
+        {
+          "tag": "update",
+          "description": "Multi-select context menu improvements<ul><li>The job card action menu trigger button will now always display that job’s specific action menu even with multiple jobs selected</li><li>Opening the action menu on a job card not included in a multi-selection will show that job’s specific action menu instead of the multi-select action menu</li><li>The multi-select action menu can now be opened by right clicking the workspace background and not just jobs within the selection</li></ul>"
+        },
+        {
+          "tag": "fixed",
+          "description": "In <em>3D classification</em>, ensure solvent mask is generated from consensus volume if (only) a focus mask is supplied."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fix a memory leak in <em>3D Classification</em> related to plotting. With the fix applied, peak memory usage should be significantly reduced, with jobs that have a large number (50+) of classes seeing the most benefit (up to a 75% reduction)."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fix incorrect batch size during class ESS tuning in <em>3D Classification</em> that required excessive amounts of GPU memory."
+        },
+        {
+          "tag": "fixed",
+          "description": "Errors reading TIFF files during import movies could cause abnormal termination."
+        },
+        {
+          "tag": "fixed",
+          "description": "Event log would flash and jump in a perpetual loading state in some cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "Job description would automatically close while being edited in some cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "Clearing intermediate results on jobs with empty output result groups would cause an error."
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs exported from this version may now be correctly imported in older versions of CryoSPARC."
+        },
+        {
+          "tag": "fixed",
+          "description": "Added a guard against creating redundant outputs in <em>Extract From Micrographs (CPU)</em>."
+        }
+      ]
+    },
+    {
       "tag": "v4.1.1+230110 (Patch)",
       "date": "01/10/2023",
       "items": [
