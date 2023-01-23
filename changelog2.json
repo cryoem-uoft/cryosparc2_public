@@ -6,6 +6,10 @@
       "items": [
         {
           "tag": "new",
+          "description": "Added a new <em>Restack Particles</em> job for consolidating particle files. More information available <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/extraction/job-restack-particles\">in the guide</a>."
+        },
+        {
+          "tag": "new",
           "description": "New <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\"><em>3D Classification</em></a> parameters<ul><li>→ Added an option (default: on) to re-order classes by number of particles at the end of processing</li><li>→ Added maximum F-EM iterations which will terminate classification even if convergence criteria are not met</li></ul>"
         },
         {
