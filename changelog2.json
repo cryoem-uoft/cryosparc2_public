@@ -1,6 +1,121 @@
 {
   "versions": [
     {
+      "tag": "v4.2.0",
+      "date": "02/27/2023",
+      "items": [
+        {
+          "tag": "new",
+          "description": "CryoSPARC now fully supports CUDA 11.8, enabling support for NVIDIA Hopper and NVIDIA Ada Lovelace GPUs (NVIDIA H100, NVIDIA RTX 40 Series), including for 3DFlex."
+        },
+        {
+          "tag": "new",
+          "description": "<p>The browse system has been updated with various incremental improvements including table header sorting, customizable view options, and upgraded CSV download functionality.</p><ul><li>→ A <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/view-options\">view options menu</a> can be accessed from the browse system control bar allowing card and table details to be shown or hidden to suit user preference.</li><li>→ The view options menu table section items can be dragged and dropped within the list to re-order the table view columns.</li><li>→ The CSV download feature now includes an additional dialog allowing the user to select what information to include or exclude and the ability to re-order the table columns.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "Within the details sidebar of a job, you can click on a particular cloned, parent, or child job to view it in the current tab. Command/ctrl click it to open that job in a new tab."
+        },
+        {
+          "tag": "new",
+          "description": "Within the ‘Metadata’ tab in the job preview dialog, there is a button to download the JSON data of a job to your clipboard."
+        },
+        {
+          "tag": "new",
+          "description": "Added a quick action to perform CTF Estimation via <em>CTTFIND4</em> from a <em>Patch Motion Correction</em> job."
+        },
+        {
+          "tag": "update",
+          "description": "Introduced a workaround for a bug in CUDA 11.8 which formerly caused jobs relying on CUDA Fourier transforms (cuFFT) to run slower than they should (sometimes dramatically so)."
+        },
+        {
+          "tag": "update",
+          "description": "When importing <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-movies\">movies</a> and <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-micrographs\">micrographs</a>, the ‘Skip header check’ parameter is now enabled by default."
+        },
+
+        {
+          "tag": "update",
+          "description": "Performance and stability improvements to all interactive job tables and the browse table in Live sessions."
+        },
+        {
+          "tag": "update",
+          "description": "Improvements to the context menu for job cards within the current jobs dialog."
+        },
+        {
+          "tag": "update",
+          "description": "Optimized current jobs tab within manage dialog and added a running timer for each job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">3D Classification</a> that caused <a href=\"https://github.com/asarnow/pyem/blob/master/csparc2star.py\">csparc2star.py</a> to produce erroneous star files if class reordering was turned on."
+        },
+        {
+          "tag": "fixed",
+          "description": "If a job is running on a cluster, the available memory usage statistic is no longer displayed within the event log."
+        },
+        {
+          "tag": "fixed",
+          "description": "If specified, the cropped box size is correctly displayed on the card of a <em>Volume Tools</em> job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved cases where the outputs view mode toggle was triggered while attempting to perform a browser or operating system keyboard shortcut."
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Removed variables <code>ram_gb</code>, <code>num_cpu</code>, and <code>num_gpu</code> from appearing as custom variables in a cluster configuration.</p><ul><li>→ The above variables are internal variables set by CryoSPARC and cannot be used/modified as custom variables</li><li>→ <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-configuring-custom-variables-for-cluster-job-submission-scripts\">Updated guide</a> with a list of internal cluster variables and instructions for modifying resources requested in a cluster submission script</li></ul>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed reading of <code>.mrc.bz2</code> gain reference files in CryoSPARC Live."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue on some OSes where building <code>pycuda</code> would fail during installation."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed error message during job heartbeat failure to correctly specify heartbeat timeout."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed “wrong generation counter” error during some long-running jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Performance optimizations to the volume viewer in Live Sessions and the job preview dialog."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">2D Classification</a> to allow manual overrides to <em>Force max over poses/shifts</em> parameter if classes is set to 20 or fewer."
+        },
+        {
+          "tag": "fixed",
+          "description": "Removed the parameter “Overall normalizer (override)” in particle extraction. The parameter had no effect."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where clearing intermediate results for projects triggered multiple notifications."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where viewing a job without selecting the card would select and pin it to the sidebar."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where the current jobs tab within the manage dialog would crash the application in some situations when interactive jobs were queued or active."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved a bug where it was not possible to define a threshold for the ‘Timestamp’ attribute of exposures in a Live Session."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue that caused an ‘Invalid path’ error when building <em>Topaz</em> or <em>DeepEMhancer</em> jobs."
+        }
+      ]
+    },
+    {
       "tag": "v4.1.2",
       "date": "01/23/2023",
       "items": [
