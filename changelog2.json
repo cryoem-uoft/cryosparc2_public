@@ -1,6 +1,36 @@
 {
   "versions": [
     {
+      "tag": "v4.2.0+230302 (Patch)",
+      "date": "03/02/2023",
+      "items": [
+        {
+          "tag": "update",
+          "description": "In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-global-ctf-refinement\">Global CTF Refinement</a>, throw a warning if the spherical aberration refines to a nonpositive value."
+        },
+        {
+          "tag": "update",
+          "description": "In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">3D Classification</a>, add &quot;Force re-do FSC split” parameter that forces re-splitting the particles into half-set splits from scratch. Disabling this allows for preserving the input splits, for particles from previous helical refinements, symmetry expansions, or local refinements."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a problem in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">2D classification</a> where many classes would be blank or very faint if multiple GPUs were used."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issues when running multiple jobs using the same SSD cache space."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-threedfsc-wrapper\">3DFSC</a> crashing due to list index out of range error."
+        },
+        {
+          "tag": "fixed",
+          "description": "In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">3D Classification</a>, removed extraneous <code>alignments3D</code> entry in <code>particles_all_classes</code> dataset output which caused <a href=\"https://github.com/asarnow/pyem/blob/master/csparc2star.py\">csparc2star.py</a> to assign all particles to a single class."
+        }
+      ]
+    },
+    {
       "tag": "v4.2.0",
       "date": "02/27/2023",
       "items": [
