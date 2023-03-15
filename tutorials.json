@@ -6,6 +6,21 @@
       "link": "https://guide.cryosparc.com/application-guide-v4.0+/a-tour-of-the-cryosparc-interface"
     },
     {
+      "title": "Tutorial: 3D Flexible Refinement",
+      "description": "An in-depth guide to 3DFlex, a motion-based deep generative model for continuous heterogeneity.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-flexible-refinement"
+    },
+    {
+      "title": "Guide: Configuring Custom Variables for Cluster Job Submission Scripts",
+      "description": "User-set variables can be injected into cluster submission scripts before a job is queued.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-configuring-custom-variables-for-cluster-job-submission-scripts"
+    },
+    {
+      "title": "Job: Restack Particles",
+      "description": "Restack Particles is useful for filtering unused particles from .mrc files, can speed up caching, and helps with data management.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/extraction/job-restack-particles"
+    },
+    {
       "title": "Job: DeepEMhancer (Wrapper)",
       "description": "Wrapper job for DeepEMhancer, a deep learning model trained to perform masking-like and sharpening-like post-processing on cryo-EM maps.",
       "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-deepemhancer-wrapper"

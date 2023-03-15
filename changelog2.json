@@ -1,6 +1,64 @@
 {
   "versions": [
     {
+      "tag": "v4.2.1",
+      "date": "03/15/2023",
+      "items": [
+        {
+          "tag": "new",
+          "description": "A project-level parameter now controls whether or not jobs output <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+#4.-ability-to-clear-intermediate-results\">intermediate results</a>, with default on. Turning this off will save disk space, without having to manually clear intermediate results after the jobs complete."
+        },
+        {
+          "tag": "update",
+          "description": "In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-particle-sets-tool\"><em>Particle Sets Tool</em></a> and <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-exposure-sets-tool\"><em>Exposure Sets Tool</em></a> jobs, add note in event log indicating that result groups are taken from set <code>A</code> for the <code>intersect</code> dataset."
+        },
+        {
+          "tag": "update",
+          "description": "In <em>Average Power Spectra</em> job, print particle pixel size and power spectra sample spacing to the event log."
+        },
+        {
+          "tag": "fixed",
+          "description": "<em>Manual Picker</em> no longer fails when micrograph CTF input is not provided."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where loading external data for the homepage modules would fail if a non-standard response was received."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevented a database error from occurring when no recent items existed for a user."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where copying to the clipboard would not work in some cases depending on how CryoSPARC was hosted over an internal network."
+        },
+        {
+          "tag": "fixed",
+          "description": "Priority field in the job queuing slide-over is now required and cannot be empty."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where a previously selected entity was still selected after creating a new project."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where clearing a job would not reset its queue priority."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where completed jobs that were deleted displayed within project, workspace and session cards."
+        },
+        {
+          "tag": "fixed",
+          "description": "In <em>3D Classification</em>, fixed <code>KeyError</code> with CTF fields when “Output results after every F-EM iteration” is enabled."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where re-ordering classes and outputting intermediate results in 3D Classification conflicted and caused the job to fail. These options are now mutually exclusive."
+        }
+      ]
+    },
+    {
       "tag": "v4.2.0+230302 (Patch)",
       "date": "03/02/2023",
       "items": [
