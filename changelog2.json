@@ -1,6 +1,212 @@
 {
   "versions": [
     {
+      "tag": "v4.3.0",
+      "date": "08/09/2023",
+      "items": [
+        {
+          "tag": "new",
+          "description": "<p><b><a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+\">Data Cleanup Tools</a></b></p> <p>A new suite of tools to simplify the process of tracking and reducing disk space usage in CryoSPARC. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+\">Supporting five ways to clear up projects or workspaces:</a></p> <ul><li>→ Mark certain jobs as <b>final</b> and automatically clear everything except for jobs needed to replicate those results</li><li>→ <b>Compact</b> CryoSPARC Live sessions, removing preprocessing data but storing particle locations and parameters needed to <b>restore</b> the session later</li><li>→ <b>Restack</b> particles to remove filtered out junk particles and then automatically clear <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+#determinism-in-cryosparc\">deterministic</a> <b>preprocessing</b> jobs that can be re-run later if needed</li><li>→ Clear <b>intermediate results</b> of iterative jobs across a project or workspace</li><li>→ Clear <b>killed and failed</b> jobs that take up disk space but can’t be further used</li> </ul> <p>Featuring a comprehensive Cleanup Data user interface, on-demand refreshing of project and job size statistics, data usage summaries in the project details sidebar, and new right-click menu options for selecting ancestors and descendants of jobs manually. See the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+\">Data Cleanup guide</a> for more details.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><b><a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-performance-benchmarking-v4.3+\">Performance Benchmarking Utilities</a></b></p> <ul><li>→ A new <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-performance-benchmarking-v4.3+\">system for measuring and comparing key aspects of CryoSPARC performance</a> across CPU, File system, and GPU operations. The benchmarking jobs break down critical elements of CryoSPARC high performance code paths and measure detailed timings to shed light on which parts of a system may be bottlenecking performance.</li><li>→ A new performance benchmark user interface allowing for visual comparison of different benchmark runs as well as <strong>reference benchmarks</strong> published along with CryoSPARC. The interface can display detailed timings from benchmarking jobs or job runtimes from full runs of the <strong>Extensive Validation</strong> <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/tutorial-verify-cryosparc-installation-with-the-extensive-workflow-sysadmin-guide\">(previously called Extensive Workflow)</a> test set.</li> </ul>"
+        },
+        {
+          "tag": "new",
+          "description": "Particle caching in CryoSPARC jobs now support multiple threads (default 2), increasing copy speed on certain filesystems. To modify, specify <code>CRYOSPARC_CACHE_NUM_THREADS</code> in <code>cryosparc_worker/config.sh</code>. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/environment-variables\">Read the guide for more information."
+        },
+        {
+          "tag": "new",
+          "description": "<p><b><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs\">Interactive Job Improvements</a></b></p> <p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs\">New plots, displays, and interactive tools across all interactive jobs</a>, including a new exposure image grid view in the Exposure Curation job for ease of assessing and manually curating exposures, and the ability to set threshold parameters when starting the job to bypass interaction and automatically filter data.</p> <p>Several usability enhancements, including:</p> <ul><li>→ Extraction is now optional in the manual picker</li>   <li>→ Datasets without pick statistics can be used in Inspect Picks</li><li>→ Charts in Exposure Curation remember their expand/collapse state when reloaded</li><li>→ Exposure Curation now displays particle picks if available</li><li>→ Optimized micrograph image loading for faster response times</li> </ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/tutorial-verify-cryosparc-installation-with-the-extensive-workflow-sysadmin-guide\">Extensive Validation</a> (previously called Extensive Workflow) job extended to support multiple datasets and also has a new <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-performance-benchmarking-v4.3+#performance-benchmarking-entire-jobs-with-the-extensive-validation-job\">“Benchmark” mode</a> where timing results are reported and browsable using the new Performance Benchmarking system."
+        },
+        {
+          "tag": "new",
+          "description": "The <code>cryosparcm compact</code> command can reduce the amount of disk space used by the MongoDB database. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-reduce-database-size-v4.3+\">This, along with other steps</a>, may be useful for reducing used storage space in instances with large database sizes. See the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-reduce-database-size-v4.3+\">Guide: Reduce Database Size</a> for more details."
+        },
+        {
+          "tag": "update",
+          "description": "<p>Interactive job improvements:</p> <ul><li>→ Flipped Select 2D resolution threshold selection option for clarity</li>   <li>→ Added total picks across all exposures as info badge in Manual Picker top bar</li><li>→ Added filter to Select 2D job to allow showing of only selected or unselected classes (sorting options can be applied to filtered classes)</li><li>→ Added info badge to Inspect Picks job to display the total number of particles within the applied thresholds</li><li>→ Manual Picker and Inspect Picks jobs now display all available data fields in the micrograph table</li><li>→ Added an exposure image preview when hovering exposure table rows in interactive jobs</li><li>→ Individual tab has been renamed to diagnostics in Exposure Curation job for clarity of function</li><li>→ Thresholds of 0 now filter micrographs correctly in Exposure Curation job</li><li>→ Support added for right clicking to remove picks in Manual Picker job</li> </ul>"
+        },
+        {
+          "tag": "update",
+          "description": "Non-uniform Refinement implementation speedups up to 15% on certain GPUs and box sizes."
+        },
+        {
+          "tag": "update",
+          "description": "Import Particles job is now 50-70% faster."
+        },
+        {
+          "tag": "update",
+          "description": "Improved speed of the caching system by reducing the number of file lookups, and improved  logging of the cache system while a job is running."
+        },
+        {
+          "tag": "update",
+          "description": "CTFFIND4 is updated to v4.1.14."
+        },
+        {
+          "tag": "update",
+          "description": "Import and utility jobs that previously ran only on the master node can now optionally be launched on any worker node or cluster lane. The <code>CRYOSPARC_DISABLE_IMPORT_ON_MASTER</code> environment variable is no longer used."
+        },
+        {
+          "tag": "update",
+          "description": "Added star button to top navigation bar in browse system to allow starring a workspace from the jobs page."
+        },
+        {
+          "tag": "update",
+          "description": "Quick access panel will now remember selections on a user basis rather than a browser tab basis."
+        },
+        {
+          "tag": "update",
+          "description": "The load all jobs view option is now saved per-user rather than based on the browser."
+        },
+        {
+          "tag": "update",
+          "description": "Event log view options have been moved into a new view options menu to minimize interface clutter."
+        },
+        {
+          "tag": "update",
+          "description": "Sessions can now be marked as completed from the session browser view."
+        },
+        {
+          "tag": "update",
+          "description": "Archived and detached projects no longer show within the session browser."
+        },
+        {
+          "tag": "update",
+          "description": "An Additional spotlight action added to navigate to the job history page."
+        },
+        {
+          "tag": "update",
+          "description": "The ‘view job’ button in the sidebar can be <code>ctrl</code>/<code>cmd</code> clicked to open in a new tab"
+        },
+        {
+          "tag": "update",
+          "description": "For job types that take random seed parameters, the random seed that was used is now saved in the input parameters of the job for easy reuse. The random seed will stay consistent if the job is cleared and re-run."
+        },
+        {
+          "tag": "update",
+          "description": "2D Classification, 3D Classification, and 3D Variability Analysis jobs will now produce intermediate results at each iteration, but will delete intermediate results from previous iterations as each new iteration completes. This behaviour can be turned off with a project-level or job-level parameter that will keep all intermediate results."
+        },
+        {
+          "tag": "update",
+          "description": "Jobs that fail to report heartbeat to the master node within the required timeout but continue running in the background will now be killed on their worker node, rather than being allowed to continue running after having been marked as failed due to missing heartbeat."
+        },
+        {
+          "tag": "update",
+          "description": "Worker installation job launch test (<code>cryosparcm test workers</code>) timeout increased to 2 minutes from 10 seconds."
+        },
+        {
+          "tag": "update",
+          "description": "The <code>config.sh</code> file with environment variables will now be included in the <code>cryosparcm snaplogs</code> bundle of logs."
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC running version is now available in the Job PDF download."
+        },
+        {
+          "tag": "update",
+          "description": "MongoDB database journaling can be enabled by adding <code>export CRYOSPARC_MONGO_EXTRA_FLAGS=&quot;&quot;</code> to <code>cryosparc_master/config.sh</code>."
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz Extract job no longer extracts particles from denoised micrographs by default."
+        },
+        {
+          "tag": "fixed",
+          "description": "3DFlex Generate job no longer ignores the Number of Frames parameter."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed unnecessary <code>AssertionError</code> in Flex Mesh Prep job when pixel size between input mask and volume match but have rounding error difference"
+        },
+        {
+          "tag": "fixed",
+          "description": "Heterogenous Refinement job no longer fails with <code>AttributeError</code> when “Refinement box size (Voxels)” parameter passed <code>None</code> as a value."
+        },
+        {
+          "tag": "fixed",
+          "description": "Worker installation test (<code>cryosparcm test workers</code>) no longer fails when worker target does not have SSD configured."
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC Live Session compute configuration parameters no longer fails to be changed if a worker lane that was previously selected is removed from the CryoSPARC instance."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed select confirmation appearance in Edge browser on Windows."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug where Job PDF would show incorrect parameter values in some cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where PDF event log download was crashing due to control characters being interpreted incorrectly during text cleaning."
+        },
+        {
+          "tag": "fixed",
+          "description": "Corrected sorting order of the job event log PDF."
+        },
+        {
+          "tag": "fixed",
+          "description": "Added optimistic job count update to stop the user interface loading state from glitching when deleting a workspace job when few exist."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved error where Import Result Group fails to import Topaz jobs correctly, causing downstream jobs to fail."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved error where Import 3D Volumes job fails with “Unable to connect to EMDB server” when trying to load volumes from EMBD."
+        },
+        {
+          "tag": "fixed",
+          "description": "Allow retrieving job and workspace documents from the CLI without errors."
+        },
+        {
+          "tag": "fixed",
+          "description": "Improved handling of missing job parent in tree view."
+        },
+        {
+          "tag": "fixed",
+          "description": "Live no longer stops finding new exposures until the next restart."
+        }
+      ]
+    },
+    {
+      "tag": "v4.2.0+230427 (Patch)",
+      "date": "04/27/2023",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Correct free SSD cache storage calculation to prevent infinite cache hang when there is enough available SSD storage"
+        }
+      ]
+    },
+    {
+      "tag": "v4.2.0+230403 (Patch)",
+      "date": "04/03/2023",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Correct retrieval of legacy cluster configurations"
+        },
+        {
+          "tag": "fixed",
+          "description": "Live no longer stops finding new exposures"
+        },
+        {
+          "tag": "fixed",
+          "description": "SSD Cache system correctly retries up to 3 times on network timeout"
+        }
+      ]
+    },
+    {
       "tag": "v4.2.1",
       "date": "03/15/2023",
       "items": [

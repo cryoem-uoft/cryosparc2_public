@@ -1,6 +1,21 @@
 {
   "tutorials": [
     {
+      "title": "Guide: Data Cleanup (v4.3+)",
+      "description": "A guide to using the new Data Cleanup tool and associated strategies for marking jobs as final, pruning workspaces and projects, and compacting Live Sessions.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+"
+    },
+    {
+      "title": "Guide: Reduce Database Size (v4.3+)",
+      "description": "How to reduce the size of large CryoSPARC databases using methods provided by MongoDB.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-reduce-database-size-v4.3+"
+    },
+    {
+      "title": "Guide: Performance Benchmarking (v4.3+)",
+      "description": "How to measure and compare key aspects of CryoSPARC performance across CPU, filesystem and GPU operations.",
+      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-performance-benchmarking-v4.3+"
+    },
+    {
       "title": "Application Guide (v4.0+)",
       "description": "Comprehensive guide to the new CryoSPARC interface, working with projects, workspaces, sessions and jobs, as well as filtering and tagging.",
       "link": "https://guide.cryosparc.com/application-guide-v4.0+/a-tour-of-the-cryosparc-interface"
