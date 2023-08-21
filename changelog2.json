@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "tag": "v4.3.0+230816 (Patch)",
+      "date": "08/16/2023",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Prevent “syntax error” following successful CryoSPARC update"
+        }
+      ]
+    },
+    {
       "tag": "v4.3.0",
       "date": "08/09/2023",
       "items": [
