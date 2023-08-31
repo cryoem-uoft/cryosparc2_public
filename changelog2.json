@@ -1,6 +1,32 @@
 {
   "versions": [
     {
+      "tag": "v4.3.1",
+      "date": "08/31/2023",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where in some cases, memory usage of the CryoSPARC master processes could grow without bound after restarting the instance."
+        },
+        {
+          "tag": "fixed",
+          "description": "Sizes of job directories on disk are no longer updated more often than necessary."
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC Live sessions are now automatically paused when the instance is restarted."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where a project could be detached while a CryoSPARC Live session was still running."
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC Live no longer monitors worker jobs when not necessary."
+        }
+      ]
+    },
+    {
       "tag": "v4.3.0+230816 (Patch)",
       "date": "08/16/2023",
       "items": [
