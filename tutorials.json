@@ -1,6 +1,51 @@
 {
   "tutorials": [
     {
+      "title": "Workflows (v4.4+)",
+      "description": "Workflows make it easy to replicate processing that you’ve done before. Select a chain of jobs to create a Workflow, and re-create it in any project or workspace with a single click.",
+      "link": "https://guide.cryosparc.com/application-guide-v4.0+/workflows"
+    },
+    {
+      "title": "Blueprints (v4.4+)",
+      "description": "Define custom parameters and annotations as a template for any job type.",
+      "link": "https://guide.cryosparc.com/application-guide-v4.0+/blueprints"
+    },
+    {
+      "title": "Job: Reference Based Motion Correction (BETA) (v4.4+)",
+      "description": "Reference Based Motion Correction improves final resolution and map quality by re-estimating per-particle motion trajectories using a reference volume.",
+      "link": "https://guide.cryosparc.com/job-reference-based-motion-correction-beta"
+    },
+    {
+      "title": "Tutorial: Common CryoSPARC Plots",
+      "description": "Detailed explanations of plots produced in 2D Classification and 3D reconstruction and refinement jobs.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-common-cryosparc-plots"
+    },
+    {
+      "title": "Tutorial: Orientation Diagnostics (v4.4+)",
+      "description": "Easily diagnose the presence of preferred orientation with new statistics and plots.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-orientation-diagnostics"
+    },
+    {
+      "title": "Tutorial: EPU AFIS Beam Shift Import (v4.4+)",
+      "description": "Import movies/micrographs with beam shift values and automatically cluster into exposure groups.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-epu-afis-beam-shift-import"
+    },
+    {
+      "title": "Tutorial: Symmetry Relaxation (v4.4+)",
+      "description": "Resolve pseudosymmetry and symmetry-mismatched complexes in 3D refinements.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-symmetry-relaxation"
+    },
+    {
+      "title": "Tutorial: Float 16 Support (v4.4+)",
+      "description": "Save particles and motion-corrected micrographs in float16 format, using less precision and half the disk space compared to default (float32).",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-float16-support/~/overview"
+    },
+    {
+      "title": "Tutorial: BILD files (v4.4+)",
+      "description": "Visualize 3D viewing direction distributions in UCSF Chimera(X) using coloured cylinders of varying height defined in BILD files.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-bild-files-in-cryosparc-v4.4+/~/overview"
+    },
+    {
       "title": "Guide: Data Cleanup (v4.3+)",
       "description": "A guide to using the new Data Cleanup tool and associated strategies for marking jobs as final, pruning workspaces and projects, and compacting Live Sessions.",
       "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+"
