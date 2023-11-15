@@ -1,6 +1,40 @@
 {
   "versions": [
     {
+      "tag": "v4.4.0+231114 (Patch)",
+      "date": "11/14/2023",
+      "items": [
+        {
+          "tag": "updates",
+          "description": "Improved error message when driver version is incorrect"
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC Live session worker jobs no longer fail during particle picking on sessions created prior to v4.4"
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC Live sessions created prior to v4.4 no longer fail during pausing and exporting particles"
+        },
+        {
+          "tag": "fixed",
+          "description": "Class Probability Filter job no longer fails when particle blobs are not available"
+        },
+        {
+          "tag": "fixed",
+          "description": "Benchmark job correctly runs with more than one GPU"
+        },
+        {
+          "tag": "fixed",
+          "description": "Benchmark job no longer fails if benchmark data is outside the project directory"
+        },
+        {
+          "tag": "fixed",
+          "description": "Small Particle parameter definition in default blueprint is now correct"
+        }
+      ]
+    },
+    {
       "tag": "v4.4.0",
       "date": "11/08/2023",
       "items": [
