@@ -1,6 +1,88 @@
 {
   "versions": [
     {
+      "tag": "v4.4.1",
+      "date": "12/05/2023",
+      "items": [
+        {
+          "tag": "update",
+          "description" : "The volume viewer now supports many more types of volume outputs: <code>map</code>, <code>map_sharp</code>, <code>map_aligned</code>, <code>map_half_A</code>, <code>map_half_B</code>, <code>map_sym</code>, <code>map_sym_sharp</code>, <code>map_filtered</code>, <code>map_3DFSC</code>"
+        },
+        {
+          "tag": "update",
+          "description" : "Attempting to unarchive a project will now fail if the directory specified does not contain a the same project UID that is being unarchived. The target project directory’s <code>project.json</code> file is checked to see if it matches the UID of the project selected in the UI."
+        },
+        {
+          "tag": "update",
+          "description" : "Exposure Group Utilities now creates the <code>exposure</code> and <code>particle</code> output groups at build time rather than run time, enabling the job to be used in Workflows."
+        },
+        {
+          "tag": "update",
+          "description" : "Align 3D’s <code>volume</code> output group now outputs a <code>map</code> output, identical to the <code>map_aligned</code> output, for enabling drag-and-drop connection to refinement job input groups."
+        },
+        {
+          "tag": "update",
+          "description" : "The Benchmark job now includes a new <code>class3D-small</code> benchmark to test minimum supported hardware specs (32GB DRAM, 11GB VRAM).  GPU benchmarks also now allow any specific benchmark to fail without halting the overall benchmark job."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue where the default blueprint ‘2D Classification (Small Particle)’ would fail due to a missing custom parameter."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue which caused the 3DVA Display job to sometimes duplicate upstream 3DVA component slots at build time."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue causing Remove Duplicate Particles and 2D Classification to occasionally fail with an AssertionError."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue where the ability to toggle display of denoised micrograph within Exposure Curation was not showing."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue which caused I/O error messages to be displayed without the specific reason for the failure."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue which could cause reference based motion correction to crash when a defect file was in use."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue where reference based motion correction could crash with a message about the variable ‘uid’ being referenced before assignment."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Increased memory limit per movie for reference based motion correction from 100 GB to the machine’s physical RAM."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue where thumbnails were not being updated when manually rejecting exposures in the exposure curation cards view with a filter set."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Project level parameter defaults are longer reset when creating a job from a blueprint (all parameters are still reset when applying a blueprint to an existing job)."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Template picking in Live no longer fails when only one template is selected."
+        },
+        {
+          "tag": "fixed",
+          "description" : "External dependencies that were removed in older versions of CryoSPARC are no longer installed."
+        },
+        {
+          "tag": "fixed",
+          "description" : "Fixed an issue where all required directories were not being checked for existence when restoring from backup."
+        },
+        {
+          "tag": "fixed",
+          "description" : "<code>MONGO_EXTRA_FLAGS</code> is no longer included in the default configuration file after installation."
+        }
+      ]
+    },
+    {
       "tag": "v4.4.0+231114 (Patch)",
       "date": "11/14/2023",
       "items": [
