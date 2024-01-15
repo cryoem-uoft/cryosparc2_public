@@ -1,6 +1,28 @@
 {
   "versions": [
     {
+      "tag": "v4.4.1+240110 (Patch)",
+      "date": "01/10/2024",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "<code>cryosparcm</code> commands <code>configuredb</code> and <code>patch</code> no longer show a segmentation fault after successful completion."
+        },
+        {
+          "tag": "fixed",
+          "description": "Log messages for project and job size updates no longer contain inconsistent counts."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue introduced in v4.4.1 where benchmark job would not complete GPU Engine benchmarks."
+        },
+        {
+          "tag": "fixed",
+          "description": "Reference-based motion correction no longer fails if GPUs are configured in <code>EXCLUSIVE_PROCESS</code> mode."
+        }
+      ]
+    },
+    {
       "tag": "v4.4.1",
       "date": "12/05/2023",
       "items": [
