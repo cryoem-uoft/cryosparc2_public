@@ -1,6 +1,41 @@
 {
   "tutorials": [
     {
+      "title": "Job: Micrograph Denoiser (BETA) (v4.5+)",
+      "description": "Produce enhanced micrograph images to aid particle picking and visual inspection.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-denoiser"
+    },
+    {
+      "title": "Job: Reference Based Auto Select 2D (BETA) (v4.5+)",
+      "description": "Select 2D classes automatically based on their similarity to a 3D reference.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/reference-based-auto-select-2d"
+    },
+    {
+      "title": "Job: Reference Based Auto Select 3D (BETA) (v4.5+)",
+      "description": "Select 3D volumes automatically based on their similarity to a 3D reference.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-automatic-select-3d-beta"
+    },
+    {
+      "title": "Job: Reference Based Auto Select 3D (BETA) (v4.5+)",
+      "description": "Select 3D volumes automatically based on their similarity to a 3D reference.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-automatic-select-3d-beta"
+    },
+    {
+      "title": "Job: Rebalance Orientations (v4.5+)",
+      "description": "Rebalance the orientation distribution of particles that have been aligned to a 3D reference to make it more uniform by removing particles from oversampled views.",
+      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-rebalance-orientations"
+    },
+    {
+      "title": "Upload Local Files (v4.5+)",
+      "description": "Upload files from your local computer to CryoSPARC directly in the browser.",
+      "link": "https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files"
+    },
+    {
+      "title": "File Browser - Bookmarks (v4.5+)",
+      "description": "The file browser now allows for bookmarking directories for common access.",
+      "link": "https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/file-browser"
+    },
+    {
       "title": "Workflows (v4.4+)",
       "description": "Workflows make it easy to replicate processing that you’ve done before. Select a chain of jobs to create a Workflow, and re-create it in any project or workspace with a single click.",
       "link": "https://guide.cryosparc.com/application-guide-v4.0+/workflows"

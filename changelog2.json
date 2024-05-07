@@ -1,6 +1,364 @@
 {
   "versions": [
     {
+      "tag": "v4.5.0",
+      "date": "05/07/2024",
+      "items": [
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-denoiser\">Micrograph Denoiser (BETA)</a>  job produces enhanced contrast in micrograph images to aid particle picking and visual inspection.</p><ul><li>→ Micrograph Denoiser uses a neural network model that can be trained on as few as 100 exposures from a new dataset in just a few minutes on a single GPU. The trained denoiser can then be used on new micrographs from the same or a different dataset. A pre-trained general denoiser model is also available to use without any training required.</li><li>→ The denoiser model is designed to work across a wide range of defocus and contrast levels.</li><li>→ Denoised micrographs can be used seamlessly in blob and template picking jobs, and can substantially improve picking results. Denoised micrographs also show by default in all interactive jobs, making visual inspection of micrographs easy.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Automatic selection of 2D classes or 3D classes given a 3D reference is now possible using new <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/reference-based-auto-select-2d\">Reference Based Auto Select 2D (BETA)</a> and <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-automatic-select-3d-beta\">Reference Based Auto Select 3D (BETA)</a> jobs.</p><ul><li>→ These jobs align and compare classes to the reference volume and select classes either based on score thresholds or clustering.</li><li>→ The jobs can be set up once on a dataset, and can subsequently allow one-click automated processing on new similar datasets using <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/workflows\">Workflows</a>.</li><li>→ The jobs also make it easy to sort and select from hundreds of 2D classes or dozens 3D classes in datasets with substantial heterogeneity.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "Upload files from your local computer to the CryoSPARC system directly in the browser. This new ability streamlines workflows involving local visualization and editing of files such as 3D maps or masks. Uploaded files are saved to the selected project directory and can be imported and used in jobs. <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files\">Read more in the guide.</a>"
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-orientation-diagnostics\">Orientation Diagnostics</a> job now reports <em>Relative Signal</em> — a new diagnostic that can help directly identify underrepresented views that affect map quality and the cFAR score. Relative signal is computed by considering FSCs within toroidal sections of Fourier half-maps to relate 3D signal quality to viewing direction. Two new plots are produced that show where on the viewing sphere relative signal is attenuated, with sample projections and an embedded structure to simplify interpretation."
+        },
+        {
+          "tag": "new",
+          "description": "New <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-rebalance-orientations\">Rebalance Orientations</a> job removes particles from overpopulated viewing direction regions. Rebalancing viewing directions can improve downstream refinements when particles have a highly non-uniform orientation distribution."
+        },
+        {
+          "tag": "new",
+          "description": "Jobs that produce multiple 3D volumes (such as 3D classification, Heterogeneous Refinement, 3D Variability Display, etc.) now output a <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/split-volumes-group\">“Volumes group” output</a> that contains multiple volumes, and can be connected to a downstream job with a single input connection. This enables seamless handling of arbitrary numbers of 3D volumes and automation using Workflows."
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-align-3d-maps\">Align 3D Maps</a> has been reimplemented with a new 3D alignment method to increase the robustness and precision of volume-to-volume alignment. In addition, it can now:</p><ul><li>→ update particle alignments while searching over handedness,</li><li>→ transform all maps and masks associated with an input volume slot,</li><li>→ and accept inputs of different box and pixel sizes.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "The file browser now features an expandable sidebar to search and navigate into project directories. Bookmark commonly-accessed directories, making them available for access at a later time through the sidebar. <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/file-browser\">Read more in the guide."
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-data#inputs-and-parameters\">Improved ‘Inputs and Parameters’ tab</a> for jobs now displays additional input group information in a summarized view while retaining an option to view low-level connection details. By default only custom parameters are shown, making it easier to identify which parameters were set for a particular job."
+        },
+        {
+          "tag": "new",
+          "description": "Additional info tags now display on the job card with useful stats and summary data, for more jobs including Import Volumes, Exposure Curation, Exposure Sets Tool, and Helical Refinement. New <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/creating-and-running-jobs#job-quick-actions\">quick actions</a> allow quick creation and connection of many more job types in typical workflows."
+        },
+        {
+          "tag": "new",
+          "description": "The details section of the <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-data#related-jobs\">job sidebar</a> now displays a more comprehensive summary of parents, children, and cloned jobs when hovered, including job type, status, summary stats, and custom parameters."
+        },
+        {
+          "tag": "update",
+          "description": "Support has been added for Falcon C camera <code>.eer</code> movies (2k x 2k physical pixels)."
+        },
+        {
+          "tag": "update",
+          "description": "<p>Various updates to <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/workflows\">Workflows</a>:</p><ul><li>→ New rebuilding system allows retaining annotations and settings when updating an existing Workflow.</li><li>→ Workflows can now be applied from anywhere in the application by selecting or creating a project and workspace from within the Workflow apply dialog.</li><li>→ Filter controls have been added to allow collapsing/expanding all jobs in sidebar, filtering by flagged jobs, and navigating to a selected job.</li><li>→ Fork option has been replaced with a “Create New” option in the edit dialog for simplicity and clarity.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Various improvements to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-reference-based-motion-correction-beta\">Reference Based Motion Correction (BETA)</a>:</p><ul><li>→ Input particles are now re-centred based on their aligned shifts, at the start of the job. This feature can be switched off. The upsampling factor for <code>.eer</code> movies can now be overridden.</li><li>→ The job has been improved to be significantly more stable. An option has been added to prevent crashing if the input movies contain different frame counts (the option is off by default). This option relies on the assumption that the most common frame count is “correct”, and will discard movies that don’t match that frame count. The job also no longer terminates if the distances between particles results in a singular covariance matrix, as a pseudo-inversion is now used. The chance of getting NaN values in the highest-frequency column of the FCC plot (due to low signal near the FSC cut-off frequency) has been greatly reduced. The job also no longer crashes if the upstream motion correction skipped the movie’s first frame.</li><li>→ The job now outputs movies or particles that were rejected, as separate output groups. Trajectory plots now correctly reflect the micrograph’s aspect ratio. The <code>mask_refine</code> low-level input is now optional (a mask must be supplied, but if the separate static mask connection is used, <code>mask_refine</code> need not be present).</li><li>→ It is now possible to prevent the GPU responsible for generating 2D reference projections from also computing trajectory estimates. Using this option reduces VRAM consumption but requires the use of at least 2 GPUs.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "Refinement jobs now produce a <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-orientation-diagnostics#plot-explanations\">cFSC summary plot</a> at every iteration, enabling anisotropy tracking throughout optimization (this includes homogeneous, non-uniform, helical, and local refinement). A new fast GPU-based implementation of the core cFSC computation adds minimal overhead, requiring less than a second of additional compute time for typical box sizes."
+        },
+        {
+          "tag": "update",
+          "description": "<p>Several improvements to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta\">3D Classification</a>:</p><ul><li>→ In line with 3D Variability Analysis, the ‘Target Resolution’ parameter has been renamed to ‘Filter Resolution’ and must be explicitly set for the job to run. Also, the secondary RMS-based convergence criterion is now turned on by default. This secondary criterion can significantly reduce run times without substantially affecting the final class volumes.</li><li>→The job now includes particle pre-processing and symmetry enforcement, and class re-ordering is now turned off by default to avoid potential confusion.</li><li>→ The job tile figure is now revamped to show class ids, relative populations, and a more distinctive difference-from-consensus projection for each class.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/extraction/job-downsample-particles\">Downsample Particles</a>, users can now specify the desired approximate pixel size after Fourier-cropping, instead of specifying the Fourier-crop box size directly, if desired."
+        },
+        {
+          "tag": "update",
+          "description": "The <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-flexible-refinement-3dflex-beta\">3D Flex Generator (BETA)</a> latent space plot is now coloured according to the normalized difference in 3D deformation relative to the origin. Larger values indicate regions of the latent space that encode more substantial flexing of the particle."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-regroup-3d\">Regroup 3D</a> now allows for pairwise alignment of volumes prior to regrouping, as well as alignment of volumes within a superclass after regrouping. It also now allows regrouping of all volumes into one single superclass."
+        },
+        {
+          "tag": "update",
+          "description": "The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-manual-picker\">Manual Picker</a> interactive job now writes manually picked particle locations to disk every 10 seconds, to minimize data loss in case the job crashes."
+        },
+        {
+          "tag": "update",
+          "description": "The new and more reliable SSD cache system introduced in v4.4 is now enabled by default. It also now features a configurable distributed locking strategy to use when multiple running jobs access the SSD cache simultaneously; the default strategy is best in most cases, but use the <code>master</code> strategy for caches on distributed file systems such as GPFS and BeeGFS where POSIX locks are disabled or unavailable. <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/environment-variables#cryosparc_worker-config.sh\">See guide for details</a>."
+        },
+        {
+          "tag": "update",
+          "description": "Deleting a project now completely removes the project folder on disk instead of leaving an empty folder."
+        },
+        {
+          "tag": "update",
+          "description": "Archived projects can now be deleted. Deleting an archived project will clear any remaining database references to the project and should clear up more space on disk. A deleted archived project cannot be un-archived. For more details about archiving, see the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+\">Data Management Guide</a>."
+        },
+        {
+          "tag": "update",
+          "description": "Projects that are archived, detached, or deleted can no longer be shared with other users."
+        },
+        {
+          "tag": "update",
+          "description": "Reduced default RAM requirements for some utility jobs."
+        },
+        {
+          "tag": "update",
+          "description": "Jobs will provide a warning before starting if the amount of RAM available is less than the amount of RAM requested by the job."
+        },
+        {
+          "tag": "update",
+          "description": "Jobs will no longer fail on completion if they cannot generate their passthrough outputs properly. They will instead raise a warning and continue to completion with potentially missing passthroughs."
+        },
+        {
+          "tag": "update",
+          "description": "Running <a href=\"https://guide.cryosparc.com/live/new-live-session-start-to-finish-guide#export-exposures-and-or-particles\">Export Exposures</a> from CryoSPARC Live sessions now provides additional information about curation thresholds that were set in the session."
+        },
+        {
+          "tag": "update",
+          "description": "When <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-maintenance-mode-and-configurable-user-facing-messages\">maintenance mode</a> is active, a banner will display in the header when viewing CryoSPARC Live sessions communicating to users that additional jobs or sessions will not be queued."
+        },
+        {
+          "tag": "update",
+          "description": "Ability to specify an arbitrary number of pre-processing GPU workers for a CryoSPARC Live session."
+        },
+        {
+          "tag": "update",
+          "description": "The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#exposure-card-view\">Curate Exposures</a> interactive job can now load micrograph thumbnails that were generated in CryoSPARC Live."
+        },
+        {
+          "tag": "update",
+          "description": "Imports in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-3d-volumes\">Import 3D Volumes</a> are now sorted alphabetically."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-tools\">Volume Tools</a> now reports the centre of mass of the input volume, if it is a mask."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools</a> now has the option to automatically re-centre the input volume and particles based on the centre of mass of the supplied mask, especially useful for local refinements."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/local-refinement/job-new-local-refinement-beta\">Local Refinement’s</a> fulcrum coordinates and <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools</a>’ 3D centre coordinates now can be specified with units of pixels (px) or Angstroms (A)."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools</a>’ 3D rotation angles can now be specified with units of radians (rad) or degrees (deg)."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-class-probability-filter\">Class Probability Filter</a> now supports the new <code>alignments3D_multi</code> particle field."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-rebalance-2d-classes-beta\">Rebalance 2D Classes</a> now always produces a “Particles Selected” output, containing selected particles from all of the superclasses."
+        },
+        {
+          "tag": "update",
+          "description": "Added parameters <code>Use spherical mask</code>, <code>Spherical mask diameter (A)</code>, and <code>Spherical mask diameter outer (A)</code> to allow users to customize the spherical mask used in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-heterogeneous-refinement\">Heterogenous Refinement</a>. The default behaviour is still the same."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-orientation-diagnostics\">Orientation Diagnostics</a> will now use the <code>mask_fsc_auto</code> mask present within the input volume connection, if no separate mask input has been connected."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-flexible-refinement-3dflex-beta\">3D Flex Generator</a> now outputs a <code>JXX_particle_flows.npy</code> file that saves the trained mesh deformation (flow) of each particle."
+        },
+        {
+          "tag": "update",
+          "description": "New <code>Freeze latents during training</code> parameter in the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-flexible-refinement-3dflex-beta\">3D Flex Training</a> job allows 3D Flex to better preserve the 3DVA motions when trained from 3DVA latents."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-inspect-particle-picks\">Inspect Particle Picks</a> now shows the picking statistics histogram in the job’s event log when the job completes, including a border showing the selected thresholds."
+        },
+        {
+          "tag": "update",
+          "description": "The exposure viewer in interactive jobs and CryoSPARC Live always pans when holding down the middle-mouse button, enabling navigation around the exposure while performing an action such as manual picking or measurement."
+        },
+        {
+          "tag": "update",
+          "description": "Refinements with global pose search now throw warnings if symmetry expanded particles are connected."
+        },
+        {
+          "tag": "update",
+          "description": "Reduced default workers and threads parameters for <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz\">Topaz Preprocessing job</a>."
+        },
+        {
+          "tag": "update",
+          "description": "Correctly set CPU resource requirements for <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz\">Topaz</a> jobs based on number of CPUs and number of workers specified in parameters."
+        },
+        {
+          "tag": "update",
+          "description": "Added a <code>Downsampling mode</code> parameter to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz\">Topaz</a> jobs with options of “manual” or “auto”. If set to manual, the user enters <code>Downsampling factor</code> as before. The default is now auto, where the user enters <code>Estimated particle diameter (A)</code> and the downsampling factor will be automatically calculated based on the type of model used."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-exposure-group-utilities\">Exposure Group Utilities</a> in “cluster&amp;split” mode now respects the “Starting Exposure Group ID” parameter."
+        },
+        {
+          "tag": "update",
+          "description": "New <code>cluster_vars</code> argument for <code>Job.queue</code> method for queueing to clusters."
+        },
+        {
+          "tag": "update",
+          "description": "Allow copy or symbolic link operations in project directories for files outside the project."
+        },
+        {
+          "tag": "fixed",
+          "description": "Previously, refinement jobs recorded internal runtime summary statistics in the database at every iteration. Stats from intermediate iterations are unnecessary and are no longer generated, and existing intermediate stats in the database will be removed in a migration upon updating to v4.5. We expect this change to noticeably improve performance in the web app when viewing or interacting with jobs due to the removed data’s size."
+        },
+        {
+          "tag": "fixed",
+          "description": "Repetitive warning messages from libtiff during normal reading of .eer movies have been suppressed, reducing the size of the job log."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug where ab-initio volumes could not be deselected after being selected in CryoSPARC Live sessions."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where it was possible to detach projects that still had jobs queued in the scheduler."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug that could cause motion correction and CTF estimation jobs to freeze forever if a child process terminates abnormally."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent applying previously-downloaded patches that don’t apply to the current version of CryoSPARC."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where thumbnails for Import Movies might not zoom in properly"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug introduced in v4.4 that would cause Patch Motion Correction jobs to fail if cleared and re-run, due to the missing input for empirical dose weights."
+        },
+        {
+          "tag": "fixed",
+          "description": "Patch Motion Correction now correctly updates the frame count in exposure metadata, in case it was recorded incorrectly by the import job (e.g. if “skip header check” was used). This will help Reference Based Motion Correction to pre-screen its input movies for those with mismatched frame counts, potentially averting a crash."
+        },
+        {
+          "tag": "fixed",
+          "description": "Allow using Job Cart with Reference Based Motion Correction."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue which could cause Local Motion Correction to crash at the end of the job while computing summary statistics, on an otherwise successful run."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where particle diameter was not being calculated correctly in Manually Curate Exposures jobs with connected particle inputs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved a bug in Inspect Particle Picks where particle picks from denoised micrographs would report NCC scores outside of [0,1], causing them to be inaccessible to filter."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug in 2D Classification where if hard classification is enabled, particles would be assigned posterior scores of 0, causing particle counts to be incorrect in Select 2D and subsequent jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Added override parameter for micrograph pixel size in 2D Classification to fix an issue where duplicate particle removal used the wrong micrograph pixel size on particle datasets from before version 4.5."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed 2D Classification plots to be consistent with Select 2D Classes job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue in Helical Refinement where input scales were previously reset to 0 if greyscale estimation is disabled."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed plotting bug in 3D Classification which resulted in the focus mask being shifted from its true location by one pixel along each axis."
+        },
+        {
+          "tag": "fixed",
+          "description": "Global CTF Refinement now throws an explicit error when the maximum and minimum fit resolutions are incompatible."
+        },
+        {
+          "tag": "fixed",
+          "description": "If inconsistent aberration values within a single exposure group are found, refinements with global CTF refinement enabled now fail at the start of the job, rather than midway through."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed bug that would prevent 3D Variability Display from skipping reconstruction in cluster mode."
+        },
+        {
+          "tag": "fixed",
+          "description": "Removed the download PDF option for cluster plots in 3D Variability; the PDFs take a long time to open due to the large number of points being plotted."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue in which <code>.seg</code>-format 3DFlex mesh segmentation files with certain topologies would fail."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue in which <code>.mrc</code>-format 3DFlex mesh segmentation files skipped the first segment."
+        },
+        {
+          "tag": "fixed",
+          "description": "Particle Sets Tool now correctly uses both a particle’s file path <em>and</em> its index within the file to identify matches when intersecting by path."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where Symmetry Expansion and Volume Alignment Tools would ignore any additional particle blob slots (including those produced by Flex Data Prep, such as <code>blob_train</code>)."
+        },
+        {
+          "tag": "fixed",
+          "description": "In Simulate Data, fix to computation of the additive noise variance. The added noise no longer erroneously depends on the chosen CTF parameters."
+        },
+        {
+          "tag": "fixed",
+          "description": "SSD cache system no longer fails when some input particle files are symbolic links that resolve to the same file."
+        },
+        {
+          "tag": "fixed",
+          "description": "Prevent invalid multi-instance access when the environment of one instance is active while running <code>cryosparcm</code> commands for another."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a bug which caused the Gctf wrapper job to fail if <code>LD_LIBRARY_PATH</code> was unset."
+        },
+        {
+          "tag": "fixed",
+          "description": "Normalize project directory names when creating or attaching to avoid duplicate entries in the database."
+        },
+        {
+          "tag": "fixed",
+          "description": "Correct Benchmark job directory access when there is a trailing slash in the specified benchmark data directory."
+        },
+        {
+          "tag": "fixed",
+          "description": "Restrict accidental cloning of certain Live-managed jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where event log PDF downloads for certain jobs (eg. Manually Curate Exposures) would fail due to control characters being interpreted incorrectly."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where the interactive scatter plot for 3D Variability Display would not update its layout when the window resized."
+        },
+        {
+          "tag": "fixed",
+          "description": "Job PDF report now states the version of CryoSPARC the job was run with, not the version of CryoSPARC running when downloading the report."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where job output image previews did not display on the ‘Outputs’ tab when previewing a job."
+        }
+      ]
+    },
+    {
       "tag": "v4.4.1+240110 (Patch)",
       "date": "01/10/2024",
       "items": [
