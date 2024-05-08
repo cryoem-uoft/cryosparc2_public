@@ -1,6 +1,24 @@
 {
   "versions": [
     {
+      "tag": "v4.5.1",
+      "date": "05/08/2024",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "Micrograph Denoiser no longer fails on launch due to <code>PicklingError</code>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Scale bars on the Import Movies job card are now the correct size"
+        },
+        {
+          "tag": "fixed",
+          "description": "Gracefully handle missing chunks when attempting to save a file to the uploads directory via the local upload tool"
+        }
+      ]
+    },
+    {
       "tag": "v4.5.0",
       "date": "05/07/2024",
       "items": [
