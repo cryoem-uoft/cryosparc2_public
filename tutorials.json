@@ -16,11 +16,6 @@
       "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-automatic-select-3d-beta"
     },
     {
-      "title": "Job: Reference Based Auto Select 3D (BETA) (v4.5+)",
-      "description": "Select 3D volumes automatically based on their similarity to a 3D reference.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-automatic-select-3d-beta"
-    },
-    {
       "title": "Job: Rebalance Orientations (v4.5+)",
       "description": "Rebalance the orientation distribution of particles that have been aligned to a 3D reference to make it more uniform by removing particles from oversampled views.",
       "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-rebalance-orientations"
