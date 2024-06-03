@@ -1,6 +1,52 @@
 {
   "versions": [
     {
+      "tag": "v4.5.2",
+      "date": "06/03/2024",
+      "items": [
+        {
+          "tag": "new",
+          "description": "Check for Corrupt Micrographs job tests for and separates micrograph files that cannot be successfully read from disk."
+        },
+        {
+          "tag": "fixed",
+          "description": "Refinement jobs default parameters have been changed so that the jobs use the half-set split from the input particles by default. This ensures that repeated application of Reference Based Motion Correction and refinement does not cause mixing of the half-sets. The Particle Sets Tool job also now has an option to balance unequal half-set splits."
+        },
+        {
+          "tag": "fixed",
+          "description": "Orientation Diagnostics no longer fails on CPU-only worker nodes, and requests the correct number of CPUs when launching on a cluster."
+        },
+        {
+          "tag": "fixed",
+          "description": "Relative signal plots in Orientation Diagnostics jobs are now less crowded."
+        },
+        {
+          "tag": "fixed",
+          "description": "The Topaz Extract job now allows input in units of estimated particle diameter for the radius of extracted region parameter."
+        },
+        {
+          "tag": "fixed",
+          "description": "Import Result Group no longer fails to import exposures when some paths are missing."
+        },
+        {
+          "tag": "fixed",
+          "description": "Regroup 3D no longer outputs incorrect particles when classes are manually excluded."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where for some large CryoSPARC Live sessions, scrolling through the exposure feed to earlier exposures could sometimes cause the application server to crash with a memory leak."
+        },
+        {
+          "tag": "fixed",
+          "description": "Excess UserWarnings are no longer printed in job log output."
+        },
+        {
+          "tag": "fixed",
+          "description": "The default value for <code>CRYOSPARC_JOB_LAUNCH_TIMEOUT</code> is now extended to 60 seconds."
+        }
+      ]
+    },
+    {
       "tag": "v4.5.1",
       "date": "05/08/2024",
       "items": [
