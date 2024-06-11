@@ -273,6 +273,10 @@
           "description": "Allow copy or symbolic link operations in project directories for files outside the project."
         },
         {
+          "tag": "update",
+          "description": "Replaced the \"Output F-crop factor\" parameter in Reference Based Motion Correction with the ability to directly specify the desired output box size."
+        },
+        {
           "tag": "fixed",
           "description": "Previously, refinement jobs recorded internal runtime summary statistics in the database at every iteration. Stats from intermediate iterations are unnecessary and are no longer generated, and existing intermediate stats in the database will be removed in a migration upon updating to v4.5. We expect this change to noticeably improve performance in the web app when viewing or interacting with jobs due to the removed data’s size."
         },
