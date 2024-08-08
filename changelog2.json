@@ -1,6 +1,52 @@
 {
   "versions": [
     {
+      "tag": "v4.5.3+240807 (Patch)",
+      "date": "08/08/2024",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-data#volumes\">volume viewer</a> now has improved reliability, with reduced likelihood of issues when multiple large volumes are loaded."
+        },
+        {
+          "tag": "fixed",
+          "description": "Streaming refinement in CryoSPARC Live now re-scales a provided input volume and mask to match the extent and pixel size of the extracted particles."
+        },
+        {
+          "tag": "update",
+          "description": "Reference Based Motion Correction no longer fails with an error indicating that there are micrographs with fewer than 2 particles, when particle re-centering is turned on."
+        },
+        {
+          "tag": "update",
+          "description": "Import Result Group job no longer fails when importing a result containing a Topaz model."
+        },
+        {
+          "tag": "update",
+          "description": "Fixed a bug that caused the 3D Flex Generator job to run out of GPU memory for large datasets."
+        },
+        {
+          "tag": "update",
+          "description": "Ab-initio Reconstruction no longer fails when upstream particles have <code>alignments3D</code> metadata attached, and the number of particles parameter is set."
+        },
+        {
+          "tag": "update",
+          "description": "Fixed a bug that would cause the 3D Classification job to fail when class re-ordering was on, and the number of classes exceeded 12."
+        },
+        {
+          "tag": "update",
+          "description": "Orientation Diagnostics no longer fails when using imported half-maps."
+        },
+        {
+          "tag": "update",
+          "description": "Removed unnecessary SSD requirement in the Regroup 3D job."
+        },
+        {
+          "tag": "update",
+          "description": "Removed unused parameter “Recenter templates” from the Blob Picker job."
+        }
+      ]
+    },
+    {
       "tag": "v4.5.3",
       "date": "06/04/2024",
       "items": [
