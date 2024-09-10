@@ -1,6 +1,140 @@
 {
   "versions": [
     {
+      "tag": "v4.6.0",
+      "date": "09/10/2024",
+      "items": [
+        {
+          "tag": "note",
+          "description": "Support for CentOS Linux 7 operating system is deprecated. CryoSPARC v4.6 will continue to function on CentOS 7, but future versions will no longer support this operating system. CentOS Linux 7 <a href=\"https://www.redhat.com/en/blog/centos-linux-has-reached-its-end-life-eol\">reached end of life on June 30, 2024</a>."
+        },
+        {
+          "tag": "new",
+          "description": "Up to <b>2.1x speedup</b> across refinement and classification jobs due to a redesign of CryoSPARC’s I/O system that provides significant optimizations to particle read times. In v4.6.0, a homogeneous refinement of 2.3M particles with box size 300 can now be completed in just 27 minutes."
+        },
+        {
+          "tag": "new",
+          "description": "Rebuilt <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/job-views-cards-tree-and-table\">tree, card, and table views</a> for jobs, with significant performance optimizations to support large workspaces and projects. Up to <strong>10x faster</strong> initial load time for the tree view, and subsequent updates when connecting and creating jobs are nearly instantaneous. In the card and table views, all jobs are now instantly accessible with detailed information loading progressively as you scroll."
+        },
+        {
+          "tag": "new",
+          "description": "Job Groups: collapse multiple jobs into a single card to maintain legibility and easy navigation within a workspace. Job Groups work across the tree, card and table views, and jobs can be easily added and removed from groups using multi-selection and the right-click menu. <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/job-views-cards-tree-and-table#job-groups\">Learn more</a>"
+        },
+        {
+          "tag": "new",
+          "description": "Improved navigation: the job search menu and targeting system allow you to quickly find and automatically navigate to any particular job, or quickly jump to the latest created, completed, or running job."
+        },
+        {
+          "tag": "new",
+          "description": "Inspect Particle Picks now has a parameter called “<a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#auto-clustering\">Auto cluster</a>”, which clusters particles based on their NCC and power scores, and can automatically select a cluster that will ideally contain true particle picks based on those scores. This allows Inspect Particle Picks to be run without user intervention. Auto cluster is designed to be used with denoised micrographs from the Micrograph Denoiser job."
+        },
+        {
+          "tag": "update",
+          "description": "The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files\">local file upload tool</a> now supports <code>.seg</code> segmentation files."
+        },
+        {
+          "tag": "update",
+          "description": "Labels designate type of output when downloading results from the job preview dialog output groups panel (e.g., map, mask, etc.)."
+        },
+        {
+          "tag": "update",
+          "description": "Added the ability to mark or unmark a job as final from the job sidebar actions panel. Read more about data cleanup in this <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+\">guide</a>."
+        },
+        {
+          "tag": "update",
+          "description": "Added ability to sort projects, workspaces, and sessions by their titles."
+        },
+        {
+          "tag": "update",
+          "description": "Added filter bar toggles to the projects view to quickly show and hide archived and/or detached projects."
+        },
+        {
+          "tag": "update",
+          "description": "Archived and detached project filters are now additive, and can be toggled together to show both archived and detached projects, instead of just archived or detached projects."
+        },
+        {
+          "tag": "update",
+          "description": "Introduced a quick action to create Homogeneous Reconstruction Only from an Import Particle Stack job."
+        },
+        {
+          "tag": "update",
+          "description": "Unused particles will be connected when building a Homogeneous Refinement, Non-uniform Refinement or Heterogeneous Refinement from a quick action on Ab-inito."
+        },
+        {
+          "tag": "update",
+          "description": "Introduced a quick action to build a Blob Picker Tuner job from Inspect Particle Picks."
+        },
+        {
+          "tag": "update",
+          "description": "Added completed, failed or killed timing to the tooltip that displays when viewing the elapsed time of a job on the card."
+        },
+        {
+          "tag": "update",
+          "description": "Downloading a CSV of projects, workspaces, sessions and jobs will include relevant project or workspace ID and a timestamp representing when the list was generated."
+        },
+        {
+          "tag": "update",
+          "description": "Cluster configuration variables are now listed in ascending alphabetical order."
+        },
+        {
+          "tag": "update",
+          "description": "Various improvements to job informational tags: Support for Homogeneous and Heterogeneous Reconstruct Only jobs, Streaming Homogeneous Refinement, and symmetry relaxation parameters."
+        },
+        {
+          "tag": "update",
+          "description": "The Live Session data management tab is now deprecated and as such, a notice displays within the tab. It is recommended to perform <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+#live-session-compaction-and-restoration\">Live Session compaction or restoration</a> as a more robust way to compress, archive and restore sessions."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where exposure pixel size shown in the Live session sidebar would not account for EER upsampling."
+        },
+        {
+          "tag": "fixed",
+          "description": "Reduced memory usage and lower likelihood of out-of-memory errors during data clean-up operations, job input loading and job output result saving."
+        },
+        {
+          "tag": "fixed",
+          "description": "Deep Picker Train and Deep Picker Inference jobs are now restricted in workflows, and are only allowed if they do not include any child jobs inside of the workflow."
+        },
+        {
+          "tag": "fixed",
+          "description": "Clicking the job’s workspace in the details panel will no longer reset the current view to cards view."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where the custom parameters tooltip in the job card’s footer would continue to be hidden even after queuing a job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where some workspaces were not being sorted into the correct order when sorting by job count."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where job CSV downloads were using the job’s created at timestamp to populate the “Status Updated” field."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved a case where filesystem errors could case the web application server to crash when downloading job results."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where refinements with downstream <em>Local Resolution Estimation</em> jobs did not have an option to load a colour map within the volume viewer tab."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue in the job report PDF where parameters set to false were reported as ‘Not Set’. Instead, boolean parameters are now listed as ‘True’ or ‘False’."
+        },
+        {
+          "tag": "fixed",
+          "description": "Denoised micrographs will now be correctly scaled to the canvas and line up with pick locations when downloaded from the exposure viewer."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where jobs queued from the sidebar would sometimes show a perpetual loading indicator until deselected."
+        }
+      ]
+    },
+    {
       "tag": "v4.5.3+240807 (Patch)",
       "date": "08/08/2024",
       "items": [

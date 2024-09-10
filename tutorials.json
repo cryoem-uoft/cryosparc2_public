@@ -1,6 +1,11 @@
 {
   "tutorials": [
     {
+      "title": "Job Views: Cards, Tree and Table",
+      "description": "Performance enhancements across all views, plus new Job Groups feature and easier navigation.",
+      "link": "https://guide.cryosparc.com/application-guide-v4.0+/job-views-cards-tree-and-table"
+    },
+    {
       "title": "Job: Micrograph Denoiser (BETA) (v4.5+)",
       "description": "Produce enhanced micrograph images to aid particle picking and visual inspection.",
       "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-denoiser"
