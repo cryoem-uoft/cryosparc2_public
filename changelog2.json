@@ -1,6 +1,72 @@
 {
   "versions": [
     {
+      "tag": "v4.6.1",
+      "date": "11/13/2024",
+      "items": [
+        {
+          "tag": "update",
+          "description": "CryoSPARC worker processes now request that the OS not allocate transparent hugepages during memory allocations. This change improves performance and stability significantly, especially on nodes with multiple GPUs and multiple simultaneous jobs. Jobs will also emit a warning if the OS is set to always use transparent hugepages."
+        },
+        {
+          "tag": "update",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-check-for-corrupt-particles\">Job: Check for Corrupt Particles</a> now checks for NaN values by default, and fails (rather than completing with warnings) if any corrupt files are detected. The job can then be <a href=\"https://guide.cryosparc.com/guides-for-v3.3/user-interface-and-usage-guide/queue-job-inspect-job-and-other-job-actions#mark-job-as-complete\">marked as completed</a> or re-run with the “Fail if corruption is detected” parameter turned off in order to use the output in which corrupt files have been filtered out. The job can also check MRC header checksums."
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC now performs an explicit NaN values check when writing MRC files, and also writes a checksum to the MRC header for subsequent corruption detection."
+        },
+        {
+          "tag": "update",
+          "description": "2D classification jobs now request an appropriate number of CPUs when running on more than one GPU."
+        },
+        {
+          "tag": "update",
+          "description": "The SSD cache system is now more robust on cluster filesystems, and “File not found” errors during caching should no longer occur. The system also produces additional logs and diagnostics."
+        },
+        {
+          "tag": "fixed",
+          "description": "When the random seed parameter is manually overridden, 2D/3D classification and refinement jobs now correctly use the provided value and produce similar results when repeated, up to GPU floating-point determinism and precision."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed a variety of rare edge cases that could cause issues in the high performance I/O system that was introduced in v4.6."
+        },
+        {
+          "tag": "fixed",
+          "description": "The default limit of open file descriptors is increased to avoid issues on some OSes."
+        },
+        {
+          "tag": "fixed",
+          "description": "Falcon C EER files no longer fail to import."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue were the application server could crash if a file was incorrectly deleted."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where the volume viewer display of local resolution colour maps was flipped along the Z axis."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where the volume viewer could display a stale volume result after clearing and re-running a job in some scenarios."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where jobs with blueprints would always display in the job builder regardless of which filter tag was applied."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue in the cards view where job cards could appear blank when expanding a group in a workspace with a significant number of large groups clustered closely together."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where loading 3DFlex mesh segmentation files in MRC format would fail due to an off-by-one error."
+        }
+      ]
+    },
+    {
       "tag": "v4.6.0",
       "date": "09/10/2024",
       "items": [
