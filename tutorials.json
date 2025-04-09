@@ -1,174 +1,44 @@
 {
   "tutorials": [
     {
-      "title": "Job Views: Cards, Tree and Table",
-      "description": "Performance enhancements across all views, plus new Job Groups feature and easier navigation.",
-      "link": "https://guide.cryosparc.com/application-guide-v4.0+/job-views-cards-tree-and-table"
+      "title": "Get Started with CryoSPARC: Introductory Tutorial",
+      "description": "An introduction to processing data in CryoSPARC.",
+      "link": "https://guide.cryosparc.com/processing-data/get-started-with-cryosparc-introductory-tutorial"
     },
     {
-      "title": "Job: Micrograph Denoiser (BETA) (v4.5+)",
-      "description": "Produce enhanced micrograph images to aid particle picking and visual inspection.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-denoiser"
+      "title": "Tutorial Videos: Single Particle Analysis with CryoSPARC",
+      "description": "Six videos covering cryo-EM fundamentals, a standard workflow, handling symmetry, discrete and continuous heterogeneity.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorial-videos#single-particle-analysis-with-cryosparc"
     },
     {
-      "title": "Job: Reference Based Auto Select 2D (BETA) (v4.5+)",
-      "description": "Select 2D classes automatically based on their similarity to a 3D reference.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/reference-based-auto-select-2d"
+      "title": "Case Study: End-to-end processing of a ligand-bound GPCR (EMPIAR-10853)",
+      "description": "Micrograph Denoising, Junk Detection, Subset Particles by Statistic, Local Refinement and focussed 3D Classification to improve ligand density.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-end-to-end-processing-of-a-ligand-bound-gpcr-empiar-10853"
     },
     {
-      "title": "Job: Reference Based Auto Select 3D (BETA) (v4.5+)",
-      "description": "Select 3D volumes automatically based on their similarity to a 3D reference.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-automatic-select-3d-beta"
+      "title": "Case Study: DkTx-bound TRPV1 (EMPIAR-10059)",
+      "description": "Focus on particle curation, developing an intuition for when a domain may be blurred due to flexibility, and how to handle this type of flexibility.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-dktx-bound-trpv1-empiar-10059"
     },
     {
-      "title": "Job: Rebalance Orientations (v4.5+)",
-      "description": "Rebalance the orientation distribution of particles that have been aligned to a 3D reference to make it more uniform by removing particles from oversampled views.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-rebalance-orientations"
+      "title": "Case Study: End-to-end processing of encapsulated ferritin (EMPIAR-10716)",
+      "description": "Focus on high-symmetry ab-initio reconstruction, local symmetry, non-point-group symmetry, symmetry expansion, and custom geometry operations.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-end-to-end-processing-of-encapsulated-ferritin-empiar-10716"
     },
     {
-      "title": "Upload Local Files (v4.5+)",
-      "description": "Upload files from your local computer to CryoSPARC directly in the browser.",
-      "link": "https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files"
-    },
-    {
-      "title": "File Browser - Bookmarks (v4.5+)",
-      "description": "The file browser now allows for bookmarking directories for common access.",
-      "link": "https://guide.cryosparc.com/application-guide-v4.0+/using-the-cryosparc-interface/file-browser"
-    },
-    {
-      "title": "Workflows (v4.4+)",
-      "description": "Workflows make it easy to replicate processing that you’ve done before. Select a chain of jobs to create a Workflow, and re-create it in any project or workspace with a single click.",
-      "link": "https://guide.cryosparc.com/application-guide-v4.0+/workflows"
-    },
-    {
-      "title": "Blueprints (v4.4+)",
-      "description": "Define custom parameters and annotations as a template for any job type.",
-      "link": "https://guide.cryosparc.com/application-guide-v4.0+/blueprints"
-    },
-    {
-      "title": "Job: Reference Based Motion Correction (BETA) (v4.4+)",
-      "description": "Reference Based Motion Correction improves final resolution and map quality by re-estimating per-particle motion trajectories using a reference volume.",
-      "link": "https://guide.cryosparc.com/job-reference-based-motion-correction-beta"
+      "title": "Case Study: End-to-end processing of an inactive GPCR (EMPIAR-10668)",
+      "description": "Local Refinement, 3D Variability Analysis, 3D Flex and classification of continuous heterogeneity.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-end-to-end-processing-of-an-inactive-gpcr-empiar-10668"
     },
     {
       "title": "Tutorial: Common CryoSPARC Plots",
-      "description": "Detailed explanations of plots produced in 2D Classification and 3D reconstruction and refinement jobs.",
+      "description": "Detailed explanation of plots produced in 2D Classification and 3D reconstruction and refinement jobs.",
       "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-common-cryosparc-plots"
     },
     {
-      "title": "Tutorial: Orientation Diagnostics (v4.4+)",
-      "description": "Easily diagnose the presence of preferred orientation with new statistics and plots.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-orientation-diagnostics"
-    },
-    {
-      "title": "Tutorial: EPU AFIS Beam Shift Import (v4.4+)",
-      "description": "Import movies/micrographs with beam shift values and automatically cluster into exposure groups.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-epu-afis-beam-shift-import"
-    },
-    {
-      "title": "Tutorial: Symmetry Relaxation (v4.4+)",
-      "description": "Resolve pseudosymmetry and symmetry-mismatched complexes in 3D refinements.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-symmetry-relaxation"
-    },
-    {
-      "title": "Tutorial: Float 16 Support (v4.4+)",
-      "description": "Save particles and motion-corrected micrographs in float16 format, using less precision and half the disk space compared to default (float32).",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-float16-support/~/overview"
-    },
-    {
-      "title": "Tutorial: BILD files (v4.4+)",
-      "description": "Visualize 3D viewing direction distributions in UCSF Chimera(X) using coloured cylinders of varying height defined in BILD files.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-bild-files-in-cryosparc-v4.4+/~/overview"
-    },
-    {
-      "title": "Guide: Data Cleanup (v4.3+)",
-      "description": "A guide to using the new Data Cleanup tool and associated strategies for marking jobs as final, pruning workspaces and projects, and compacting Live Sessions.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+"
-    },
-    {
-      "title": "Guide: Reduce Database Size (v4.3+)",
-      "description": "How to reduce the size of large CryoSPARC databases using methods provided by MongoDB.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-reduce-database-size-v4.3+"
-    },
-    {
-      "title": "Guide: Performance Benchmarking (v4.3+)",
-      "description": "How to measure and compare key aspects of CryoSPARC performance across CPU, filesystem and GPU operations.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-performance-benchmarking-v4.3+"
-    },
-    {
-      "title": "Application Guide (v4.0+)",
-      "description": "Comprehensive guide to the new CryoSPARC interface, working with projects, workspaces, sessions and jobs, as well as filtering and tagging.",
-      "link": "https://guide.cryosparc.com/application-guide-v4.0+/a-tour-of-the-cryosparc-interface"
-    },
-    {
-      "title": "Tutorial: 3D Flexible Refinement",
-      "description": "An in-depth guide to 3DFlex, a motion-based deep generative model for continuous heterogeneity.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-flexible-refinement"
-    },
-    {
-      "title": "Guide: Configuring Custom Variables for Cluster Job Submission Scripts",
-      "description": "User-set variables can be injected into cluster submission scripts before a job is queued.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-configuring-custom-variables-for-cluster-job-submission-scripts"
-    },
-    {
-      "title": "Job: Restack Particles",
-      "description": "Restack Particles is useful for filtering unused particles from .mrc files, can speed up caching, and helps with data management.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/extraction/job-restack-particles"
-    },
-    {
-      "title": "Job: DeepEMhancer (Wrapper)",
-      "description": "Wrapper job for DeepEMhancer, a deep learning model trained to perform masking-like and sharpening-like post-processing on cryo-EM maps.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-deepemhancer-wrapper"
-    },
-    {
-      "title": "Job: Average Power Spectra",
-      "description": "This job takes the outputs of a Select 2D Classes job and generates averaged power spectra for each desired class, to assist with determining the helical symmetry present in the sample.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/helical-reconstruction-beta/job-average-power-spectra"
-    },
-    {
-      "title": "Job: 3D Classification (BETA)",
-      "description": "Improved algorithm and diagnostics in CryoSPARC v4.0: FSC-based regularization, new convergence criteria, and more.",
-      "link": "https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification-beta"
-    },
-    {
-      "title": "Tutorial: 3D Classification (BETA)",
-      "description": "Newly updated for CryoSPARC v4.0 with multiple datasets and use cases.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-classification-beta"
-    },
-    {
-      "title": "Tutorial: Tips for Membrane Protein Structures",
-      "description": "Tips for working with membrane protein targets in CryoSPARC, sorted by the different stages of processing.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-tips-for-membrane-protein-structures"
-    },
-    {
-      "title": "Guide: Maintenance Mode and Configurable User Facing Messages",
-      "description": "Once an administrator has turned on maintenance mode, the queue will be paused. When existing running jobs are complete, the instance will be idle and the administrator can re-start, update, etc. Also includes information on configurable message of the day and login message.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-maintenance-mode-and-configurable-user-facing-messages"
-    },
-    {
-      "title": "Guide: Installation Testing with `cryosparcm test`",
-      "description": "Verify that CryoSPARC is your instance is correctly installed by using `cryosparcm test install` and `cryosparcm test workers` via the command line. Running these functions will perform several tests that ensure users can seamlessly launch jobs and process data in CryoSPARC.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-installation-testing-with-cryosparcm-test"
-    },
-    {
-      "title": "Guide: Data Management in CryoSPARC (v4.0+)",
-      "description": "CryoSPARC projects are now explicitly “locked” to a single CryoSPARC instance at any given time. Use the new Attach, Detach, Archive and Unarchive actions to manage the project life cycle and moving project directories.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+"
-    },
-    {
-      "title": "Troubleshooting",
-      "description": "Overview of common issues and advice on how to resolve them.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/troubleshooting"
-    },
-    {
-      "title": "Guide: Download Error Reports",
-      "description": "Learn how to download a complete job error report (including job details, job event logs, browser diagnostics and system logs), as well as system error report, to assist with troubleshooting.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-download-error-reports"
-    },
-    {
-      "title": "Guide: Cluster Integration Validation",
-      "description": "New functions in CryoSPARC v4.0 for testing cluster integrations and polling the cluster scheduler to ensure that job status is reflected in the CryoSPARC instance.",
-      "link": "https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-cluster-integration-validation"
+      "title": "CryoSPARC Live: New Session Start to Finish Guide",
+      "description": "End-to-end workflow for using CryoSPARC Live.",
+      "link": "https://guide.cryosparc.com/live/new-live-session-start-to-finish-guide"
     }
   ]
 }

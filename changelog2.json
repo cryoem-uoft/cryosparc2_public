@@ -1,6 +1,136 @@
 {
   "versions": [
     {
+      "tag": "v4.7.0",
+      "date": "04/09/2025",
+      "items": [
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-junk-detector-beta\" target=\"_blank\">Micrograph Junk Detector (BETA)</a> automatically labels contaminants and junk objects to aid in micrograph curation and particle picking.</p><ul><li>→ Micrograph Junk Detector uses a neural network model that has been pre-trained on manually labelled micrographs across a variety of datasets, to predict three categories of junk: carbon/gold edges, intrinsic ice issues (e.g., cracks, non-vitreous ice, graphene wrinkles) and extrinsic ice issues (e.g., ethane contaminants, ice crystals).</li><li>→ The job rapidly labels new micrographs (over 100 per minute on a single GPU) and produces junk annotations that are then used to filter particle picks in junk areas.</li><li>→ Outputs of the Micrograph Junk Detector can be used in <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-manually-curate-exposures\" target=\"_blank\">Manually Curate Exposures</a> to view junk annotations, and to filter micrographs based on junk statistics (e.g., presence and fraction of junk area of each type).</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-subset-particles-by-statistic\" target=\"_blank\">Subset Particles by Statistic</a> job: create subsets of an input particle set, based on individual particle statistics such as per-particle scale factors, classification probabilities, particle picking scores, pose changes, etc. The job can fit a Gaussian mixture model to separate clusters in the data, or allows thresholds to be manually set.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-reference-based-auto-select-2d-beta\" target=\"_blank\">Reference Based Auto Select 2D (BETA)</a> computes new metrics (Sobel and correlation scores) that can more accurately match 2D classes with projections of a 3D reference volume, allowing for more reliable automatic 2D class selection.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-reference-based-auto-select-3d-beta\" target=\"_blank\">Reference Based Auto Select 3D (BETA)</a> has a new mode for selecting 3D classes based on resolution metrics alone, without a reference volume.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Exposure attribute scatter plots in <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-manually-curate-exposures\" target=\"_blank\">Manually Curate Exposures</a> and Live <a href=\"https://guide.cryosparc.com/live/ui-overview#overview-tab\" target=\"_blank\">overview tab</a> are now powered by WebGL, supporting responsive zoom and select interactions even when viewing a large number (e.g., over 50,000) of exposures.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-particle-sets-tool\" target=\"_blank\">Particle Sets Tool</a> job now allows computing intersections of particle sets when only <code>ctf</code> or <code>location</code> data is present.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz/job-topaz-train-beta\" target=\"_blank\">Topaz Train</a> job no longer uses denoised micrographs by default.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-reslog-analysis\" target=\"_blank\">ResLog</a> job’s plot now has the y-axis in units of 1/Å² and y-axis titles are updated accordingly.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-global-ctf-refinement\" target=\"_blank\">Global CTF Refinement</a> job no longer produces incorrect results on certain combinations of hardware.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>MRC files written in <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-float16-support\" target=\"_blank\">float16 format</a> will now automatically revert to float32 if the range of float16 is exceeded. Additionally, if a <code>nan</code> or <code>inf</code> value would be written out, even in float32, an error is raised.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-reference-based-motion-correction-beta\" target=\"_blank\">Reference Based Motion Correction</a> whereby certain upstream F-crop ratios, including 3/4 in patch motion correction, could trigger an <code>AssertionError</code>. While some combinations of F-crop ratio and extraction box size may still be incompatible, the error message will now explain the cause more clearly.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed an issue in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-estimation/job-patch-ctf-estimation\" target=\"_blank\">Patch CTF Estimation</a> which could cause a whole job crash if axis limits for the diagnostic plots of any micrograph were <code>nan</code> or <code>inf</code>.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Added option to output class volumes during O-EM iterations in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification\" target=\"_blank\">3D Classification</a>.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>CryoSPARC installation script no longer incorrectly skips updating <code>.bashrc</code> file in some cases.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Added more clear error messages in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-reference-based-motion-correction-beta\" target=\"_blank\">Reference Based Motion Correction</a> that explain failures due to connecting incompatible empirical dose weights.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-rebalance-2d-classes-beta\" target=\"_blank\">Rebalance 2D Classes</a> where the job would fail if the “Do superclassification” parameter was set to false.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/extraction/job-downsample-particles\" target=\"_blank\">Downsample Particles</a> where both the desired pixel size and box size needed to be specified in the builder.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed an issue in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\" target=\"_blank\">2D Classification</a> where <code>nan</code> values would be produced when the minimum alignment resolution was set too high.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug where <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction\" target=\"_blank\">Ab-Initio Reconstruction</a> would fail depending on the maximum resolution and initial resolution set.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved character encoding errors in job report PDFs by switching from a WinAnsi-encoded base font to an embedded Unicode font (Roboto Mono), ensuring full support for extended characters.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue where applicable <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/workflows\" target=\"_blank\">Workflows</a> would not filter based on job selection.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/workflows#rerouted-parent-connections\" target=\"_blank\">Workflows</a> now correctly reroute input connections from parent jobs when replacing the original job with a compatible one.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Added support for updating movie symlinks in sessions with <code>cryosparcm rtpcli</code> <code>\"session_replace_symlinks(&lt;project_uid&gt;, &lt;session_uid&gt;, &lt;prefix_cut&gt;, &lt;prefix_new&gt;)\"</code> , similar to <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring/cli#job_import_replace_symlinks-project_uid-str-job_uid-str-prefix_cut-str-prefix_new-str\" target=\"_blank\">job_import_replace_symlinks</a></p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>It is no longer possible to install CryoSPARC in a path that is too long or deeply-nested, in order to prevent “No module named ‘conda’” error.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>New \"Min plot interval\" advanced parameter for <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-flexible-refinement\" target=\"_blank\">3D Flex Training</a> job to limit plotting frequency and prevent potential web application overload. Defaults to 1 second.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Reduce likelihood of web application crash when viewing a job that removes entries from its event log, such as <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-3d-flexible-refinement\" target=\"_blank\">3D Flex Training</a>.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Prevent rare input load error for some empty datasets.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue where filesystem related errors would cause the application service to crash when downloading images, files or outputs from the web application.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>More reliable project directory access and permission check to prevent errors on network file systems that do not correctly report their permissions flags.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Volume viewer and other visualization features no longer stop working until a restart occurs.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a problem in CryoSPARC command servers whereby an excessive number of file handles could be held open for a long time.</p>"
+        }
+      ]
+    },
+    {
       "tag": "v4.6.2",
       "date": "11/18/2024",
       "items": [
