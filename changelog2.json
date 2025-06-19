@@ -1,6 +1,92 @@
 {
   "versions": [
     {
+      "tag": "v4.7.1",
+      "date": "06/19/2025",
+      "items": [
+        {
+          "tag": "new",
+          "description": "<p>Support for NVIDIA Blackwell GPUs such as the RTX 5000 series is available in a special CUDA 12.8 build version of this release, <code>v4.7.1-cuda12</code>.</p><ul><li>The special build version has updated minimum system requirements:<ul><li>NVIDIA Driver 570.26+ is required. Note that NVIDIA Blackwell devices are only compatible with the open driver.</li><li>The operating system must support GLIBC 2.28 or greater. Therefore, the oldest compatible operating systems are Rocky/RHEL 8 and Ubuntu 20.04. However, Ubuntu 22.04 or newer is recommended.</li></ul></li><li>To update to the special build, use <code>cryosparcm update --version=v4.7.1-cuda12</code> . See more <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-updates#update-or-roll-back-downgrade-to-a-specific-version\">details here</a>.</li><li>The standard build, <code>v4.7.1</code>, does not have any dependency changes or system requirement changes compared to <code>v4.7.0</code> and can be installed with <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-updates#installing-automatic-updates\">standard update steps</a> using <code>cryosparcm update</code>.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-select-volume\">Select Volume</a> utility job: Automatically select the highest resolution volume out of a number of input volumes, and output the best volume with its corresponding particle stack. This job can be useful for automated selection between multiple refinements with different parameters, for example CTF refinement parameters, masking parameters, etc."
+        },
+        {
+          "tag": "update",
+          "description": "Added a toggle to hide per-micrograph junk stats in Exposure Curation when viewing annotated micrographs"
+        },
+        {
+          "tag": "update",
+          "description": "Added a timezone identifier to the job PDF output"
+        },
+        {
+          "tag": "update",
+          "description": "Added imposed symmetry informational tags to Helical Refine job card"
+        },
+        {
+          "tag": "update",
+          "description": "Certain job actions (clear, kill, restart) for Live Worker jobs that were disabled in v4.7.0 have been re-enabled through the jobs interface"
+        },
+        {
+          "tag": "fixed",
+          "description": "Files downloaded from the event log will no longer have the file type appended twice."
+        },
+        {
+          "tag": "fixed",
+          "description": "Workflows can no longer be applied when the “Queue on Apply” option is selected, but the lane is left blank."
+        },
+        {
+          "tag": "fixed",
+          "description": "Filtering projects by both detached and archived now correctly displays projects to which the user has access."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue in Exposure Curation where the ruler tool would not activate when also viewing junk detector annotations"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where Micrograph Junk Detector would fails with IndexError on some datasets."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where Micrograph Junk Detector would produce partially misaligned junk masks on some datasets."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where Patch Motion Correction would produce NaNs in the background estimate for some micrographs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where some <code>.tiff</code> files that were missing the <code>TIFFTAG_SAMPLEFORMAT</code> tag would fail to be read."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where some <code>.tiff</code> files that had <code>uint32</code> datatype would fail to be read."
+        },
+        {
+          "tag": "fixed",
+          "description": "Curate exposures no longer fails when the particles input is connected but contains zero particles."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed builder logic issue where not all necessary parameters would show up in the Subset Particles by Statistic builder when selecting subset by Class Probability."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue in subset particles difference mode where the input particle stacks would not be both intersected and reordered if they needed to be."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed issue where the Template Picker job would incorrectly re-center templates in some cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixes issue in the 3D Classification job where output tile figures would be incorrectly assigned to output groups in some cases."
+        }
+      ]
+    },
+    {
       "tag": "v4.7.0",
       "date": "04/09/2025",
       "items": [
