@@ -1,9 +1,13 @@
 {
   "versions": [
     {
-      "tag": "v4.7.1+250811 (Patch)",
-      "date": "08/11/2025",
+      "tag": "v4.7.1+250814 (Patch)",
+      "date": "08/14/2025",
       "items": [
+        {
+          "tag": "note",
+          "description": "Users running v4.7.1-cuda12 can apply the equivalent patch patch <code>v4.7.1+250811</code>"
+        },
         {
           "tag": "fixed",
           "description": "<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-subset-particles-by-statistic\">Subset Particles by Statistic</a> job no longer fails when manual thresholds are specified in the job builder."
