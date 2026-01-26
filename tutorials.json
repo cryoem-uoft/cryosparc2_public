@@ -11,19 +11,24 @@
       "link": "https://guide.cryosparc.com/processing-data/tutorial-videos#single-particle-analysis-with-cryosparc"
     },
     {
+      "title": "Case Study: End-to-end exploratory processing of a motor-bound nucleosome (EMPIAR-10739)",
+      "description": "Handling global pseudosymmetry, using 3DVA to guide classification strategies, separating low population classes, and local refinement of a flexible region.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-end-to-end-and-exploratory-processing-of-a-motor-bound-nucleosome-empiar-10739"
+    },
+    {
       "title": "Case Study: End-to-end processing of a ligand-bound GPCR (EMPIAR-10853)",
       "description": "Micrograph Denoising, Junk Detection, Subset Particles by Statistic, Local Refinement and focussed 3D Classification to improve ligand density.",
       "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-end-to-end-processing-of-a-ligand-bound-gpcr-empiar-10853"
     },
     {
-      "title": "Case Study: DkTx-bound TRPV1 (EMPIAR-10059)",
-      "description": "Focus on particle curation, developing an intuition for when a domain may be blurred due to flexibility, and how to handle this type of flexibility.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-dktx-bound-trpv1-empiar-10059"
+      "title": "Case Study: Discrete and Continuous Heterogeneity in FaNaC1 (EMPIAR-11631 and -11632)",
+      "description": "Processing a combined dataset of an ion channel with a focus on techniques for separating conformational states from a heterogeneous mixture.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-discrete-and-continuous-heterogeneity-in-fanac1-empiar-11631-and-11632"
     },
     {
-      "title": "Case Study: End-to-end processing of encapsulated ferritin (EMPIAR-10716)",
-      "description": "Focus on high-symmetry ab-initio reconstruction, local symmetry, non-point-group symmetry, symmetry expansion, and custom geometry operations.",
-      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-end-to-end-processing-of-encapsulated-ferritin-empiar-10716"
+      "title": "Case Study: Pseudosymmetry in TRPV5 and Calmodulin (EMPIAR-10256)",
+      "description": "Focus on handling pseudosymmetry and 3D Classification parameter choices.",
+      "link": "https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/case-study-pseudosymmetry-in-trpv5-and-calmodulin-empiar-10256"
     },
     {
       "title": "Case Study: End-to-end processing of an inactive GPCR (EMPIAR-10668)",
