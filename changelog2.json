@@ -1,6 +1,536 @@
 {
   "versions": [
     {
+      "tag": "v5.0.0",
+      "date": "01/27/2026",
+      "items": [
+        {
+          "tag": "note",
+          "description": "<p>For CryoSPARC v5, <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/hardware-and-system-requirements#operating-system\">the operating system must support GLIBC 2.28 or greater</a>. Therefore, the oldest compatible operating systems are Rocky/RHEL 8 and Ubuntu 20.04. However, Ubuntu 22.04 or newer is recommended.</p>"
+        },
+        {
+          "tag": "note",
+          "description": "<p><a href=\"https://guide.cryosparc.com/setup-configuration-and-management/cryosparc-installation-prerequisites\">CryoSPARC v5 requires NVIDIA driver version 570.26 or newer</a>. Note that NVIDIA Blackwell devices are only compatible with the open driver. CryoSPARC v5 uses CUDA 12.8 which drops support for NVIDIA GPUs with compute capability 3.5 (Kepler). Only GPUs with compute capability 5.0 (Maxwell) to 12.0 (Blackwell) are supported.</p>"
+        },
+        {
+          "tag": "note",
+          "description": "<p>A new, backwards compatible version of <a href=\"https://tools.cryosparc.com/intro.html#\">cryosparc-tools</a> for scripting with v5 is available; see <a href=\"https://github.com/cryoem-uoft/cryosparc-tools/blob/main/CHANGELOG.md\">details here</a>. Scripts written with previous versions will continue to function as before.</p>"
+        },
+        {
+          "tag": "note",
+          "description": "<p>CryoSPARC v5 introduces a <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring-v5.0+/cryosparcm-cli-reference-v5.0+\">new improved command line interface</a> that is not compatible with v4 <code>cli</code> commands. Scripts that used v4 <code>cli</code> commands will need to be updated, including for <a href=\"https://guide.cryosparc.com/live/managing-a-cryosparc-live-session-from-the-cli-v5.0+\">managing CryoSPARC Live sessions</a>.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-job-data#dashboard\">Job Dashboard</a> displays all key job outputs, plots, and statistics at a glance, and is the new default view when opening a job card. Use iteration sliders to see how results and plots changed during processing.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Multi-select jobs and press <code>spacebar</code>: The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/inspecting-job-data#comparing-jobs\">Comparison View</a> shows all selected jobs' parameters, outputs, and plots side-by-side, making it easy to spot differences and make decisions about the effect of input or parameter changes. Use iteration sliders to visualize progress, and download outputs from multiple jobs in one click.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>CryoSPARC v5.0 introduces a <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-dynamic-masking-in-refinements-v5.0+\">new automatic mask generation method</a> that is robust across a wide range of resolutions and reduces the possibility of overfitting or overestimation of resolution, without users having to adjust masking parameters.</p><ul><li>Dynamically generated masks now use mask tightness and softness parameters that are based on the 3D refinement map's current resolution estimate, meaning that masks for lower-resolution structures automatically have softer padding.</li><li>The new method is used for refinement masks (<code>mask_refine</code>) and resolution masks (<code>mask_fsc</code>), and makes it significantly less likely that user-set masking parameters produce masks that are too tight or too hard, especially for low or moderate resolution structures. Mask auto-tightening has also been made more conservative by default.</li><li>Across all refinement jobs, both the refinement and the resolution masks are plotted each iteration, in a new plot that displays the extent of the mask edge falloff.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Refinement jobs now have a parameter \"<a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/dynamic-masking-in-refinements\">Use dynamic refinement mask</a>\" that can be turned off to allow the job to run without any refinement mask applied during iterations. In some cases, especially in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-non-uniform-refinement-new\">Non-Uniform Refinement</a>, using no mask can produce improved results.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>All refinement jobs now output the refinement mask, resolution mask, and auto-tightened resolution mask as separate draggable outputs.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-common-cryosparc-plots#cryosparc-v5\">FSC curve plots are now standardized across CryoSPARC</a>, with a consistent colour scheme that more clearly indicates which mask has been used to produce each curve, and whether <a href=\"https://guide.cryosparc.com/processing-data/tutorials-and-case-studies/tutorial-common-cryosparc-plots#high-resolution-phase-randomization\">correction via phase randomization</a> has been applied.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>If FSC resolution meets or exceeds the Nyquist frequency, refinement jobs now throw a warning to recommend re-extracting particles with a smaller pixel size.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>The format of FSC <code>txt</code> files has been updated to include additional columns and column titles.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>By default, refinements (Homogeneous, Non-uniform, and Helical) now perform per-particle scale optimization. The optimized values provide a measure of particle quality, which is used during 3D reconstruction to down-weight low quality particles. The per-particle scale values can also be useful for <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-subset-particles-by-statistic#subsetting-by-per-particle-scale\">separating low-quality particles from a dataset</a>.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>All <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-refinement/job-homogeneous-refinement\">refinements</a>, Local CTF Refinement, 3D Classification, and 3D Variability Analysis now create a Rejected Particles output group. The group is populated with particles that had zero or negative per-particle scale, indicating empty or inverted contrast that is ignored during 3D reconstruction.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>The new <a href=\"https://guide.cryosparc.com/live/new-live-session-start-to-finish-guide#configuration-section\">Run Configuration options</a> in <a href=\"https://guide.cryosparc.com/live/new-live-session-start-to-finish-guide\">CryoSPARC Live</a> enable auto-start and auto-pause of Live Sessions to better match data collection workflows. Multiple sessions can be started at the same time, each pointing to a different raw data input directory (e.g., corresponding to multiple grids). Sessions can be started with <code>Delay worker startup until ready</code> so that Live Preprocessing worker jobs will not launch until new data is detected. <code>Auto pause mode</code> triggers when no new data has been detected for a configurable timeout and automatically pauses Sessions to free up GPU and license resources for the next session.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><code>Auto Pause Mode</code> automatically pauses the Live Session when there are no remaining exposures to process, with two available modes:</p><ul><li>Standard: Pause the session immediately after the idle timeout has expired. This will kill any running 2D/3D streaming jobs at the time auto pause is triggered.</li><li>Graceful: Once the idle timeout has lapsed, also wait for 2D/3D streaming jobs to finish processing the available particles before pausing the session.</li><li>An <code>Auto Pause Timeout</code> can also optionally be configured.</li></ul>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Ability to launch more than one Live Preprocessing worker job per GPU. Use <code>Workers per GPU</code> in the Configuration Tab to specify the number of Live Preprocessing worker jobs to launch per GPU worker. On some systems, running multiple workers jobs per GPU can improve preprocessing throughput.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Live Sessions can now be cloned in the UI. Cloning a session preserves configuration.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>CryoSPARC Live Sessions will now inherit the project-level parameter for outputting in 16-bit floating point format.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Exposure filenames in Live now correctly pad UIDs with leading zeros.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>The Live particle export job's output is now correctly named \"Exported Particles\".</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Lane selections in CryoSPARC Live now display only those of which are available for the current user.</p>"
+        },
+        {
+          "tag": "note",
+          "description": "<p>CryoSPARC Live's <a href=\"https://guide.cryosparc.com/live/new-live-session-start-to-finish-guide#load-configuration-profile\">configuration profiles</a> in v5 are not backwards compatible. New profiles can be created in v5 but will not be retained if downgrading to v4.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Upstream jobs in the tree view will now be <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/job-views-cards-tree-and-table#upstream-jobs\">collapsed into single grouped cards by default</a>, making it easy to see where jobs from other workspaces are connected to jobs in the current workspace tree. Extremely large processing trees can be condensed to display only the jobs relevant in the current workspace.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/job-views-cards-tree-and-table#job-groups\">Job Group cards</a> now list their contents; hover over any job to view its specific details.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Groups in the tree or card view will no longer accept the addition of jobs that would cause a circular connection error when the group is collapsed.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Moving or unlinking jobs in the middle of a chain in the tree view will no longer cause data loading and/or layout issues in some cases.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Documentation icons have been added across the application that link out to relevant pages in the <a href=\"https://guide.cryosparc.com/\">CryoSPARC Guide</a>. These include documentation for core actions as well as CryoSPARC jobs, plots, and general onboarding.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-homogeneous-ab-initio-refinement-beta\">Homogeneous Ab-Initio Refinement (BETA)</a> uses the same algorithm as <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction\">Ab-Initio Reconstruction</a> (i.e., <a href=\"https://www.nature.com/articles/nmeth.4169\">stochastic gradient descent</a>) to refine a dataset to high resolution from scratch, while preserving gold standard independence of two half-sets and half-maps. Half-maps are aligned in 3D during optimization to keep them in register. The job type is inspired by recent results showing that Ab-Initio Reconstruction can produce improved map quality for small and challenging targets when run at high resolution (HR-HAIR: <a href=\"https://www.biorxiv.org/content/10.1101/2025.09.08.674935v1\">Kim et al. 2025</a>).</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/local-refinement/job-new-local-refinement-beta\">Local Refinement</a> now has an option to use input half-maps for initialization, allowing local refinement to retain the gold-standard separation of half-maps from an upstream Ab-Initio Refinement or other source.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction\">Ab-Initio Reconstruction</a> now supports <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction#volume-window-mode\">spherical or cylindrical</a> windowing of volumes during reconstruction, via the <code>Volume window mode</code> parameter. Window size can be controlled with <code>Window inner diameter</code> and <code>Window outer diameter</code> parameters. Spherical windows can help with reconstruction of smaller particles, and cylindrical windows with helical particles.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction\">Ab-Initio Reconstruction</a> now has a parameter <code>Minimum alignment resolution</code> that performs high-pass filtering on the volume (for the purpose of alignment only).</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/3d-reconstruction/job-ab-initio-reconstruction\">Ab-Initio Reconstruction</a> that could cause NaN errors when class volumes were near empty.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">2D Classification</a> now aligns 2D classes to each other and plots classes in a sorted order determined by inter-class similarity, for easier visual comparison. This can be reverted to sorting by size, by modifying the \"<a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification#plotting-sort-method\">Plotting sort method</a>\" parameter.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Added a \"Do orientation alignment\" parameter to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-2d-classification\">2D Classification</a>, turned on by default. If 3D alignments are available in input particles, this parameter can be turned off to allow for 2D Classification without alignment.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Added class index to sort options in Select 2D Classes.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification\">3D Classification</a> now includes the option (default: off) to use <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification#use-latent-mixing-coefficients\">latent mixing coefficients during classification</a>. When turned on, 3D Classification treats the current class sizes at a given iteration as a representative example of the underlying, true class sizes; formally, it applies a prior over class posteriors based on the current sizes of classes. This can result in more diverse class sizes, reducing the likelihood of 'uniform' class distributions.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification\">3D Classification</a>, the solvent mask is now automatically expanded to ensure it always fully contains the focus mask. Furthermore, if a solvent mask is not provided as input, there is a new option to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification#generate-solvent-mask-from-consensus\">Generate solvent mask from consensus</a> (and a spherical mask is used if this option is turned off).</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-classification\">3D Classification</a> now has a new real-space slice plot with improved contrast and a modified colourbar.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-local-ctf-refinement\">Local CTF Refinement</a> now optimizes over per-particle scale and defocus in tandem. In testing, this can lead to better error landscapes and potentially improved defocus values.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/tags\">Upgraded tagging experience</a>: quickly create and manage tags.</p><ul><li>The \"Edit Tags\" menu for jobs now by default only shows tags created by the current user, with a toggle to view all tags in the instance.</li><li>Added ability to tag multiple jobs at once using the multi-actions menu.</li><li>Added new option to create a tag in the \"Edit Tags\" menu. Default tag will be created with the search term if applicable, or the \"Create Tag\" slideover will be opened to complete creation.</li><li>Updated tag filter in jobs browse view to only show tags that have been applied to jobs in the view.</li><li>Redesigned tag manage dialog panel for more information density and added ability to delete multiple tags at once.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Titles and descriptions in the details sidebar autosave when edited.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files\">Upload Local Files</a> now offers the option to <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files#auto-import-3d-volumes\">automatically create and queue an Import 3D Volumes job</a> for each volume when uploading <code>.mrc</code> or <code>.map</code> files if Auto-Import is checked off. The Volume Type dropdown (map_sharp, map_locres, etc.) will be automatically populated based on the file name.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/upload-local-files\">Upload Local Files</a> provides a message when attempting to upload an unsupported file type and lists the applicable file types that are allowed.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/creating-and-running-jobs#copy-and-paste-parameters\">Copy/Paste Parameters</a>: Use <code>command</code>+<code>option</code>+<code>c</code> to copy parameters from a selected job, and <code>command</code>+<code>option</code>+<code>v</code> to paste onto a selected job.</p><ul><li>Parameters can be pasted onto jobs of different types, useful between jobs with many of the same parameters such as 3D refinements.</li><li>Parameters are copied to the clipboard as a valid CryoSPARC <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/blueprints\">Blueprint</a>, in JSON format for editing or sharing. These can also be copied from the job builder using the \"Copy as Blueprint\" button or <code>command</code>+<code>option</code>+<code>c</code> .</li><li>Parameters can also be copied in plain text for pasting into lab notebooks, using the \"Copy all parameters as text\" option in the job builder.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Ability to search for parameters in the job builder:</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>When dragging an output group into a building job, there is now an option to replace the existing group connection if only one connection is allowed.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Added additional checks when building jobs to prevent incorrect number of input groups from being connected.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Prevent workflows from being applied if they are missing parent connections, preventing jobs from being connected with missing passthrough outputs.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Ability to <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/creating-and-running-jobs#queueing-a-job\">queue GPU and CPU jobs</a> to a hostname/target directly in the Queue slide-over, plus improvements to right-click queue menu:</p><ul><li>The Queue slide-over now shows a warning when the CPUs, GPUs or RAM of the selected lane/target are fully allocated.</li><li>When right-clicking on a job, the quick access menu displays a coloured light icon and tooltip for each lane's current resource allocation, the compute requirements of the job, and a warning if one of the lane's compute resources is fully allocated. Lanes with insufficient resources for the job will appear under \"Underprovisioned lanes\".</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/instance-management#instance-tab\">Instance Information tab</a>, that displays all available worker and cluster lanes, has been redesigned.</p><ul><li>Search filters have been added, allowing the user to filter lanes by name, lane type, and compute resources.</li><li>Each target card now contains a list of GPUs displaying their ID, name, and VRAM.</li><li>A new table view has been added that displays instance information in a collapsible nested tabular format.</li><li>Contents of target paths and cluster submission scripts can now be copied to the clipboard with a single click.</li><li>JSON export of all targets can now be downloaded.</li></ul>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/managing-jobs#current-jobs-dialog\">Current Jobs dialog and Queue slide-over</a> now display how many compute resources (CPUs, GPUs, RAM) are currently allocated in a lane, target, or job.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/tutorial-priority-job-queuing\">Job priority</a> is now displayed on job cards.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Improved error messages when queuing to under-provisioned lanes or targets</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>When launching a job directly on GPUs, the list of available GPUs now respect instance configuration, hiding GPUs that are marked as unavailable to CryoSPARC.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Added an 'info tags' option to the <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/downloading-and-exporting-data\">job CSV download</a>, enabling access to the same statistics presented on job cards.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Option to <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/downloading-and-exporting-data#downloading-lists-of-projects-workspaces-sessions-and-jobs-as-a-csv-file\">download a CSV of just the selected jobs</a> via the browse pages.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Improved job info tags and dashboard cards for Extract from Micrographs (including display of F-cropped box size and output pixel sizes), Subset Particles by Statistic and Helical Refinement.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue where the job report would fail to download for certain jobs that contained special characters in their event log output, title or description.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>The <a href=\"https://guide.cryosparc.com/application-guide-v4.0+/keyboard-shortcuts\">shortcuts dialog</a> has been reworked to show all available keyboard shortcuts inside of hierarchical sections in a single panel. To open the shortcuts dialog, click on the \"keyboard\" icon in the left navigation bar.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>The keyboard shortcut for marking/unmarking a job as final has been modified from 'F' to 'Option + Shift + F'.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Selection menus for projects, workspaces, and sessions have been updated to show all items with no upper limit and no UI performance impact.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Added a toggle (default: off) to the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+#project-and-workspace-cleanup-data-tool\">Cleanup Data tool</a> that controls whether final-ancestor preprocessing jobs (i.e., preprocessing jobs that are ancestors of <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+#id-3.-clear-non-final-results\">jobs marked \"final\"</a>) should be cleared. Preprocessing jobs' outputs (micrographs, particle stacks) take a lot of disk space, but can be reproduced by re-running the jobs again as long as the raw data is available. Therefore, turning on this option can be useful to clear additional space without losing the ability to recreate final results. Read the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-cleanup-v4.3+\">Data Cleanup guide</a> before proceeding.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>A new <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring-v5.0+/cryosparcm-cli-reference-v5.0+\">command line</a> endpoint <code>delete_output_result_files</code> allows deleting files produced by a job that are part of just a specific result, for example <code>micrographs_non_dw</code> for non-dose-weighted micrographs in Patch Motion Correction.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>Added <code>cryosparcm recover</code> : a simplified way for CryoSPARC instances to fully recover from database loss or corruption without the need for database backups. See the <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-instance-recovery-v5.0+\">Instance Recovery guide</a> for more details.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>When <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+#id-2.-attaching-detaching-archiving-and-unarchiving-projects\">attaching a project</a>, the project card and details sidebar now display the status of the attach process (i.e., in progress, successful, or failed). Projects that fail to attach will display an error banner.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>When <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-data-management-in-cryosparc-v4.0+?q=import+job#id-5.-ability-to-export-and-import-individual-jobs\">importing a job</a>, the job card now displays the import status:</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Clear and restart actions are now disabled for imported jobs.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Job search menu can now support viewing and searching any number of jobs in a view without a limit. Menu can be opened with new shortcut <code>shift</code> + <code>j</code> .</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Upgraded multi-selection experience for jobs: identify, navigate to and view a summary of results within the sidebar. Sidebar cards include key information including info tags, runtime, custom parameters and resource usage, as well as actions to open the job dialog, target (go to) the relevant card in the browse view, and open the quick actions menu.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Clicking on a job header within the current jobs tab will open the job preview, similar to the browse views.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>The current browse view (card, table, etc.) can now be toggled using the keyboard shortcut <code>shift</code> + <code>{</code> or <code>}</code>.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue when attempting to remove the 'Final or Ancestor of Final' filter within the browse system.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue were jobs of a certain status were not able to be unlinked.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Navigating the job card view using the arrow keys will no longer get stuck on groups.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue where the multi-select quick actions menu would not display when selecting dozens of jobs.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-reassign-particles-to-micrographs\">Reassign Particles to Micrographs</a> now creates a separate output group for particles that did not match any of the input micrographs, rather than failing.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-particle-stack\">Import Particle Stack</a> for helical particles now uses randomized <code>filament_uid</code> for each filament (rather than copying directly from <code>rlnHelicalTubeID</code>) to ensure the correct distribution of values.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-3d-volumes\">Import 3D Volumes</a> will no longer fail when importing EMDB volumes with IDs starting with zero.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Tooltip for the gain reference field in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/import/job-import-movies\">Import Movies</a> accurately reflects the fact that TIFF gain references are supported.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Added a parameter to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-patch-motion-correction\">Patch Motion Correction</a> and <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-reference-based-motion-correction-beta\">Reference Based Motion Correction</a> jobs called \"hot pixel threshold\". This controls how many standard deviations away from the mean a pixel can be before it is considered a stuck or aberrant pixel, and ignored during motion correction.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Added a parameter to the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-junk-detector-beta\">Micrograph Junk Detector</a> that sets a minimum area for junk labels below which particles won't be rejected.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug in the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-junk-detector-beta\">Micrograph Junk Detector</a> which caused masks to be slightly offset for certain micrograph sizes.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/interactive-job-manually-curate-exposures\">Manually Curate Exposures</a> will no longer fail if zero particles are connected.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/interactive-job-manually-curate-exposures\">Manually Curate Exposures</a>, the button to toggle display of annotation controls is now only shown when annotations are loaded.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/interactive-job-manually-curate-exposures\">Manually Curate Exposures</a>, where the exposure grid view would not update after changing filters.</p>"
+        },
+        {
+          "tag": "note",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/deep-network-particle-picker/job-deep-picker-train-beta-and-deep-picker-extract-beta\">Deep Picker Train and Deep Picker Inference</a> have been deprecated and are no longer present in CryoSPARC v5. Previously-run jobs are still visible in the interface.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-blob-picker\">Blob Picker</a> now includes a warning if the <code>Lowpass filter to apply to templates/micrographs</code> parameter values are too high and incompatible with the specified \"Minimum particle diameter\" value.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-blob-picker\">Blob Picker</a> now has two elliptical blob generation modes (stretch and squeeze) to account for different particle shapes, corresponding to thinner rods and flatter disks. It also has a parameter <code>Blob size spacing (A)</code> that controls the number of intermediate sized blobs that will be generated between min and max diameters, and prints the diameters of the circular, elliptical, and ring templates alongside the plots of the templates.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>When turning on the \"Pick on denoised micrographs\" parameter in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-template-picker\">Template Picker</a> or <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-filament-tracer-beta\">Filament Tracer</a>, the \"Use CTFs to filter the templates\" parameter will be set to the correct value automatically.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz/job-topaz-extract-beta\">Topaz Extract</a>, <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz/job-topaz-train-beta\">Topaz Train and Cross Validation</a> now have a progress bar during preprocessing. Topaz Train now logs the training status per epoch.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Topaz jobs using Topaz v0.3.0+ now use a file with a list of micrograph filenames, to avoid \"Argument list too long\" errors.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-picking/job-filament-tracer-beta\">Filament Tracer</a> now prints the diameters (if template is not provided) of the filament. Filament tracer and template tracer no longer cause errors due to changes in blob picker parameter.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Several updates to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/particle-curation/job-subset-particles-by-statistic\">Subset Particles by Statistic</a></p><ul><li>The job now now allows for subsetting by either <code>Per-particle scale (used)</code>, which is the value used by the upstream job during back projection of particles, or <code>Per-particle scale (optimal)</code>, which is the value computed but not necessarily used by the upstream job. The job defaults to <code>per-particle scale (optimal)</code> as the statistic.</li><li>The job now now allows for subsetting by the total amount of shift in either 2D or 3D alignments, and also by the azimuth or elevation from 3D alignments.</li><li>The job as a new option to ensure that an equal number of particles are selected from each half-set split defined in the incoming particle stack. The job also allows splitting particle sets into the two gold-standard half-sets based on <code>alignments3D/split</code>.</li></ul>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/application-guide-v4.0+/interactive-jobs#interactive-job-inspect-particle-picks\">Inspect Particle Picks</a> no longer fails when there are too few particles, instead it will skip CTF bins that have zero particles and throw a warning instead.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed issue in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/extraction/job-downsample-particles\">Downsample Particles</a> where <code>alignments3D</code> and <code>alignments2D</code> were not being updated, causing the job to produce incorrect results when <code>Recenter using aligned shifts</code> was enabled.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>BILD files are now output for viewing direction distributions in all refinements.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Refinement jobs now include cFAR scores in summary statistics, so that these values are available to scripts using cryosparc-tools.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed issue in Helical Refinement where the <code>Maximum out-of-plane tilt angle</code> parameter value would reset to the default upon launching the job, regardless of its specified value.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-orientation-diagnostics\">Orientation Diagnostics</a>, a new expanded cFSC plot shows all cFSC curves, and raw cFSC data is now output to a <code>csv</code> file in the job directory to facilitate plot reproduction. In addition to cFAR, the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-orientation-diagnostics#tfsc-area-ratio-tfar\">job now reports 'tFAR'</a>, a variant of cFAR which uses toroidal Fourier segments rather than conical segments. In our testing, tFAR can better represent signal anisotropy under unimodal or bimodal viewing direction distributions. Both tFAR and cFAR scores are more prominently displayed in plots.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Updates to <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-sharpening-tools\">Sharpening Tools</a>:</p><ul><li>The job now allows sharpening without applying an FSC filter. Instead, a Butterworth lowpass filter of custom resolution and order can be specified.</li><li>The job now reads the FSC mask from the <code>fsc_mask_auto</code> slot in the input volume group. If desired, Sharpening Tools is also able to run *without* a mask.</li></ul>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/post-processing/job-validation-fsc\">Validation (FSC)</a> no longer fails when using the CPU compute facility.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>In <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-tools\">Volume Tools</a>, the default filter is changed to 8th order Butterworth.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools</a> now has a parameter to control whether the mask is multiplied onto the input volume.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools</a> now allows for only applying a mask as a valid action.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-volume-alignment-tools\">Volume Alignment Tools</a> now correctly outputs masks with appropriate pixel size.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-align-3d-maps\">Align 3D Maps</a> no longer applies a lowpass filter to outputted maps. A new parameter, <code>Alignment resolution (A)</code>, is instead used to control the maximum frequency of information used for volume-to-volume alignment.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Improvements to the alignment algorithm used in <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-align-3d-maps\">Align 3D Maps</a>. The objective function now accounts for overall greyscale differences between maps, which can improve resulting alignments in cases where input volumes came from different processing workflows.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/utilities/job-remove-duplicate-particles\">Remove Duplicate Particles</a> now logs the micrograph's pixel size that is used to compute inter-particle distances.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/ctf-refinement/job-exposure-group-utilities\">Exposure Group Utilities</a> and other jobs that assign exposure group ids now correctly increment a project-level exposure group counter so that new exposure groups receive a unique id.</p>"
+        },
+        {
+          "tag": "note",
+          "description": "<p>CryoSPARC v5's <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-performance-benchmarking-v4.3+\">performance benchmarking system</a> is not backwards compatible. New performance benchmarks can be recorded in v5 but will not be retained if downgrading to v4.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p>CryoSPARC v5 includes updated performance benchmark references on bare metal and AWS nodes.</p>"
+        },
+        {
+          "tag": "new",
+          "description": "<p><code>cryosparcm worker connect</code> and <code>cryosparcm worker disconnect</code> commands can be used to manage connected nodes from the master node. View the updated v5 <code>cryosparcm</code> reference <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring-v5.0+/cryosparcm-reference-v5.0+\">here</a>.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>CryoSPARC will now check for conflicts with network ports at installation time.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>CryoSPARC will now check for conflicts with active network ports at startup time.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Improved detection for when a scheduler target is the master node.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>The default range of <a href=\"https://guide.cryosparc.com/setup-configuration-and-management/management-and-monitoring-v5.0+/cryosparcm-reference-v5.0+#logs\">logs</a> returned in <code>cryosparcm log</code> and <code>cryosparcm errorreport</code> has been increased from 7 days to 30 days.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Modified cluster launch scripts to append to the job log file instead of overwriting.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Prevent \"Could not parse signed file\" error during instance startup after changing license IDs.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fix permissions error when creating job directories on NFS drives.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Worker updates are now copied directly instead of over SSH when updating standalone instances.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "<p>Notifications for actions and changes within a project are shown to admin users when viewing that project, regardless of who created it and the sharing permissions.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Native browser autocomplete dialogs are disabled when interacting with an autocomplete filter within the interface.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Sort order will now be respected for new jobs created in a workspace sorted by Job ID.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue where flags were not retained when rebuilding a workflow.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Sidebar action panel doesn't scroll on small height windows</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Filter hidden parameters out of job card footer widget.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Fixed a bug which could allow a specific kind of movie, micrograph or particle file corruption (truncated frames) to go unreported.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Downstream programs that read MRC files from CryoSPARC and expect them to be in CCP4 format will no longer encounter errors due to checksums embedded in CryoSPARC MRC output files.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/variability/job-3d-variability-display\">3D Variability Display</a> interactive cluster plot legend now matches cluster numbers from job output.</p>"
+        },
+        {
+          "tag": "fixed",
+          "description": "<p>Resolved an issue where the exposure count for <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/motion-correction/job-reference-based-motion-correction-beta\">Reference Based Motion Correction</a> would always display as 0.</p>"
+        }
+      ]
+    },
+    {
       "tag": "v4.7.1+250814 (Patch)",
       "date": "08/14/2025",
       "items": [
