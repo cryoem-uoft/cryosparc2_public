@@ -1,6 +1,28 @@
 {
   "versions": [
     {
+      "tag": "v5.0.1",
+      "date": "01/30/2026",
+      "items": [
+        {
+          "tag": "fixed",
+          "description": "The <code>http_proxy</code> and <code>https_proxy</code> environment variables are no longer incorrectly ignored when contacting the CryoSPARC license server via a proxy."
+        },
+        {
+          "tag": "fixed",
+          "description": "3D Classification Jobs that had required parameters set to None now pass validation. For users who updated to v5.0.0: projects detached during upgrade due to <code>TypeError: &#39;&lt;=&#39; not supported between instances of &#39;float&#39; and &#39;NoneType&#39;</code> can now be attached in v5.0.1."
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs that produce more than 500 outputs now pass validation during upgrade. For users who updated to v5.0.0: projects detached during upgrade due to <code>Value should have at most 500 items after validation</code> can now be attached in v5.0.1."
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs that included path parameters set to None now pass validation during upgrade. For users who updated to v5.0.0: projects detached during upgrade due to <code>TypeError: argument should be a str or an os.PathLike object where fspath returns a str, not &#39;NoneType&#39;</code> can now be attached in v5.0.1."
+        }
+      ]
+    },
+    {
       "tag": "v5.0.0",
       "date": "01/27/2026",
       "items": [
@@ -367,6 +389,14 @@
         {
           "tag": "update",
           "description": "<p><a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz/job-topaz-extract-beta\">Topaz Extract</a>, <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz/job-topaz-train-beta\">Topaz Train and Cross Validation</a> now have a progress bar during preprocessing. Topaz Train now logs the training status per epoch.</p>"
+        },
+        {
+          "tag": "update",
+          "description": "Topaz v0.3.0 is now supported."
+        },
+        {
+          "tag": "update",
+          "description": "Micrographs denoised using the <a href=\"https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/exposure-curation/job-micrograph-denoiser-beta\">Micrograph Denoiser</a> are now compatible with Topaz v0.3.0."
         },
         {
           "tag": "fixed",
