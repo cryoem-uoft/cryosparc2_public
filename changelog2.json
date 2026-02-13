@@ -1,9 +1,67 @@
 {
   "versions": [
     {
+      "tag": "v5.0.2",
+      "date": "02/13/2026",
+      "items": [
+        {
+          "tag": "note",
+          "description": "If you are updating to v5.0.2 from a CryoSPARC v4 version, please see the full v5.0 changelog, update instructions, and compatibility notes here: <a href=\"https://cryosparc.com/updates/v5.0\">cryosparc.com/updates/v5.0</a>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where, in some environments, cluster job submission scripts would fail with <code>ERROR: ld.so: object &apos;xxx/lib/libpython3.12.so&apos; from LD_PRELOAD cannot be preloaded</code> due to environment variables that were not correctly cleared."
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs no longer fail to launch on worker nodes that are running the <code>tcsh</code> shell."
+        },
+        {
+          "tag": "fixed",
+          "description": "Using the Export Exposures functionality in a Live session no longer fails when a gain reference was not specified in the Live exposure group configuration."
+        },
+        {
+          "tag": "fixed",
+          "description": "Live sessions no longer fail when no particles are picked on a micrograph and advanced parameter <code>Enable Plotting in RTP Worker</code> is enabled."
+        },
+        {
+          "tag": "fixed",
+          "description": "When configuring template picking in a Live session, 2D classes can now be loaded from any job type that outputs 2D classes."
+        },
+        {
+          "tag": "fixed",
+          "description": "Patch Motion Correction (and Live Worker) are now significantly faster when processing low-magnification movies."
+        },
+        {
+          "tag": "fixed",
+          "description": "3D Classification now correctly orders particle outputs when <code>Reorder classes by size</code> is turned on."
+        },
+        {
+          "tag": "fixed",
+          "description": "In Extensive Validation, Local Refinement now correctly uses the SSD cache based on the user specified parameter."
+        },
+        {
+          "tag": "fixed",
+          "description": "When editing thresholds in Manually Curate Exposures, micrographs with values equal to the default threshold are no longer excluded."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where hovering/clicking on an exposure within the scatter plot in Inspect Picks and Manual Picker would not navigate to it."
+        },
+        {
+          "tag": "fixed",
+          "description": "Updating CryoSPARC no longer issues warnings about the use of an ephemeral port range if the port range was already set previously."
+        }
+      ]
+    },
+    {
       "tag": "v5.0.1",
       "date": "01/30/2026",
       "items": [
+        {
+          "tag": "note",
+          "description": "If you are updating to v5.0.1 from a CryoSPARC v4 version, please see the full v5.0 changelog, update instructions, and compatibility notes here: <a href=\"https://cryosparc.com/updates/v5.0\">cryosparc.com/updates/v5.0</a>"
+        },
         {
           "tag": "fixed",
           "description": "The <code>http_proxy</code> and <code>https_proxy</code> environment variables are no longer incorrectly ignored when contacting the CryoSPARC license server via a proxy."
