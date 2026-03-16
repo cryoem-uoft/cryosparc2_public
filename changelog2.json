@@ -1,6 +1,96 @@
 {
   "versions": [
     {
+      "tag": "v5.0.3",
+      "date": "03/16/2026",
+      "items": [
+        {
+          "tag": "note",
+          "description": "If you are updating to v5.0.3 from a CryoSPARC v4 version, please see the full v5.0 changelog, update instructions, and compatibility notes here: <a href=\"https://cryosparc.com/updates/v5.0\">cryosparc.com/updates/v5.0</a>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Jobs with integer parameter values larger than 8 bytes now pass validation. For users who updated to v5.0.0-v5.0.2: projects detached during upgrade due to <code>OverflowError: MongoDB can only handle up to 8-byte ints</code> can now be attached in v5.0.3."
+        },
+        {
+          "tag": "fixed",
+          "description": "Projects with empty project titles now pass validation. For users who updated to v5.0.0-v5.0.2: projects detached during upgrade due to <code>String should have at least 1 character [type=string_too_short, input_value=&#39;&#39;, input_type=str]</code> can now be attached in v5.0.3."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where users could not edit the titles of jobs/workspaces/projects in projects that had been shared with them."
+        },
+        {
+          "tag": "fixed",
+          "description": "Correctly forward environment variables such as <code>LD_LIBRARY_PATH</code> to cluster submission commands, preventing failure."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where SSD reserve would default to 0, instead of 10GB, for connected targets and clusters."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where a launched job is marked as failed when using some terminal shells, if there is extra output in the shell configuration."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where jobs that were cleared quickly after queuing were still launched."
+        },
+        {
+          "tag": "fixed",
+          "description": "For jobs created programatically or by CryoSPARC Live, the <code>created_by_user_id</code> field is now correctly set."
+        },
+        {
+          "tag": "fixed",
+          "description": "Homogeneous Ab-initio Refinement no longer fails with <code>KeyError</code> when run with helical data."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where imported micrographs would display as too light or too dark in interactive jobs."
+        },
+        {
+          "tag": "fixed",
+          "description": "Extra &ldquo;Random Seed Default&rdquo; parameter no longer appears on newly-created Blueprints."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where, under some conditions, a job fails with &ldquo;unknown dataset field error&rdquo; if two slots with the same type are connected."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where <code>.cs</code> and <code>.csg</code> filenames for exported jobs or outputs would incorrectly differ."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where a job would attempt to connect to the wrong master hostname if the master environment is active when the job launches."
+        },
+        {
+          "tag": "fixed",
+          "description": "<code>cryosparcm</code> service management commands no longer fail when running from a working directory that the current user does not have permission to access."
+        },
+        {
+          "tag": "fixed",
+          "description": "Extensive Validation no longer fails with an error indicating a checksum mismatch, when test data is downloaded automatically by CryoSPARC."
+        },
+        {
+          "tag": "fixed",
+          "description": "Exposure Sets Tool no longer fails on intersect action when only micrographs (not movies) are connected."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where session restoration would crash due to missing a related notification."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue in 2D Classification causing it to crash when the output of intermediate plots was disabled."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where Split Volumes Group did not correctly passthrough upstream particle metadata."
+        }
+      ]
+    },
+    {
       "tag": "v5.0.2",
       "date": "02/13/2026",
       "items": [
