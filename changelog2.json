@@ -1,6 +1,84 @@
 {
   "versions": [
     {
+      "tag": "v5.0.4",
+      "date": "04/02/2026",
+      "items": [
+        {
+          "tag": "note",
+          "description": "If you are updating to v5.0.4 from a CryoSPARC v4 version, please see the full v5.0 changelog, update instructions, and compatibility notes here: <a href=\"https://cryosparc.com/updates/v5.0\">cryosparc.com/updates/v5.0</a>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue in 3D variability analysis that could, for some datasets, cause streaking artefacts in 3D variability component volumes and skewed latent distributions."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where, for some datasets, 2D Classification using the <code>similarity</code> plotting sorting would produce degraded result quality, due to large translations of class averages during the 3rd last iteration."
+        },
+        {
+          "tag": "fixed",
+          "description": "When deleting a detached project, a clearer description of the operation being performed is provided in the UI."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where importing a job directory that had been symlinked (rather than copied) into the project directory would fail."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where project directories that had been synced and restored from S3-like filesystems would fail to attach due to missing (empty) <code>gridfs_data</code> directories."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where Ab-initio Reconstruction jobs within CryoSPARC Live would ignore the SSD usage parameter."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where cloning a CryoSPARC Live session would result in the exposure groups being pre-emptively enabled."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue in CryoSPARC Live where it was not possible to select a source job for 2D templates from outside of the current project."
+        },
+        {
+          "tag": "fixed",
+          "description": "Improved handling of exported Live session exposures when no gain reference is provided."
+        },
+        {
+          "tag": "fixed",
+          "description": "If attaching a project fails, the project lock file (<code>cs.lock</code>, created during the attempt to attach) will no longer be deleted. If the project directory needs to be attached to a different instance later, the lock file can be manually deleted from the project directory."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where installing worker updates could fail due to incorrectly changing the current working directory."
+        },
+        {
+          "tag": "fixed",
+          "description": "Shell control characters are no longer incorrectly escaped when submitting cluster commands."
+        },
+        {
+          "tag": "fixed",
+          "description": "Data cleanup tool no longer shows an error message when clearing intermediate results."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue where 2D Classification would fail when configured with 1 class and otherwise default parameters."
+        },
+        {
+          "tag": "fixed",
+          "description": "3D Flex Mesh Prep job no longer fails if only two segments are provided in the segmentation file and connection tree."
+        },
+        {
+          "tag": "fixed",
+          "description": "Fixed an issue in Topaz Cross Validation where the parameter being optimized incorrectly required an input value, and updated the job to instruct users to clear this field before running the job."
+        },
+        {
+          "tag": "fixed",
+          "description": "Topaz Cross Validation job no longer fails to launch when decimal values are provided for some parameters."
+        }
+      ]
+    },
+    {
       "tag": "v5.0.3",
       "date": "03/16/2026",
       "items": [
