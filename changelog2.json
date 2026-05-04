@@ -1,6 +1,76 @@
 {
   "versions": [
     {
+      "tag": "v5.0.5",
+      "date": "05/04/2026",
+      "items": [
+        {
+          "tag": "note",
+          "description": "If you are updating to v5.0.5 from a CryoSPARC v4 version, please see the full v5.0 changelog, update instructions, and compatibility notes here: <a href=\"https://cryosparc.com/updates/v5.0\">cryosparc.com/updates/v5.0</a>"
+        },
+        {
+          "tag": "fixed",
+          "description": "Local Refinement jobs no longer fail with a plotting error when intermediate iteration plots are being produced in certain cases."
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC Live auto-pause now correctly pauses Live sessions in both standard and graceful modes, including for sessions where streaming 2D and 3D jobs are running."
+        },
+        {
+          "tag": "fixed",
+          "description": "Import Volumes job no longer fails when importing integer-type MRC volumes."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where ‘undefined’ columns would display when downloading workspace and project CSVs."
+        },
+        {
+          "tag": "update",
+          "description": "CryoSPARC Live session configuration profiles are now included in automatic instance configuration exports, so that profiles are retained when restoring a CryoSPARC instance using <code>cryosparcm recover</code>"
+        },
+        {
+          "tag": "update",
+          "description": "Set environment variable <code>CRYOSPARC_CLI_SKIP_ACCESS_CHECK=true</code> in both CryoSPARC master and worker <code>config.sh</code> files, in order to disable filesystem permission checks for <code>cryosparcm</code> and <code>cryosparcw</code> command-line arguments. This setting may be used with network file systems where listed UNIX access permissions do not match the true available permissions."
+        },
+        {
+          "tag": "update",
+          "description": "Improved detection and fallback for silent SSD cache file copy failures on some network file systems, including Lustre."
+        },
+        {
+          "tag": "fixed",
+          "description": "CryoSPARC command line and cryosparc-tools no longer produce errors when loading workspace or session objects."
+        },
+        {
+          "tag": "fixed",
+          "description": "When multiple particle set inputs are connected to a job,  <code>alignments3D_multi</code> results will be removed rather than being passed through, in order to prevent failure in descendant jobs due to a mismatch in the number of classes present in the results."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where connections between Workflow jobs would fail in some cases, due to the connection being made using the input slot name instead of the output result name."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where the option to group jobs was presented when viewing all jobs within a project."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where current resource usage would not load when interacting with the job context menu in the tree view."
+        },
+        {
+          "tag": "fixed",
+          "description": "Resolved an issue where the “Apply” action on the Live configuration tab would remain disabled after applying a configuration profile with missing required parameters."
+        },
+        {
+          "tag": "fixed",
+          "description": "Micrograph Denoiser jobs info tags no longer display number of training micrographs used if a pre-trained model is provided as input."
+        },
+        {
+          "tag": "fixed",
+          "description": "Legacy jobs now appear with formatted titles on the job cards and details view."
+        }
+      ]
+    },
+    {
       "tag": "v5.0.4",
       "date": "04/02/2026",
       "items": [
